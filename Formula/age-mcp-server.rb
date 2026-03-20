@@ -105,17 +105,17 @@ class AgeMcpServer < Formula
   end
   resource "pydantic-core" do
     if OS.mac? && Hardware::CPU.arm?
-      url "https://files.pythonhosted.org/packages/eb/a7/dfba778590b8b7fc2660320d6124b666b902fe7f3bb60f79bfd75f8d6cfb/pydantic_core-2.42.0-cp313-cp313-macosx_11_0_arm64.whl"
-      sha256 "c042694870c20053b8814a57c416cd2c6273fe462a440460005c791c24c39baf"
+      url "https://files.pythonhosted.org/packages/94/02/abfa0e0bda67faa65fef1c84971c7e45928e108fe24333c81f3bfe35d5f5/pydantic_core-2.41.5-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "112e305c3314f40c93998e567879e887a3160bb8689ef3d2c04b6cc62c33ac34"
     elsif OS.mac? && Hardware::CPU.intel?
-      url "https://files.pythonhosted.org/packages/d9/73/f1ca9122a23924bb1b09e15b09e48dcf1ccbef8eb7151ffde8ba7723350e/pydantic_core-2.42.0-cp313-cp313-macosx_10_12_x86_64.whl"
-      sha256 "02fd2b4a62efa12e004fce2bfd2648cf8c39efc5dfc5ed5f196eb4ccefc7db4e"
+      url "https://files.pythonhosted.org/packages/87/06/8806241ff1f70d9939f9af039c6c35f2360cf16e93c2ca76f184e76b1564/pydantic_core-2.41.5-cp313-cp313-macosx_10_12_x86_64.whl"
+      sha256 "941103c9be18ac8daf7b7adca8228f8ed6bb7a1849020f643b3a14d15b1924d9"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/bf/25/dd3e68362b4d7983bec8ccd421f06c47360aa65763774426ccf6377c8d4a/pydantic_core-2.42.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-      sha256 "c5f352ffa0ec2983b849a93714571063bfc57413b5df2f1027d7a04b6e8bdd25"
+      url "https://files.pythonhosted.org/packages/cf/4e/35a80cae583a37cf15604b44240e45c05e04e86f9cfd766623149297e971/pydantic_core-2.41.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+      sha256 "406bf18d345822d6c21366031003612b9c77b3e29ffdb0f612367352aab7d586"
     else
-      url "https://files.pythonhosted.org/packages/6a/5d/f33a858a3b38ca2ecea6a12d749a8dae1052098cf61f88403a585bd64906/pydantic_core-2.42.0.tar.gz"
-      sha256 "34068adadf673c872f01265fa17ec00073e99d7f53f6d499bdfae652f330b3d2"
+      url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
+      sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
     end
   end
   resource "pydantic-settings" do

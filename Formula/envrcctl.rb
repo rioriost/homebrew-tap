@@ -13,7 +13,7 @@ class Envrcctl < Formula
 
   resource "envrcctl-macos-auth" do
     url "https://github.com/rioriost/envrcctl/releases/download/0.2.2/envrcctl-macos-auth-0.2.2-arm64.tar.gz"
-    sha256 "d1e5b0b061f15bdacdc9f9df379408c01f4feed4fcf4d79534d9989a1949de0b"  end
+    sha256 "52f956643489b571b94ae8ba420007fed44d9522a5afea47cbd2effbdfb1a5af"  end
 
   def install
     virtualenv_install_with_resources

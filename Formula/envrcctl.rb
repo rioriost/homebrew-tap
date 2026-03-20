@@ -13,11 +13,11 @@ class Envrcctl < Formula
 
   resource "envrcctl-macos-auth" do
     url "https://github.com/rioriost/envrcctl/releases/download/0.2.2/envrcctl-macos-auth-0.2.2-arm64.tar.gz"
-    sha256 "4ff019dad923c80b692856d83805ff0a1aaa8da99eb050b6d9b711b369fa84f2"  end
+    sha256 "6a9128104276155af535cc516970bc9798ed6434a2000236ff314625e7166486"  end
 
   def install
     venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install buildpath
+    venv.pip_install Pathname.pwd/"envrcctl-0.2.2-py3-none-any.whl"
 
     bin.install_symlink libexec/"bin/envrcctl"
 

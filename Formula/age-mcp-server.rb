@@ -175,8 +175,317 @@ class AgeMcpServer < Formula
   end
 
   def install
-    cd "src" do
-      virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.13")
+
+    resource("agefreighter").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("aiofiles").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("annotated-types").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("anyio").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("argcomplete").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("attrs").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("certifi").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("click").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("h11").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("httpcore").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("httpx").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("httpx-sse").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("idna").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("jsonschema").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("jsonschema-specifications").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("mcp").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("numpy").stage do
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("ply").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("psycopg").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("psycopg-pool").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("pydantic").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("pydantic-core").stage do
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("pydantic-settings").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("python-dotenv").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("python-multipart").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("referencing").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("rpds-py").stage do
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("shtab").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("sse-starlette").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("starlette").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("typing-extensions").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("typing-inspection").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("uvicorn").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    buildpath.install Dir["*"]
+    cd buildpath/"src" do
+      venv.pip_install Pathname.pwd
     end
   end
 

@@ -483,10 +483,7 @@ class AgeMcpServer < Formula
       end
     end
 
-    buildpath.install Dir["*"]
-    cd buildpath/"src" do
-      venv.pip_install Pathname.pwd
-    end
+    venv.pip_install buildpath
   end
 
   test do

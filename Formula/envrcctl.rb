@@ -3,8 +3,8 @@ class Envrcctl < Formula
 
   desc "Manage .envrc with managed blocks and OS-backed secrets"
   homepage "https://github.com/rioriost/envrcctl"
-  url "https://github.com/rioriost/envrcctl/releases/download/0.2.7/envrcctl-0.2.7.tar.gz"
-  sha256 "62abcdd7c22fb5aae8192a08582bf3172aac3ed6be97aeea2b535ff65becc430"
+  url "https://github.com/rioriost/envrcctl/releases/download/0.2.8/envrcctl-0.2.8.tar.gz"
+  sha256 "e92d1bac63776a6e217495a27075cbdabe676bfee422b88678fe14058f80018c"
   license "MIT"
 
   depends_on "python@3.12"
@@ -52,8 +52,8 @@ class Envrcctl < Formula
   on_macos do
     on_arm do
       resource "envrcctl-macos-auth-arm64" do
-        url "https://github.com/rioriost/envrcctl/releases/download/0.2.7/envrcctl-macos-auth-0.2.7-arm64.tar.gz"
-        sha256 "2d558bad085e5ba143afc499094dd6de6fbe4d8edd08e2eed10c116bb7c9b6b5"
+        url "https://github.com/rioriost/envrcctl/releases/download/0.2.8/envrcctl-macos-auth-0.2.8-arm64.tar.gz"
+        sha256 "9dda05d314f66073027369c8d9eaabac6ef753c056e824b45083460637553319"
       end
     end
   end

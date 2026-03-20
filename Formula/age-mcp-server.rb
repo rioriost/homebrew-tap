@@ -484,6 +484,7 @@ class AgeMcpServer < Formula
     end
 
     venv.pip_install buildpath
+    bin.install_symlink libexec/"bin/age-mcp-server"
   end
 
   test do

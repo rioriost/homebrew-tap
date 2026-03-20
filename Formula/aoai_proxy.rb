@@ -3,8 +3,8 @@ class AoaiProxy < Formula
 
   desc "OpenAI-compatible proxy for Azure OpenAI using Entra ID authentication"
   homepage "https://github.com/rioriost/aoai_proxy"
-  url "https://github.com/rioriost/aoai-proxy/releases/download/0.1.2/aoai_proxy-0.1.2.tar.gz"
-  sha256 "28f6090b85f781351fe52573775af8b3506a2757379f27f91bfe651dce962c55"
+  url "https://github.com/rioriost/aoai_proxy/releases/download/0.1.3/aoai_proxy-0.1.3.tar.gz"
+  sha256 "5a89c51c991613f8443aaa218aa29ca757995ded9e2f6c2c9cbc5569eccc4e3f"
   license "MIT"
 
   depends_on "python@3.12"
@@ -391,10 +391,10 @@ class AoaiProxy < Formula
     end
 
     venv.pip_install buildpath
-    bin.install_symlink libexec/"bin/aoai-proxy"
+    bin.install_symlink libexec/"bin/aoai_proxy"
   end
 
   test do
-    system "#{bin}/aoai-proxy", "--help"
+    system "#{bin}/aoai_proxy", "--help"
   end
 end

@@ -3,22 +3,22 @@ class Envrcctl < Formula
 
   desc "Manage .envrc with managed blocks and OS-backed secrets"
   homepage "https://github.com/rioriost/envrcctl"
-  url "https://github.com/rioriost/envrcctl/releases/download/0.2.5/envrcctl-0.2.5.tar.gz"
-  sha256 "a7183773c0b8652f14cf15abdf1a128c3ebcafc0e2cc0e40d1e1cba5742bf600"
+  url "https://github.com/rioriost/envrcctl/releases/download/0.2.6/envrcctl-0.2.6.tar.gz"
+  sha256 "c42c3dd028c5423b204e93eee0797b9e1181b44453bab27a86e2cc15a38ad1bb"
   license "MIT"
 
   depends_on "python@3.12"
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/source/t/typer/typer-0.24.1.tar.gz"
-    sha256 "8bf4e81499611d3161106e998fe4d624a83abf8bfda3b99898b4498d0c2f0976"
+    url "https://files.pythonhosted.org/packages/f5/24/cb09efec5cc954f7f9b930bf8279447d24618bb6758d4f6adf2574c41780/typer-0.24.1.tar.gz"
+    sha256 "e39b4732d65fbdcde189ae76cf7cd48aeae72919dea1fdfc16593be016256b45"
   end
 
   on_macos do
     on_arm do
       resource "envrcctl-macos-auth-arm64" do
-        url "https://github.com/rioriost/envrcctl/releases/download/0.2.5/envrcctl-macos-auth-0.2.5-arm64.tar.gz"
-        sha256 "665fd185227565fd169e1a6c19a6f1aa2f254a62a98d96fa9d875ef41f1bcf9c"
+        url "https://github.com/rioriost/envrcctl/releases/download/0.2.6/envrcctl-macos-auth-0.2.6-arm64.tar.gz"
+        sha256 "2f3d94780818ab2aeb86c308ca475ca2bb4f2d9762e191d4d15439f7d30cd275"
       end
     end
   end

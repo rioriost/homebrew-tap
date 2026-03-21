@@ -3,8 +3,8 @@ class Celestsp < Formula
 
   desc "Celestial TSP is a Python script that calculates the optimal order of celestial bodies for observation based on their coordinates."
   homepage "https://github.com/rioriost/celestsp"
-  url "https://files.pythonhosted.org/packages/1d/24/bb7da688eee8111b25af3b408e3f9242246040ca3f8da7ee9fc218523cc9/celestsp-0.2.46.tar.gz"
-  sha256 "2d9cf952f5d08357262ccdc6f3c28362186ba25d871c0d4464d632285aa3e652"
+  url "https://github.com/rioriost/celestsp/releases/download/0.2.47/celestsp-0.2.47.tar.gz"
+  sha256 "8a4854ba8cbe00a8330e815803fb3ccc1a2565bfe86636e24093a36f474f64d8"
   license "MIT"
 
   depends_on "python@3.13"

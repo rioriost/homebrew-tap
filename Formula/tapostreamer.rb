@@ -1,57 +1,138 @@
 class Tapostreamer < Formula
   include Language::Python::Virtualenv
 
-  desc "TapoStreamer is an Python application that shows the video streaming from the cameras made by TP-Link."
-  homepage "https://github.com/rioriost/tapostreamer/"
-  url "https://files.pythonhosted.org/packages/fe/ec/ac13cba2c7eea92aeee66d8323e04499f4ffeabf8a6eba51a006837c3066/tapostreamer-0.4.1.tar.gz"
-  sha256 "4f1d50d31e7f337c97f066517decdc1e59dd42ed924069fb53a88245688aa634"
+  desc "TapoStreamer is a Python application that shows video streaming from TP-Link cameras."
+  homepage "https://github.com/rioriost/tapostreamer"
+  url "https://github.com/rioriost/tapostreamer/releases/download/0.4.3/tapostreamer-0.4.3.tar.gz"
+  sha256 "5aa73afc1a96c60b130541e08d2b0d9664fc8ea1f8348b1f1e4351e7a7f6d2e0"
   license "MIT"
 
   depends_on "python@3.14"
-
-  resource "backports-tarfile" do
-    url "https://files.pythonhosted.org/packages/86/72/cd9b395f25e290e633655a100af28cb253e4393396264a98bd5f5951d50f/backports_tarfile-1.2.0.tar.gz"
-    sha256 "d75e02c268746e1b8144c278978b6e98e85de6ad16f8e4b0844a154557eca991"
+  resource "jaraco.classes" do
+    url "https://files.pythonhosted.org/packages/7f/66/b15ce62552d84bbfcec9a4873ab79d993a1dd4edb922cbfccae192bd5b5f/jaraco.classes-3.4.0-py3-none-any.whl"
+    sha256 "f662826b6bed8cace05e7ff873ce0f9283b5c924470fe664fff1c2f00f581790"
   end
-
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/f3/49/3b30cad09e7771a4982d9975a8cbf64f00d4a1ececb53297f1d9a7be1b10/importlib_metadata-8.7.1.tar.gz"
-    sha256 "49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb"
+  resource "jaraco.context" do
+    url "https://files.pythonhosted.org/packages/f2/58/bc8954bda5fcda97bd7c19be11b85f91973d67a706ed4a3aec33e7de22db/jaraco_context-6.1.2-py3-none-any.whl"
+    sha256 "bf8150b79a2d5d91ae48629d8b427a8f7ba0e1097dd6202a9059f29a36379535"
   end
-
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz"
-    sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
+  resource "jaraco.functools" do
+    url "https://files.pythonhosted.org/packages/fd/c4/813bb09f0985cb21e959f21f2464169eca882656849adf727ac7bb7e1767/jaraco_functools-4.4.0-py3-none-any.whl"
+    sha256 "9eec1e36f45c818d9bf307c8948eb03b2b56cd44087b3cdc989abca1f20b9176"
   end
-
-  resource "jaraco-context" do
-    url "https://files.pythonhosted.org/packages/27/7b/c3081ff1af947915503121c649f26a778e1a2101fd525f74aef997d75b7e/jaraco_context-6.1.1.tar.gz"
-    sha256 "bc046b2dc94f1e5532bd02402684414575cc11f565d929b6563125deb0a6e581"
-  end
-
-  resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
-    sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
-  end
-
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
-    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
+    url "https://files.pythonhosted.org/packages/81/db/e655086b7f3a705df045bf0933bdd9c2f79bb3c97bfef1384598bb79a217/keyring-25.7.0-py3-none-any.whl"
+    sha256 "be4a0b195f149690c166e850609a477c532ddbfbaed96a404d4e43f8d5e2689f"
   end
-
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
-    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
+    url "https://files.pythonhosted.org/packages/a4/8e/469e5a4a2f5855992e425f3cb33804cc07bf18d48f2db061aec61ce50270/more_itertools-10.8.0-py3-none-any.whl"
+    sha256 "52d4362373dcf7c52546bc4af9a86ee7c4579df9a8dc268be0a2f949d376cc9b"
   end
-
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
-    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
+  resource "numpy" do
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/9b/62/760f2b55866b496bb1fa7da2a6db076bef908110e568b02fcfc1422e2a3a/numpy-2.4.3-cp314-cp314-macosx_11_0_arm64.whl"
+      sha256 "297837823f5bc572c5f9379b0c9f3a3365f08492cbdc33bcc3af174372ebb168"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/70/ae/3936f79adebf8caf81bd7a599b90a561334a658be4dcc7b6329ebf4ee8de/numpy-2.4.3-cp314-cp314-macosx_10_15_x86_64.whl"
+      sha256 "5884ce5c7acfae1e4e1b6fde43797d10aa506074d25b531b4f54bde33c0c31d4"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/a9/7e/4f120ecc54ba26ddf3dc348eeb9eb063f421de65c05fc961941798feea18/numpy-2.4.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "679f2a834bae9020f81534671c56fd0cc76dd7e5182f57131478e23d0dc59e24"
+    else
+      url "https://files.pythonhosted.org/packages/10/8b/c265f4823726ab832de836cdd184d0986dcf94480f81e8739692a7ac7af2/numpy-2.4.3.tar.gz"
+      sha256 "483a201202b73495f00dbc83796c6ae63137a9bdade074f7648b3e32613412dd"
+    end
+  end
+  resource "opencv-python" do
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/fc/6f/5a28fef4c4a382be06afe3938c64cc168223016fa520c5abaf37e8862aa5/opencv_python-4.13.0.92-cp37-abi3-macosx_13_0_arm64.whl"
+      sha256 "caf60c071ec391ba51ed00a4a920f996d0b64e3e46068aac1f646b5de0326a19"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/08/ac/6c98c44c650b8114a0fb901691351cfb3956d502e8e9b5cd27f4ee7fbf2f/opencv_python-4.13.0.92-cp37-abi3-macosx_14_0_x86_64.whl"
+      sha256 "5868a8c028a0b37561579bfb8ac1875babdc69546d236249fff296a8c010ccf9"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/db/07/90b34a8e2cf9c50fe8ed25cac9011cde0676b4d9d9c973751ac7616223a2/opencv_python-4.13.0.92-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+      sha256 "402033cddf9d294693094de5ef532339f14ce821da3ad7df7c9f6e8316da32cf"
+    else
+      url "https://files.pythonhosted.org/packages/fc/6f/5a28fef4c4a382be06afe3938c64cc168223016fa520c5abaf37e8862aa5/opencv_python-4.13.0.92-cp37-abi3-macosx_13_0_arm64.whl"
+      sha256 "caf60c071ec391ba51ed00a4a920f996d0b64e3e46068aac1f646b5de0326a19"
+    end
   end
 
   def install
-    virtualenv_install_with_resources
-    system libexec/"bin/python", "-m", "pip", "install", "opencv-python", "numpy"
+    venv = virtualenv_create(libexec, "python3.14")
+
+    resource("jaraco.classes").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("jaraco.context").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("jaraco.functools").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("keyring").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("more-itertools").stage do
+      wheel = Dir["*.whl"].first
+      if wheel
+        venv.pip_install Pathname(wheel)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("numpy").stage do
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    resource("opencv-python").stage do
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      else
+        venv.pip_install Pathname.pwd
+      end
+    end
+
+    venv.pip_install buildpath
+    bin.install_symlink libexec/"bin/tapostreamer"
   end
 
   test do

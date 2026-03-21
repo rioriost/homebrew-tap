@@ -3,14 +3,25 @@ class Celestsp < Formula
 
   desc "Celestial TSP is a Python script that calculates the optimal order of celestial bodies for observation based on their coordinates."
   homepage "https://github.com/rioriost/celestsp"
-  url "https://github.com/rioriost/celestsp/releases/download/0.2.46/celestsp-0.2.46.tar.gz"
+  url "https://files.pythonhosted.org/packages/1d/24/bb7da688eee8111b25af3b408e3f9242246040ca3f8da7ee9fc218523cc9/celestsp-0.2.46.tar.gz"
   sha256 "2d9cf952f5d08357262ccdc6f3c28362186ba25d871c0d4464d632285aa3e652"
   license "MIT"
 
   depends_on "python@3.13"
   resource "astropy" do
-    url "https://files.pythonhosted.org/packages/7b/92/2dce2d48347efc3346d08ca7995b152d242ebd170c571f7c9346468d8427/astropy-7.2.0.tar.gz"
-    sha256 "ae48bc26b1feaeb603cd94bd1fa1aa39137a115fe931b7f13787ab420e8c3070"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/a6/ba/3418133ba144dfcd1530bca5a6b695f4cdd21a8abaaa2ac4e5450d11b028/astropy-7.2.0-cp311-abi3-macosx_11_0_arm64.whl"
+      sha256 "52e9a7d9c86b21f1af911a2930cd0c4a275fb302d455c89e11eedaffef6f2ad0"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/b4/6d/6330a844bad8dfc4875e0f2fa1db1fee87837ba9805aa8a8d048c071363a/astropy-7.2.0-cp311-abi3-macosx_10_9_x86_64.whl"
+      sha256 "efac04df4cc488efe630c2fff1992d6516dfb16a06e197fb68bc9e8e3b85def1"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/c3/1c/f06ad85180e7dd9855aa5ede901bfc2be858d7bee17d4e978a14c0ecec14/astropy-7.2.0-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "2f39ce2c80211fbceb005d377a5478cd0d66c42aa1498d252f2239fe5a025c24"
+    else
+      url "https://files.pythonhosted.org/packages/7b/92/2dce2d48347efc3346d08ca7995b152d242ebd170c571f7c9346468d8427/astropy-7.2.0.tar.gz"
+      sha256 "ae48bc26b1feaeb603cd94bd1fa1aa39137a115fe931b7f13787ab420e8c3070"
+    end
   end
   resource "astropy-iers-data" do
     url "https://files.pythonhosted.org/packages/64/7f/223a0d2ba7ea0c798b59e5a0f61782347cf9292274a1f7f3eef0a02c1536/astropy_iers_data-0.2026.3.16.0.53.33-py3-none-any.whl"
@@ -76,8 +87,19 @@ class Celestsp < Formula
     sha256 "4186a699674af418f655dbd420ed87f50d56b4cd6603784279d9eef6627823c8"
   end
   resource "pillow" do
-    url "https://files.pythonhosted.org/packages/1f/42/5c74462b4fd957fcd7b13b04fb3205ff8349236ea74c7c375766d6c82288/pillow-12.1.1.tar.gz"
-    sha256 "9ad8fa5937ab05218e2b6a4cff30295ad35afd2f83ac592e68c0d871bb0fdbc4"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/bb/ad/ad9dc98ff24f485008aa5cdedaf1a219876f6f6c42a4626c08bc4e80b120/pillow-12.1.1-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "8b7e5304e34942bf62e15184219a7b5ad4ff7f3bb5cca4d984f37df1a0e1aee2"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/14/a1/16c4b823838ba4c9c52c0e6bbda903a3fe5a1bdbf1b8eb4fff7156f3e318/pillow-12.1.1-cp313-cp313-macosx_10_13_x86_64.whl"
+      sha256 "6c6db3b84c87d48d0088943bf33440e0c42370b99b1c2a7989216f7b42eede60"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/95/f4/86f51b8745070daf21fd2e5b1fe0eb35d4db9ca26e6d58366562fb56a743/pillow-12.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+      sha256 "fc44ef1f3de4f45b50ccf9136999d71abb99dca7706bc75d222ed350b9fd2289"
+    else
+      url "https://files.pythonhosted.org/packages/1f/42/5c74462b4fd957fcd7b13b04fb3205ff8349236ea74c7c375766d6c82288/pillow-12.1.1.tar.gz"
+      sha256 "9ad8fa5937ab05218e2b6a4cff30295ad35afd2f83ac592e68c0d871bb0fdbc4"
+    end
   end
   resource "pyerfa" do
     url "https://files.pythonhosted.org/packages/71/39/63cc8291b0cf324ae710df41527faf7d331bce573899199d926b3e492260/pyerfa-2.0.1.5.tar.gz"
@@ -100,8 +122,19 @@ class Celestsp < Formula
     sha256 "2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6"
   end
   resource "scipy" do
-    url "https://files.pythonhosted.org/packages/7a/97/5a3609c4f8d58b039179648e62dd220f89864f56f7357f5d4f45c29eb2cc/scipy-1.17.1.tar.gz"
-    sha256 "95d8e012d8cb8816c226aef832200b1d45109ed4464303e997c5b13122b297c0"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/ec/ae/db19f8ab842e9b724bf5dbb7db29302a91f1e55bc4d04b1025d6d605a2c5/scipy-1.17.1-cp313-cp313-macosx_12_0_arm64.whl"
+      sha256 "6fac755ca3d2c3edcb22f479fceaa241704111414831ddd3bc6056e18516892f"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/76/27/07ee1b57b65e92645f219b37148a7e7928b82e2b5dbeccecb4dff7c64f0b/scipy-1.17.1-cp313-cp313-macosx_10_14_x86_64.whl"
+      sha256 "5e3c5c011904115f88a39308379c17f91546f77c1667cea98739fe0fccea804c"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/f5/5f/f17563f28ff03c7b6799c50d01d5d856a1d55f2676f537ca8d28c7f627cd/scipy-1.17.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "581b2264fc0aa555f3f435a5944da7504ea3a065d7029ad60e7c3d1ae09c5464"
+    else
+      url "https://files.pythonhosted.org/packages/7a/97/5a3609c4f8d58b039179648e62dd220f89864f56f7357f5d4f45c29eb2cc/scipy-1.17.1.tar.gz"
+      sha256 "95d8e012d8cb8816c226aef832200b1d45109ed4464303e997c5b13122b297c0"
+    end
   end
   resource "six" do
     url "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl"
@@ -116,9 +149,12 @@ class Celestsp < Formula
     venv = virtualenv_create(libexec, "python3.13")
 
     resource("astropy").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end
@@ -245,9 +281,12 @@ class Celestsp < Formula
     end
 
     resource("pillow").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end
@@ -299,9 +338,12 @@ class Celestsp < Formula
     end
 
     resource("scipy").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end

@@ -36,8 +36,19 @@ class Celestsp < Formula
     sha256 "947cf925bc916d90adba35a64c82aace04fa39b46b52d4630ece166655905a69"
   end
   resource "contourpy" do
-    url "https://files.pythonhosted.org/packages/58/01/1253e6698a07380cd31a736d248a3f2a50a7c88779a1813da27503cadc2a/contourpy-1.3.3.tar.gz"
-    sha256 "083e12155b210502d0bca491432bb04d56dc3432f95a979b429f2848c3dbe880"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/96/e4/7adcd9c8362745b2210728f209bfbcf7d91ba868a2c5f40d8b58f54c509b/contourpy-1.3.3-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "d002b6f00d73d69333dac9d0b8d5e84d9724ff9ef044fd63c5986e62b7c9e1b1"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/68/35/0167aad910bbdb9599272bd96d01a9ec6852f36b9455cf2ca67bd4cc2d23/contourpy-1.3.3-cp313-cp313-macosx_10_13_x86_64.whl"
+      sha256 "177fb367556747a686509d6fef71d221a4b198a3905fe824430e5ea0fda54eb5"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/4b/32/e0f13a1c5b0f8572d0ec6ae2f6c677b7991fafd95da523159c19eff0696a/contourpy-1.3.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "4debd64f124ca62069f313a9cb86656ff087786016d76927ae2cf37846b006c9"
+    else
+      url "https://files.pythonhosted.org/packages/58/01/1253e6698a07380cd31a736d248a3f2a50a7c88779a1813da27503cadc2a/contourpy-1.3.3.tar.gz"
+      sha256 "083e12155b210502d0bca491432bb04d56dc3432f95a979b429f2848c3dbe880"
+    end
   end
   resource "cycler" do
     url "https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl"
@@ -52,12 +63,34 @@ class Celestsp < Formula
     sha256 "771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea"
   end
   resource "kiwisolver" do
-    url "https://files.pythonhosted.org/packages/d0/67/9c61eccb13f0bdca9307614e782fec49ffdde0f7a2314935d489fa93cd9c/kiwisolver-1.5.0.tar.gz"
-    sha256 "d4193f3d9dc3f6f79aaed0e5637f45d98850ebf01f7ca20e69457f3e8946b66a"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/9d/69/024d6711d5ba575aa65d5538042e99964104e97fa153a9f10bc369182bc2/kiwisolver-1.5.0-cp313-cp313-macosx_10_13_universal2.whl"
+      sha256 "fd40bb9cd0891c4c3cb1ddf83f8bbfa15731a248fdc8162669405451e2724b09"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/9d/69/024d6711d5ba575aa65d5538042e99964104e97fa153a9f10bc369182bc2/kiwisolver-1.5.0-cp313-cp313-macosx_10_13_universal2.whl"
+      sha256 "fd40bb9cd0891c4c3cb1ddf83f8bbfa15731a248fdc8162669405451e2724b09"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/2b/0a/7b98e1e119878a27ba8618ca1e18b14f992ff1eda40f47bccccf4de44121/kiwisolver-1.5.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+      sha256 "332b4f0145c30b5f5ad9374881133e5aa64320428a57c2c2b61e9d891a51c2f3"
+    else
+      url "https://files.pythonhosted.org/packages/d0/67/9c61eccb13f0bdca9307614e782fec49ffdde0f7a2314935d489fa93cd9c/kiwisolver-1.5.0.tar.gz"
+      sha256 "d4193f3d9dc3f6f79aaed0e5637f45d98850ebf01f7ca20e69457f3e8946b66a"
+    end
   end
   resource "matplotlib" do
-    url "https://files.pythonhosted.org/packages/8a/76/d3c6e3a13fe484ebe7718d14e269c9569c4eb0020a968a327acb3b9a8fe6/matplotlib-3.10.8.tar.gz"
-    sha256 "2299372c19d56bcd35cf05a2738308758d32b9eaed2371898d8f5bd33f084aa3"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/8d/a0/2ba3473c1b66b9c74dc7107c67e9008cb1782edbe896d4c899d39ae9cf78/matplotlib-3.10.8-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "56271f3dac49a88d7fca5060f004d9d22b865f743a12a23b1e937a0be4818ee1"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/3d/b9/15fd5541ef4f5b9a17eefd379356cf12175fe577424e7b1d80676516031a/matplotlib-3.10.8-cp313-cp313-macosx_10_13_x86_64.whl"
+      sha256 "3f2e409836d7f5ac2f1c013110a4d50b9f7edc26328c108915f9075d7d7a91b6"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/75/97/a471f1c3eb1fd6f6c24a31a5858f443891d5127e63a7788678d14e249aea/matplotlib-3.10.8-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+      sha256 "a0a7f52498f72f13d4a25ea70f35f4cb60642b466cbb0a9be951b5bc3f45a486"
+    else
+      url "https://files.pythonhosted.org/packages/8a/76/d3c6e3a13fe484ebe7718d14e269c9569c4eb0020a968a327acb3b9a8fe6/matplotlib-3.10.8.tar.gz"
+      sha256 "2299372c19d56bcd35cf05a2738308758d32b9eaed2371898d8f5bd33f084aa3"
+    end
   end
   resource "networkx" do
     url "https://files.pythonhosted.org/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl"
@@ -83,8 +116,19 @@ class Celestsp < Formula
     sha256 "b36f1fef9334a5588b4166f8bcd26a14e521f2b55e6b9de3aaa80d3ff7a37529"
   end
   resource "pandas" do
-    url "https://files.pythonhosted.org/packages/2e/0c/b28ed414f080ee0ad153f848586d61d1878f91689950f037f976ce15f6c8/pandas-3.0.1.tar.gz"
-    sha256 "4186a699674af418f655dbd420ed87f50d56b4cd6603784279d9eef6627823c8"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/a8/14/5990826f779f79148ae9d3a2c39593dc04d61d5d90541e71b5749f35af95/pandas-3.0.1-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "661e0f665932af88c7877f31da0dc743fe9c8f2524bdffe23d24fdcb67ef9d56"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/0b/48/aad6ec4f8d007534c091e9a7172b3ec1b1ee6d99a9cbb936b5eab6c6cf58/pandas-3.0.1-cp313-cp313-macosx_10_13_x86_64.whl"
+      sha256 "5272627187b5d9c20e55d27caf5f2cd23e286aba25cadf73c8590e432e2b7262"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/f2/85/ab6d04733a7d6ff32bfc8382bf1b07078228f5d6ebec5266b91bfc5c4ff7/pandas-3.0.1-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "1ff8cf1d2896e34343197685f432450ec99a85ba8d90cce2030c5eee2ef98791"
+    else
+      url "https://files.pythonhosted.org/packages/2e/0c/b28ed414f080ee0ad153f848586d61d1878f91689950f037f976ce15f6c8/pandas-3.0.1.tar.gz"
+      sha256 "4186a699674af418f655dbd420ed87f50d56b4cd6603784279d9eef6627823c8"
+    end
   end
   resource "pillow" do
     if OS.mac? && Hardware::CPU.arm?
@@ -102,8 +146,19 @@ class Celestsp < Formula
     end
   end
   resource "pyerfa" do
-    url "https://files.pythonhosted.org/packages/71/39/63cc8291b0cf324ae710df41527faf7d331bce573899199d926b3e492260/pyerfa-2.0.1.5.tar.gz"
-    sha256 "17d6b24fe4846c65d5e7d8c362dcb08199dc63b30a236aedd73875cc83e1f6c0"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/11/4a/31a363370478b63c6289a34743f2ba2d3ae1bd8223e004d18ab28fb92385/pyerfa-2.0.1.5-cp39-abi3-macosx_11_0_arm64.whl"
+      sha256 "be1aeb70390dd03a34faf96749d5cabc58437410b4aab7213c512323932427df"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/7d/d9/3448a57cb5bd19950de6d6ab08bd8fbb3df60baa71726de91d73d76c481b/pyerfa-2.0.1.5-cp39-abi3-macosx_10_9_x86_64.whl"
+      sha256 "b282d7c60c4c47cf629c484c17ac504fcb04abd7b3f4dfcf53ee042afc3a5944"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/e5/e0/050018d855d26d3c0b4a7d1b2ed692be758ce276d8289e2a2b44ba1014a5/pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+      sha256 "0e43c7194e3242083f2350b46c09fd4bf8ba1bcc0ebd1460b98fc47fe2389906"
+    else
+      url "https://files.pythonhosted.org/packages/71/39/63cc8291b0cf324ae710df41527faf7d331bce573899199d926b3e492260/pyerfa-2.0.1.5.tar.gz"
+      sha256 "17d6b24fe4846c65d5e7d8c362dcb08199dc63b30a236aedd73875cc83e1f6c0"
+    end
   end
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl"
@@ -188,9 +243,12 @@ class Celestsp < Formula
     end
 
     resource("contourpy").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end
@@ -224,18 +282,24 @@ class Celestsp < Formula
     end
 
     resource("kiwisolver").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("matplotlib").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end
@@ -272,9 +336,12 @@ class Celestsp < Formula
     end
 
     resource("pandas").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end
@@ -293,9 +360,12 @@ class Celestsp < Formula
     end
 
     resource("pyerfa").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end

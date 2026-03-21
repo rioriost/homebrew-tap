@@ -2,20 +2,21 @@ class Phorganize < Formula
   include Language::Python::Virtualenv
 
   desc "Phorganize is a python script to organize photos and videos using embedded meta data in the files."
-  homepage "https://github.com/rioriost/phorganize/"
-  url "https://files.pythonhosted.org/packages/ca/7c/69cea08dbb557204407de9f24c2764ca7b3817f37976593d171f86475a9e/phorganize-0.1.4.tar.gz"
-  sha256 "88246cdece37d22a92f8c678abc16ded62e00b544f08b5f327cc79b12148ec4a"
+  homepage "https://github.com/rioriost/phorganize"
+  url "https://github.com/rioriost/phorganize/releases/download/0.1.5/phorganize-0.1.5.tar.gz"
+  sha256 "03b9c226eaf95f3a18e2a10d5af5a6b302222c801fc03e664e009d1feec969a4"
   license "MIT"
 
-  depends_on "python@3.11"
-
+  depends_on "python@3.13"
   resource "python-magic" do
-    url "https://files.pythonhosted.org/packages/da/db/0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130/python-magic-0.4.27.tar.gz"
-    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
+    url "https://files.pythonhosted.org/packages/6c/73/9f872cb81fc5c3bb48f7227872c28975f998f3e7c2b1c16e95e6432bbb90/python_magic-0.4.27-py2.py3-none-any.whl"
+    sha256 "c212960ad306f700aa0d01e5d7a325d20548ff97eb9920dcd29513174f0294d3"
   end
 
   def install
-    virtualenv_install_with_resources
+    cd "." do
+      virtualenv_install_with_resources
+    end
   end
 
   test do

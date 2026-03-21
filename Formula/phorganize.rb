@@ -3,7 +3,7 @@ class Phorganize < Formula
 
   desc "Phorganize is a python script to organize photos and videos using embedded meta data in the files."
   homepage "https://github.com/rioriost/phorganize"
-  url "https://github.com/rioriost/phorganize/releases/download/0.1.5/phorganize-0.1.5.tar.gz"
+  url "https://files.pythonhosted.org/packages/43/92/8110a0c8cd4fa6248d7f5fd61c62c44c67738615750632d142c48223acc9/phorganize-0.1.5.tar.gz"
   sha256 "03b9c226eaf95f3a18e2a10d5af5a6b302222c801fc03e664e009d1feec969a4"
   license "MIT"
 

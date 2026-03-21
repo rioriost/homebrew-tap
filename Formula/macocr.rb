@@ -3,7 +3,7 @@ class Macocr < Formula
 
   desc "macocr is a python script for OCR on macOS"
   homepage "https://github.com/rioriost/macocr"
-  url "https://github.com/rioriost/macocr/releases/download/0.1.16/macocr-0.1.16.tar.gz"
+  url "https://files.pythonhosted.org/packages/40/2b/3b8ca4ebfef0193856c9560c92f474bee5b05cbb4bfd8da637e7e784daf7/macocr-0.1.16.tar.gz"
   sha256 "1fabbb4bd423c41a4f3ac2f81abe477c50c5dd158af81cdeaceff0f3014ca961"
   license "MIT"
 
@@ -32,8 +32,19 @@ class Macocr < Formula
     end
   end
   resource "pillow-heif" do
-    url "https://files.pythonhosted.org/packages/cd/58/2df4fc42840633e01c97b75965cb1bc6e14425973b92382391650e97e4b7/pillow_heif-1.3.0.tar.gz"
-    sha256 "af8d2bda85e395677d5bb50d7bda3b5655c946cc95b913b5e7222fabacbb467f"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/23/eb/b6b52e3655f366b95301f18aecd2d35487cace18d17134b80ad0f70cc1eb/pillow_heif-1.3.0-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "9390dd7987887aa09779fbd88bbab715c732c9ad3a71d6707284035e3ca93379"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/81/c3/9effa6ab5c2c2ffb80228143c578a9a2a8e2f059dd9d067ec6ff6f6c89db/pillow_heif-1.3.0-cp313-cp313-macosx_10_15_x86_64.whl"
+      sha256 "641c50a064aa9ad6626a6b2b914b65855202f937d573d53838e344feb2e8c6d1"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/47/8c/be44f6dea425a9756ff418cb03f5ee75ed1c7dd1ff9bee1f3893b2b82da4/pillow_heif-1.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "7d30054ccc97ecbe5ee3fa486a505ccc33bfbb27f005ad624ddb4c17b80ddd57"
+    else
+      url "https://files.pythonhosted.org/packages/cd/58/2df4fc42840633e01c97b75965cb1bc6e14425973b92382391650e97e4b7/pillow_heif-1.3.0.tar.gz"
+      sha256 "af8d2bda85e395677d5bb50d7bda3b5655c946cc95b913b5e7222fabacbb467f"
+    end
   end
   resource "pyobjc-core" do
     url "https://files.pythonhosted.org/packages/b8/b6/d5612eb40be4fd5ef88c259339e6313f46ba67577a95d86c3470b951fce0/pyobjc_core-12.1.tar.gz"
@@ -94,9 +105,12 @@ class Macocr < Formula
     end
 
     resource("pillow-heif").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end

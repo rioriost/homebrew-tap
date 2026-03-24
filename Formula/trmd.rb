@@ -3,8 +3,8 @@ class Trmd < Formula
 
   desc "Translate Markdown using OpenAI"
   homepage "https://github.com/rioriost/trmd"
-  url "https://files.pythonhosted.org/packages/dc/68/731aeddcbba78bce8f39950fcff598195a5917c1529fa9b537764dd2d701/trmd-0.1.37.tar.gz"
-  sha256 "faaebd1eaa018132106b0a0ab319d3e1c443a5356c694ee24a6edd4da8780171"
+  url "https://github.com/rioriost/trmd/releases/download/0.1.38/trmd-0.1.38.tar.gz"
+  sha256 "f52f6eaa736a9151045d1659df95a9caa0453b0b552f52b874cd27ee290393c8"
   license "MIT"
 
   depends_on "python@3.13"
@@ -13,8 +13,8 @@ class Trmd < Formula
     sha256 "1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"
   end
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/38/0e/27be9fdef66e72d64c0cdc3cc2823101b80585f8119b5c112c2e8f5f7dab/anyio-4.12.1-py3-none-any.whl"
-    sha256 "d405828884fc140aa80a3c667b8beed277f1dfedec42ba031bd6ac3db606ab6c"
+    url "https://files.pythonhosted.org/packages/da/42/e921fccf5015463e32a3cf6ee7f980a6ed0f395ceeaa45060b61d86486c2/anyio-4.13.0-py3-none-any.whl"
+    sha256 "08b310f9e24a9594186fd75b4f73f4a4152069e3853f1ed8bfbf58369f4ad708"
   end
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/9a/3c/c17fb3ca2d9c3acff52e30b309f538586f9f5b9c9cf454f3845fc9af4881/certifi-2026.2.25-py3-none-any.whl"

@@ -3,8 +3,8 @@ class Trmd < Formula
 
   desc "Translate Markdown using OpenAI"
   homepage "https://github.com/rioriost/trmd"
-  url "https://github.com/rioriost/trmd/releases/download/0.1.38/trmd-0.1.38.tar.gz"
-  sha256 "f52f6eaa736a9151045d1659df95a9caa0453b0b552f52b874cd27ee290393c8"
+  url "https://github.com/rioriost/trmd/releases/download/0.1.39/trmd-0.1.39.tar.gz"
+  sha256 "fcc6e734fbe3a1e65fc5b78318c3c864c5e450bd218a7ff7532f7a17ddd04ecd"
   license "MIT"
 
   depends_on "python@3.13"
@@ -56,8 +56,8 @@ class Trmd < Formula
     end
   end
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/d0/b1/35b6f9c8cf9318e3dbb7146cc82dab4cf61182a8d5406fc9b50864362895/openai-2.29.0-py3-none-any.whl"
-    sha256 "b7c5de513c3286d17c5e29b92c4c98ceaf0d775244ac8159aeb1bddf840eb42a"
+    url "https://files.pythonhosted.org/packages/2a/9e/5bfa2270f902d5b92ab7d41ce0475b8630572e71e349b2a4996d14bdda93/openai-2.30.0-py3-none-any.whl"
+    sha256 "9a5ae616888eb2748ec5e0c5b955a51592e0b201a11f4262db920f2a78c5231d"
   end
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/5a/87/b70ad306ebb6f9b585f114d0ac2137d792b48be34d732d60e597c2f8465a/pydantic-2.12.5-py3-none-any.whl"
@@ -96,6 +96,11 @@ class Trmd < Formula
   end
 
   def install
+    if OS.mac?
+      ENV.append "LDFLAGS", "-Wl,-headerpad_max_install_names"
+      ENV.append "RUSTFLAGS", "-C link-arg=-Wl,-headerpad_max_install_names"
+    end
+
     venv = virtualenv_create(libexec, "python3.13")
 
     resource("annotated-types").stage do

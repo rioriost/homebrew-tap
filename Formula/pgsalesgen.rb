@@ -3,24 +3,24 @@ class Pgsalesgen < Formula
 
   desc "Generate sales data for PostgreSQL"
   homepage "https://github.com/rioriost/pgsalesgen"
-  url "https://github.com/rioriost/pgsalesgen/releases/download/0.1.4/pgsalesgen-0.1.4.tar.gz"
-  sha256 "ef58a207d168c74af8fc55f79f4f6dc33acfaf5fc7d6a04f8f7d4b8b0e488a01"
+  url "https://github.com/rioriost/pgsalesgen/releases/download/0.1.5/pgsalesgen-0.1.5.tar.gz"
+  sha256 "e93c728a07e77e80bd77396b30c6aa20fbed8e45a4f396417b737d038969478e"
   license "MIT"
 
   depends_on "python@3.14"
   resource "numpy" do
     if OS.mac? && Hardware::CPU.arm?
-      url "https://files.pythonhosted.org/packages/9b/62/760f2b55866b496bb1fa7da2a6db076bef908110e568b02fcfc1422e2a3a/numpy-2.4.3-cp314-cp314-macosx_11_0_arm64.whl"
-      sha256 "297837823f5bc572c5f9379b0c9f3a3365f08492cbdc33bcc3af174372ebb168"
+      url "https://files.pythonhosted.org/packages/4c/39/8a320264a84404c74cc7e79715de85d6130fa07a0898f67fb5cd5bd79908/numpy-2.4.4-cp314-cp314-macosx_11_0_arm64.whl"
+      sha256 "2483e4584a1cb3092da4470b38866634bafb223cbcd551ee047633fd2584599a"
     elsif OS.mac? && Hardware::CPU.intel?
-      url "https://files.pythonhosted.org/packages/70/ae/3936f79adebf8caf81bd7a599b90a561334a658be4dcc7b6329ebf4ee8de/numpy-2.4.3-cp314-cp314-macosx_10_15_x86_64.whl"
-      sha256 "5884ce5c7acfae1e4e1b6fde43797d10aa506074d25b531b4f54bde33c0c31d4"
+      url "https://files.pythonhosted.org/packages/6e/06/c54062f85f673dd5c04cbe2f14c3acb8c8b95e3384869bb8cc9bff8cb9df/numpy-2.4.4-cp314-cp314-macosx_10_15_x86_64.whl"
+      sha256 "f169b9a863d34f5d11b8698ead99febeaa17a13ca044961aa8e2662a6c7766a0"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/a9/7e/4f120ecc54ba26ddf3dc348eeb9eb063f421de65c05fc961941798feea18/numpy-2.4.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
-      sha256 "679f2a834bae9020f81534671c56fd0cc76dd7e5182f57131478e23d0dc59e24"
+      url "https://files.pythonhosted.org/packages/98/7c/21252050676612625449b4807d6b695b9ce8a7c9e1c197ee6216c8a65c7c/numpy-2.4.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "27a8d92cd10f1382a67d7cf4db7ce18341b66438bdd9f691d7b0e48d104c2a9d"
     else
-      url "https://files.pythonhosted.org/packages/10/8b/c265f4823726ab832de836cdd184d0986dcf94480f81e8739692a7ac7af2/numpy-2.4.3.tar.gz"
-      sha256 "483a201202b73495f00dbc83796c6ae63137a9bdade074f7648b3e32613412dd"
+      url "https://files.pythonhosted.org/packages/d7/9f/b8cef5bffa569759033adda9481211426f12f53299629b410340795c2514/numpy-2.4.4.tar.gz"
+      sha256 "2d390634c5182175533585cc89f3608a4682ccb173cc9bb940b2881c8d6f8fa0"
     end
   end
   resource "psycopg" do
@@ -29,6 +29,11 @@ class Pgsalesgen < Formula
   end
 
   def install
+    if OS.mac?
+      ENV.append "LDFLAGS", "-Wl,-headerpad_max_install_names"
+      ENV.append "RUSTFLAGS", "-C link-arg=-Wl,-headerpad_max_install_names"
+    end
+
     venv = virtualenv_create(libexec, "python3.14")
 
     resource("numpy").stage do

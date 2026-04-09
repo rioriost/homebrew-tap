@@ -3,8 +3,8 @@ class Trmd < Formula
 
   desc "Translate Markdown using OpenAI"
   homepage "https://github.com/rioriost/trmd"
-  url "https://github.com/rioriost/trmd/releases/download/0.1.39/trmd-0.1.39.tar.gz"
-  sha256 "fcc6e734fbe3a1e65fc5b78318c3c864c5e450bd218a7ff7532f7a17ddd04ecd"
+  url "https://github.com/rioriost/trmd/releases/download/0.1.40/trmd-0.1.40.tar.gz"
+  sha256 "e3b9abe9f4a66157db4dae824411111ff4dc59737e95d530e4a4ceefd346aba3"
   license "MIT"
 
   depends_on "python@3.13"
@@ -51,13 +51,13 @@ class Trmd < Formula
       url "https://files.pythonhosted.org/packages/01/99/ed5e478ff0eb4e8aa5fd998f9d69603c9fd3f32de3bd16c2b1194f68361c/jiter-0.13.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
       sha256 "98fbafb6e88256f4454de33c1f40203d09fc33ed19162a68b3b257b29ca7f663"
     else
-      url "https://files.pythonhosted.org/packages/0d/5e/4ec91646aee381d01cdb9974e30882c9cd3b8c5d1079d6b5ff4af522439a/jiter-0.13.0.tar.gz"
-      sha256 "f2839f9c2c7e2dffc1bc5929a510e14ce0a946be9365fd1219e7ef342dae14f4"
+      url "https://files.pythonhosted.org/packages/7c/02/be5b870d1d2be5dd6a91bdfb90f248fbb7dcbd21338f092c6b89817c3dbf/jiter-0.13.0-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "f556aa591c00f2c45eb1b89f68f52441a016034d18b65da60e2d2875bbbf344a"
     end
   end
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/2a/9e/5bfa2270f902d5b92ab7d41ce0475b8630572e71e349b2a4996d14bdda93/openai-2.30.0-py3-none-any.whl"
-    sha256 "9a5ae616888eb2748ec5e0c5b955a51592e0b201a11f4262db920f2a78c5231d"
+    url "https://files.pythonhosted.org/packages/66/bc/a8f7c3aa03452fedbb9af8be83e959adba96a6b4a35e416faffcc959c568/openai-2.31.0-py3-none-any.whl"
+    sha256 "44e1344d87e56a493d649b17e2fac519d1368cbb0745f59f1957c4c26de50a0a"
   end
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/5a/87/b70ad306ebb6f9b585f114d0ac2137d792b48be34d732d60e597c2f8465a/pydantic-2.12.5-py3-none-any.whl"
@@ -74,8 +74,8 @@ class Trmd < Formula
       url "https://files.pythonhosted.org/packages/cf/4e/35a80cae583a37cf15604b44240e45c05e04e86f9cfd766623149297e971/pydantic_core-2.41.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
       sha256 "406bf18d345822d6c21366031003612b9c77b3e29ffdb0f612367352aab7d586"
     else
-      url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
-      sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
+      url "https://files.pythonhosted.org/packages/94/02/abfa0e0bda67faa65fef1c84971c7e45928e108fe24333c81f3bfe35d5f5/pydantic_core-2.41.5-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "112e305c3314f40c93998e567879e887a3160bb8689ef3d2c04b6cc62c33ac34"
     end
   end
   resource "sniffio" do

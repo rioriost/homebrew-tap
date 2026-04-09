@@ -3,8 +3,8 @@ class Ggai < Formula
 
   desc "Helper for GeoGuessr training using OpenAI"
   homepage "https://github.com/rioriost/ggai"
-  url "https://github.com/rioriost/ggai/releases/download/0.5.8/ggai-0.5.8.tar.gz"
-  sha256 "d4b74ae00ad1f5ea095e9514869a33befc7c30f91db88d98266565bc246e3a9c"
+  url "https://github.com/rioriost/ggai/releases/download/0.5.9/ggai-0.5.9.tar.gz"
+  sha256 "6f6983052034cb63571d5c2e99530bb67c209a5b3a0c251ece6b88f0bb1799be"
   license "MIT"
 
   depends_on "python@3.14"
@@ -51,13 +51,13 @@ class Ggai < Formula
       url "https://files.pythonhosted.org/packages/4e/c1/e4693f107a1789a239c759a432e9afc592366f04e901470c2af89cfd28e1/jiter-0.13.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
       sha256 "0c365005b05505a90d1c47856420980d0237adf82f70c4aff7aebd3c1cc143ad"
     else
-      url "https://files.pythonhosted.org/packages/0d/5e/4ec91646aee381d01cdb9974e30882c9cd3b8c5d1079d6b5ff4af522439a/jiter-0.13.0.tar.gz"
-      sha256 "f2839f9c2c7e2dffc1bc5929a510e14ce0a946be9365fd1219e7ef342dae14f4"
+      url "https://files.pythonhosted.org/packages/cd/8f/5482a7677731fd44881f0204981ce2d7175db271f82cba2085dd2212e095/jiter-0.13.0-cp314-cp314-macosx_11_0_arm64.whl"
+      sha256 "9776ebe51713acf438fd9b4405fcd86893ae5d03487546dae7f34993217f8a91"
     end
   end
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/2a/9e/5bfa2270f902d5b92ab7d41ce0475b8630572e71e349b2a4996d14bdda93/openai-2.30.0-py3-none-any.whl"
-    sha256 "9a5ae616888eb2748ec5e0c5b955a51592e0b201a11f4262db920f2a78c5231d"
+    url "https://files.pythonhosted.org/packages/66/bc/a8f7c3aa03452fedbb9af8be83e959adba96a6b4a35e416faffcc959c568/openai-2.31.0-py3-none-any.whl"
+    sha256 "44e1344d87e56a493d649b17e2fac519d1368cbb0745f59f1957c4c26de50a0a"
   end
   resource "pillow" do
     if OS.mac? && Hardware::CPU.arm?
@@ -70,8 +70,8 @@ class Ggai < Formula
       url "https://files.pythonhosted.org/packages/5e/03/688747d2e91cfbe0e64f316cd2e8005698f76ada3130d0194664174fa5de/pillow-12.2.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
       sha256 "7b14cc0106cd9aecda615dd6903840a058b4700fcb817687d0ee4fc8b6e389be"
     else
-      url "https://files.pythonhosted.org/packages/8c/21/c2bcdd5906101a30244eaffc1b6e6ce71a31bd0742a01eb89e660ebfac2d/pillow-12.2.0.tar.gz"
-      sha256 "a830b1a40919539d07806aa58e1b114df53ddd43213d9c8b75847eee6c0182b5"
+      url "https://files.pythonhosted.org/packages/ba/8c/1a9e46228571de18f8e28f16fabdfc20212a5d019f3e3303452b3f0a580d/pillow-12.2.0-cp314-cp314-macosx_11_0_arm64.whl"
+      sha256 "80b2da48193b2f33ed0c32c38140f9d3186583ce7d516526d462645fd98660ae"
     end
   end
   resource "pydantic" do
@@ -89,8 +89,8 @@ class Ggai < Formula
       url "https://files.pythonhosted.org/packages/4c/d2/ef2074dc020dd6e109611a8be4449b98cd25e1b9b8a303c2f0fca2f2bcf7/pydantic_core-2.41.5-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
       sha256 "22f0fb8c1c583a3b6f24df2470833b40207e907b90c928cc8d3594b76f874375"
     else
-      url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
-      sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
+      url "https://files.pythonhosted.org/packages/74/1a/145646e5687e8d9a1e8d09acb278c8535ebe9e972e1f162ed338a622f193/pydantic_core-2.41.5-cp314-cp314-macosx_11_0_arm64.whl"
+      sha256 "1d1d9764366c73f996edd17abb6d9d7649a7eb690006ab6adbda117717099b14"
     end
   end
   resource "pyobjc" do
@@ -105,24 +105,46 @@ class Ggai < Formula
       url "https://files.pythonhosted.org/packages/25/98/9f4ed07162de69603144ff480be35cd021808faa7f730d082b92f7ebf2b5/pyobjc_core-12.1-cp314-cp314-macosx_10_15_universal2.whl"
       sha256 "844515f5d86395b979d02152576e7dee9cc679acc0b32dc626ef5bda315eaa43"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/b8/b6/d5612eb40be4fd5ef88c259339e6313f46ba67577a95d86c3470b951fce0/pyobjc_core-12.1.tar.gz"
-      sha256 "2bb3903f5387f72422145e1466b3ac3f7f0ef2e9960afa9bcd8961c5cbf8bd21"
+      url "https://files.pythonhosted.org/packages/25/98/9f4ed07162de69603144ff480be35cd021808faa7f730d082b92f7ebf2b5/pyobjc_core-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "844515f5d86395b979d02152576e7dee9cc679acc0b32dc626ef5bda315eaa43"
     else
-      url "https://files.pythonhosted.org/packages/b8/b6/d5612eb40be4fd5ef88c259339e6313f46ba67577a95d86c3470b951fce0/pyobjc_core-12.1.tar.gz"
-      sha256 "2bb3903f5387f72422145e1466b3ac3f7f0ef2e9960afa9bcd8961c5cbf8bd21"
+      url "https://files.pythonhosted.org/packages/25/98/9f4ed07162de69603144ff480be35cd021808faa7f730d082b92f7ebf2b5/pyobjc_core-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "844515f5d86395b979d02152576e7dee9cc679acc0b32dc626ef5bda315eaa43"
     end
   end
   resource "pyobjc-framework-Accessibility" do
-    url "https://files.pythonhosted.org/packages/2d/87/8ca40428d05a668fecc638f2f47dba86054dbdc35351d247f039749de955/pyobjc_framework_accessibility-12.1.tar.gz"
-    sha256 "5ff362c3425edc242d49deec11f5f3e26e565cefb6a2872eda59ab7362149772"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/98/ce/21a076746ada1c03015ce23ee87aa3a3f052885ec386296d4d90c4fb0eb2/pyobjc_framework_accessibility-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "0a14c794af7f38d8b59f6d7b03f708e61473a42d4a43663e7a2a6355121d11f7"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/98/ce/21a076746ada1c03015ce23ee87aa3a3f052885ec386296d4d90c4fb0eb2/pyobjc_framework_accessibility-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "0a14c794af7f38d8b59f6d7b03f708e61473a42d4a43663e7a2a6355121d11f7"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/98/ce/21a076746ada1c03015ce23ee87aa3a3f052885ec386296d4d90c4fb0eb2/pyobjc_framework_accessibility-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "0a14c794af7f38d8b59f6d7b03f708e61473a42d4a43663e7a2a6355121d11f7"
+    else
+      url "https://files.pythonhosted.org/packages/98/ce/21a076746ada1c03015ce23ee87aa3a3f052885ec386296d4d90c4fb0eb2/pyobjc_framework_accessibility-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "0a14c794af7f38d8b59f6d7b03f708e61473a42d4a43663e7a2a6355121d11f7"
+    end
   end
   resource "pyobjc-framework-Accounts" do
     url "https://files.pythonhosted.org/packages/ac/70/5f9214250f92fbe2e07f35778875d2771d612f313af2a0e4bacba80af28e/pyobjc_framework_accounts-12.1-py2.py3-none-any.whl"
     sha256 "e1544ad11a2f889a7aaed649188d0e76d58595a27eec07ca663847a7adb21ae5"
   end
   resource "pyobjc-framework-AddressBook" do
-    url "https://files.pythonhosted.org/packages/18/28/0404af2a1c6fa8fd266df26fb6196a8f3fb500d6fe3dab94701949247bea/pyobjc_framework_addressbook-12.1.tar.gz"
-    sha256 "c48b740cf981103cef1743d0804a226d86481fcb839bd84b80e9a586187e8000"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/1c/bc/7a0648f3b56f16eab76e349e873f21cc5d33864d9915bb33ade9a100d1c0/pyobjc_framework_addressbook-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e4e24094fa293f158ed21fcd57414b759dc1220c23efec4ee8a7672d726b3576"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/1c/bc/7a0648f3b56f16eab76e349e873f21cc5d33864d9915bb33ade9a100d1c0/pyobjc_framework_addressbook-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e4e24094fa293f158ed21fcd57414b759dc1220c23efec4ee8a7672d726b3576"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/1c/bc/7a0648f3b56f16eab76e349e873f21cc5d33864d9915bb33ade9a100d1c0/pyobjc_framework_addressbook-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e4e24094fa293f158ed21fcd57414b759dc1220c23efec4ee8a7672d726b3576"
+    else
+      url "https://files.pythonhosted.org/packages/1c/bc/7a0648f3b56f16eab76e349e873f21cc5d33864d9915bb33ade9a100d1c0/pyobjc_framework_addressbook-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e4e24094fa293f158ed21fcd57414b759dc1220c23efec4ee8a7672d726b3576"
+    end
   end
   resource "pyobjc-framework-AdServices" do
     url "https://files.pythonhosted.org/packages/ad/13/f7796469b25f50750299c4b0e95dc2f75c7c7fc4c93ef2c644f947f10529/pyobjc_framework_adservices-12.1-py2.py3-none-any.whl"
@@ -141,8 +163,19 @@ class Ggai < Formula
     sha256 "79068f982cc22471712ce808c0a8fd5deea11258fc8d8c61968a84b1962a3d10"
   end
   resource "pyobjc-framework-ApplicationServices" do
-    url "https://files.pythonhosted.org/packages/be/6a/d4e613c8e926a5744fc47a9e9fea08384a510dc4f27d844f7ad7a2d793bd/pyobjc_framework_applicationservices-12.1.tar.gz"
-    sha256 "c06abb74f119bc27aeb41bf1aef8102c0ae1288aec1ac8665ea186a067a8945b"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/40/44/3196b40fec68b4413c92875311f17ccf4c3ff7d2e53676f8fc18ad29bd18/pyobjc_framework_applicationservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f43c9a24ad97a9121276d4d571aa04a924282c80d7291cfb3b29839c3e2013a8"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/40/44/3196b40fec68b4413c92875311f17ccf4c3ff7d2e53676f8fc18ad29bd18/pyobjc_framework_applicationservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f43c9a24ad97a9121276d4d571aa04a924282c80d7291cfb3b29839c3e2013a8"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/40/44/3196b40fec68b4413c92875311f17ccf4c3ff7d2e53676f8fc18ad29bd18/pyobjc_framework_applicationservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f43c9a24ad97a9121276d4d571aa04a924282c80d7291cfb3b29839c3e2013a8"
+    else
+      url "https://files.pythonhosted.org/packages/40/44/3196b40fec68b4413c92875311f17ccf4c3ff7d2e53676f8fc18ad29bd18/pyobjc_framework_applicationservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f43c9a24ad97a9121276d4d571aa04a924282c80d7291cfb3b29839c3e2013a8"
+    end
   end
   resource "pyobjc-framework-AppTrackingTransparency" do
     url "https://files.pythonhosted.org/packages/19/b2/90120b93ecfb099b6af21696c26356ad0f2182bdef72b6cba28aa6472ca6/pyobjc_framework_apptrackingtransparency-12.1-py2.py3-none-any.whl"
@@ -153,40 +186,139 @@ class Ggai < Formula
     sha256 "f6d39e28d858ee03f052d6780a552247e682204382dbc090f1d3192fa1b21493"
   end
   resource "pyobjc-framework-AudioVideoBridging" do
-    url "https://files.pythonhosted.org/packages/9f/51/f81581e7a3c5cb6c9254c6f1e1ee1d614930493761dec491b5b0d49544b9/pyobjc_framework_audiovideobridging-12.1.tar.gz"
-    sha256 "6230ace6bec1f38e8a727c35d054a7be54e039b3053f98e6dd8d08d6baee2625"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/98/9a/f4b435523c297cdf25bfe0d0a8bb25ae0d3fa19813c2365cf1e93f462948/pyobjc_framework_audiovideobridging-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "88f97bf62cba0d07f623650a7b2a58f73aedcc03b523e2bcd5653042dd50c152"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/98/9a/f4b435523c297cdf25bfe0d0a8bb25ae0d3fa19813c2365cf1e93f462948/pyobjc_framework_audiovideobridging-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "88f97bf62cba0d07f623650a7b2a58f73aedcc03b523e2bcd5653042dd50c152"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/98/9a/f4b435523c297cdf25bfe0d0a8bb25ae0d3fa19813c2365cf1e93f462948/pyobjc_framework_audiovideobridging-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "88f97bf62cba0d07f623650a7b2a58f73aedcc03b523e2bcd5653042dd50c152"
+    else
+      url "https://files.pythonhosted.org/packages/98/9a/f4b435523c297cdf25bfe0d0a8bb25ae0d3fa19813c2365cf1e93f462948/pyobjc_framework_audiovideobridging-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "88f97bf62cba0d07f623650a7b2a58f73aedcc03b523e2bcd5653042dd50c152"
+    end
   end
   resource "pyobjc-framework-AuthenticationServices" do
-    url "https://files.pythonhosted.org/packages/6c/18/86218de3bf67fc1d810065f353d9df70c740de567ebee8550d476cb23862/pyobjc_framework_authenticationservices-12.1.tar.gz"
-    sha256 "cef71faeae2559f5c0ff9a81c9ceea1c81108e2f4ec7de52a98c269feff7a4b6"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/a2/93/13232a82318153ec392a46c0f674baeb64ce0aaab05683d4c129ac0fafec/pyobjc_framework_authenticationservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3ee69de818ce91c3bea6f87deba59ab8392a2c17c48f3d6fce0639c0e548bb0c"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/a2/93/13232a82318153ec392a46c0f674baeb64ce0aaab05683d4c129ac0fafec/pyobjc_framework_authenticationservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3ee69de818ce91c3bea6f87deba59ab8392a2c17c48f3d6fce0639c0e548bb0c"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/a2/93/13232a82318153ec392a46c0f674baeb64ce0aaab05683d4c129ac0fafec/pyobjc_framework_authenticationservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3ee69de818ce91c3bea6f87deba59ab8392a2c17c48f3d6fce0639c0e548bb0c"
+    else
+      url "https://files.pythonhosted.org/packages/a2/93/13232a82318153ec392a46c0f674baeb64ce0aaab05683d4c129ac0fafec/pyobjc_framework_authenticationservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3ee69de818ce91c3bea6f87deba59ab8392a2c17c48f3d6fce0639c0e548bb0c"
+    end
   end
   resource "pyobjc-framework-AutomaticAssessmentConfiguration" do
-    url "https://files.pythonhosted.org/packages/e4/24/080afe8189c47c4bb3daa191ccfd962400ca31a67c14b0f7c2d002c2e249/pyobjc_framework_automaticassessmentconfiguration-12.1.tar.gz"
-    sha256 "2b732c02d9097682ca16e48f5d3b10056b740bc091e217ee4d5715194c8970b1"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/dd/36/b7a59d77cf0f3dfe8676ecd0ab22dca215df11a0f1623cb0dbac29bb30d2/pyobjc_framework_automaticassessmentconfiguration-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f5f1818c6f77daf64d954878bbbda6b3f5e41e23b599210da08fefed1f1d5981"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/dd/36/b7a59d77cf0f3dfe8676ecd0ab22dca215df11a0f1623cb0dbac29bb30d2/pyobjc_framework_automaticassessmentconfiguration-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f5f1818c6f77daf64d954878bbbda6b3f5e41e23b599210da08fefed1f1d5981"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/dd/36/b7a59d77cf0f3dfe8676ecd0ab22dca215df11a0f1623cb0dbac29bb30d2/pyobjc_framework_automaticassessmentconfiguration-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f5f1818c6f77daf64d954878bbbda6b3f5e41e23b599210da08fefed1f1d5981"
+    else
+      url "https://files.pythonhosted.org/packages/dd/36/b7a59d77cf0f3dfe8676ecd0ab22dca215df11a0f1623cb0dbac29bb30d2/pyobjc_framework_automaticassessmentconfiguration-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f5f1818c6f77daf64d954878bbbda6b3f5e41e23b599210da08fefed1f1d5981"
+    end
   end
   resource "pyobjc-framework-Automator" do
-    url "https://files.pythonhosted.org/packages/7e/08/362bf6ac2bba393c46cf56078d4578b692b56857c385e47690637a72f0dd/pyobjc_framework_automator-12.1.tar.gz"
-    sha256 "7491a99347bb30da3a3f744052a03434ee29bee3e2ae520576f7e796740e4ba7"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/c6/be/97fcdb60072f443ec360d2aa07e45469125eed57e0158d50f00ef5431240/pyobjc_framework_automator-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "fb6a177cac056f2ecacaae1d4815f4e10529025cb13184fdee297989b55846f7"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/c6/be/97fcdb60072f443ec360d2aa07e45469125eed57e0158d50f00ef5431240/pyobjc_framework_automator-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "fb6a177cac056f2ecacaae1d4815f4e10529025cb13184fdee297989b55846f7"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/c6/be/97fcdb60072f443ec360d2aa07e45469125eed57e0158d50f00ef5431240/pyobjc_framework_automator-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "fb6a177cac056f2ecacaae1d4815f4e10529025cb13184fdee297989b55846f7"
+    else
+      url "https://files.pythonhosted.org/packages/c6/be/97fcdb60072f443ec360d2aa07e45469125eed57e0158d50f00ef5431240/pyobjc_framework_automator-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "fb6a177cac056f2ecacaae1d4815f4e10529025cb13184fdee297989b55846f7"
+    end
   end
   resource "pyobjc-framework-AVFoundation" do
-    url "https://files.pythonhosted.org/packages/cd/42/c026ab308edc2ed5582d8b4b93da6b15d1b6557c0086914a4aabedd1f032/pyobjc_framework_avfoundation-12.1.tar.gz"
-    sha256 "eda0bb60be380f9ba2344600c4231dd58a3efafa99fdc65d3673ecfbb83f6fcb"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/0c/65/a79cf3b8935a78329ac1107056b91868a581096a90ab6ddff5fd28db4947/pyobjc_framework_avfoundation-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "9a3ffd1ae90bd72dbcf2875aa9254369e805b904140362a7338ebf1af54201a6"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/0c/65/a79cf3b8935a78329ac1107056b91868a581096a90ab6ddff5fd28db4947/pyobjc_framework_avfoundation-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "9a3ffd1ae90bd72dbcf2875aa9254369e805b904140362a7338ebf1af54201a6"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/0c/65/a79cf3b8935a78329ac1107056b91868a581096a90ab6ddff5fd28db4947/pyobjc_framework_avfoundation-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "9a3ffd1ae90bd72dbcf2875aa9254369e805b904140362a7338ebf1af54201a6"
+    else
+      url "https://files.pythonhosted.org/packages/0c/65/a79cf3b8935a78329ac1107056b91868a581096a90ab6ddff5fd28db4947/pyobjc_framework_avfoundation-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "9a3ffd1ae90bd72dbcf2875aa9254369e805b904140362a7338ebf1af54201a6"
+    end
   end
   resource "pyobjc-framework-AVKit" do
-    url "https://files.pythonhosted.org/packages/34/a9/e44db1a1f26e2882c140f1d502d508b1f240af9048909dcf1e1a687375b4/pyobjc_framework_avkit-12.1.tar.gz"
-    sha256 "a5c0ddb0cb700f9b09c8afeca2c58952d554139e9bb078236d2355b1fddfb588"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/29/4e/bd28968f538f5b4f806431c782556aaa5c17567c83edb6df0ef83c7a26ca/pyobjc_framework_avkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f49ee90e4f8737ae5dea7579016cdf344b64092810bf5b5acf0cb9c1c6a0d328"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/29/4e/bd28968f538f5b4f806431c782556aaa5c17567c83edb6df0ef83c7a26ca/pyobjc_framework_avkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f49ee90e4f8737ae5dea7579016cdf344b64092810bf5b5acf0cb9c1c6a0d328"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/29/4e/bd28968f538f5b4f806431c782556aaa5c17567c83edb6df0ef83c7a26ca/pyobjc_framework_avkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f49ee90e4f8737ae5dea7579016cdf344b64092810bf5b5acf0cb9c1c6a0d328"
+    else
+      url "https://files.pythonhosted.org/packages/29/4e/bd28968f538f5b4f806431c782556aaa5c17567c83edb6df0ef83c7a26ca/pyobjc_framework_avkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f49ee90e4f8737ae5dea7579016cdf344b64092810bf5b5acf0cb9c1c6a0d328"
+    end
   end
   resource "pyobjc-framework-AVRouting" do
-    url "https://files.pythonhosted.org/packages/6e/83/15bf6c28ec100dae7f92d37c9e117b3b4ee6b4873db062833e16f1cfd6c4/pyobjc_framework_avrouting-12.1.tar.gz"
-    sha256 "6a6c5e583d14f6501df530a9d0559a32269a821fc8140e3646015f097155cd1c"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/b0/0a/9e9bf48c70f129c1fa42e84e091901b6aa6d11074365d93aa22a42d13ba6/pyobjc_framework_avrouting-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "defaad8e98793dfaceb7e36eba3da9bf92d0840207d39e39b018ce6eb41d80f8"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/b0/0a/9e9bf48c70f129c1fa42e84e091901b6aa6d11074365d93aa22a42d13ba6/pyobjc_framework_avrouting-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "defaad8e98793dfaceb7e36eba3da9bf92d0840207d39e39b018ce6eb41d80f8"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/b0/0a/9e9bf48c70f129c1fa42e84e091901b6aa6d11074365d93aa22a42d13ba6/pyobjc_framework_avrouting-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "defaad8e98793dfaceb7e36eba3da9bf92d0840207d39e39b018ce6eb41d80f8"
+    else
+      url "https://files.pythonhosted.org/packages/b0/0a/9e9bf48c70f129c1fa42e84e091901b6aa6d11074365d93aa22a42d13ba6/pyobjc_framework_avrouting-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "defaad8e98793dfaceb7e36eba3da9bf92d0840207d39e39b018ce6eb41d80f8"
+    end
   end
   resource "pyobjc-framework-BackgroundAssets" do
-    url "https://files.pythonhosted.org/packages/34/d1/e917fba82790495152fd3508c5053827658881cf7e9887ba60def5e3f221/pyobjc_framework_backgroundassets-12.1.tar.gz"
-    sha256 "8da34df9ae4519c360c429415477fdaf3fbba5addbc647b3340b8783454eb419"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/f1/8b/80cd655122c20fd29edd3b2b609e6be006cef4bdc830d71944399c6abcd5/pyobjc_framework_backgroundassets-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "57d77b1babd450b18e32e852a47dd1095329323e1bed9f258b46c43e20e6d0fc"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/f1/8b/80cd655122c20fd29edd3b2b609e6be006cef4bdc830d71944399c6abcd5/pyobjc_framework_backgroundassets-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "57d77b1babd450b18e32e852a47dd1095329323e1bed9f258b46c43e20e6d0fc"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/f1/8b/80cd655122c20fd29edd3b2b609e6be006cef4bdc830d71944399c6abcd5/pyobjc_framework_backgroundassets-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "57d77b1babd450b18e32e852a47dd1095329323e1bed9f258b46c43e20e6d0fc"
+    else
+      url "https://files.pythonhosted.org/packages/f1/8b/80cd655122c20fd29edd3b2b609e6be006cef4bdc830d71944399c6abcd5/pyobjc_framework_backgroundassets-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "57d77b1babd450b18e32e852a47dd1095329323e1bed9f258b46c43e20e6d0fc"
+    end
   end
   resource "pyobjc-framework-BrowserEngineKit" do
-    url "https://files.pythonhosted.org/packages/5d/b9/39f9de1730e6f8e73be0e4f0c6087cd9439cbe11645b8052d22e1fb8e69b/pyobjc_framework_browserenginekit-12.1.tar.gz"
-    sha256 "6a1a34a155778ab55ab5f463e885f2a3b4680231264e1fe078e62ddeccce49ed"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/13/4d/a340f75fc6daa482d9d3470fe449da0d8e1263a6f77803f2b1185b3a69af/pyobjc_framework_browserenginekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "ad7896751accf7a6f866e64e8155f97b6cf0fc0e6efd64e9940346d8fbf0ec66"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/13/4d/a340f75fc6daa482d9d3470fe449da0d8e1263a6f77803f2b1185b3a69af/pyobjc_framework_browserenginekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "ad7896751accf7a6f866e64e8155f97b6cf0fc0e6efd64e9940346d8fbf0ec66"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/13/4d/a340f75fc6daa482d9d3470fe449da0d8e1263a6f77803f2b1185b3a69af/pyobjc_framework_browserenginekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "ad7896751accf7a6f866e64e8155f97b6cf0fc0e6efd64e9940346d8fbf0ec66"
+    else
+      url "https://files.pythonhosted.org/packages/13/4d/a340f75fc6daa482d9d3470fe449da0d8e1263a6f77803f2b1185b3a69af/pyobjc_framework_browserenginekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "ad7896751accf7a6f866e64e8155f97b6cf0fc0e6efd64e9940346d8fbf0ec66"
+    end
   end
   resource "pyobjc-framework-BusinessChat" do
     url "https://files.pythonhosted.org/packages/53/88/4c727424b05efa33ed7f6c45e40333e5a8a8dc5bb238e34695addd68463b/pyobjc_framework_businesschat-12.1-py2.py3-none-any.whl"
@@ -197,24 +329,57 @@ class Ggai < Formula
     sha256 "18533e0fcbcdd29ee5884dfbd30606710f65df9b688bf47daee1438ee22e50cc"
   end
   resource "pyobjc-framework-CallKit" do
-    url "https://files.pythonhosted.org/packages/1a/c0/1859d4532d39254df085309aff55b85323576f00a883626325af40da4653/pyobjc_framework_callkit-12.1.tar.gz"
-    sha256 "fd6dc9688b785aab360139d683be56f0844bf68bf5e45d0eb770cb68221083cc"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/e3/db/e8bcdde2b9cf109ebdf389e730900de7acf792664aa0a7fbc630cd61a82a/pyobjc_framework_callkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a2438a252ff428bca1c1d1db2fca921d2cc572ee5c582f000a713fb61b29324f"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/e3/db/e8bcdde2b9cf109ebdf389e730900de7acf792664aa0a7fbc630cd61a82a/pyobjc_framework_callkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a2438a252ff428bca1c1d1db2fca921d2cc572ee5c582f000a713fb61b29324f"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/e3/db/e8bcdde2b9cf109ebdf389e730900de7acf792664aa0a7fbc630cd61a82a/pyobjc_framework_callkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a2438a252ff428bca1c1d1db2fca921d2cc572ee5c582f000a713fb61b29324f"
+    else
+      url "https://files.pythonhosted.org/packages/e3/db/e8bcdde2b9cf109ebdf389e730900de7acf792664aa0a7fbc630cd61a82a/pyobjc_framework_callkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a2438a252ff428bca1c1d1db2fca921d2cc572ee5c582f000a713fb61b29324f"
+    end
   end
   resource "pyobjc-framework-Carbon" do
     url "https://files.pythonhosted.org/packages/a4/9e/91853c8f98b9d5bccf464113908620c94cc12c2a3e4625f3ce172e3ea4bc/pyobjc_framework_carbon-12.1-py2.py3-none-any.whl"
     sha256 "f8b719b3c7c5cf1d61ac7c45a8a70b5e5e5a83fa02f5194c2a48a7e81a3d1b7f"
   end
   resource "pyobjc-framework-CFNetwork" do
-    url "https://files.pythonhosted.org/packages/d2/6a/f5f0f191956e187db85312cbffcc41bf863670d121b9190b4a35f0d36403/pyobjc_framework_cfnetwork-12.1.tar.gz"
-    sha256 "2d16e820f2d43522c793f55833fda89888139d7a84ca5758548ba1f3a325a88d"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/6e/63/931cda003b627cc04c8e5bf9efecc391006305462192414b3d29eb16b5fd/pyobjc_framework_cfnetwork-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b94c190bdfdf0c8f3f6f7bf8e19ccc2847ecb67adab0068f8d12a25ab7df3c1a"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/6e/63/931cda003b627cc04c8e5bf9efecc391006305462192414b3d29eb16b5fd/pyobjc_framework_cfnetwork-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b94c190bdfdf0c8f3f6f7bf8e19ccc2847ecb67adab0068f8d12a25ab7df3c1a"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/6e/63/931cda003b627cc04c8e5bf9efecc391006305462192414b3d29eb16b5fd/pyobjc_framework_cfnetwork-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b94c190bdfdf0c8f3f6f7bf8e19ccc2847ecb67adab0068f8d12a25ab7df3c1a"
+    else
+      url "https://files.pythonhosted.org/packages/6e/63/931cda003b627cc04c8e5bf9efecc391006305462192414b3d29eb16b5fd/pyobjc_framework_cfnetwork-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b94c190bdfdf0c8f3f6f7bf8e19ccc2847ecb67adab0068f8d12a25ab7df3c1a"
+    end
   end
   resource "pyobjc-framework-Cinematic" do
     url "https://files.pythonhosted.org/packages/c9/a0/cd85c827ce5535c08d936e5723c16ee49f7ff633f2e9881f4f58bf83e4ce/pyobjc_framework_cinematic-12.1-py2.py3-none-any.whl"
     sha256 "c003543bb6908379680a93dfd77a44228686b86c118cf3bc930f60241d0cd141"
   end
   resource "pyobjc-framework-ClassKit" do
-    url "https://files.pythonhosted.org/packages/ac/ef/67815278023b344a79c7e95f748f647245d6f5305136fc80615254ad447c/pyobjc_framework_classkit-12.1.tar.gz"
-    sha256 "8d1e9dd75c3d14938ff533d88b72bca2d34918e4461f418ea323bfb2498473b4"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/2e/0b/7f25a43b0820a220a00c4a334d93c36cfa9e4248764054d6f9901eacbbd4/pyobjc_framework_classkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5d0a5cd026c51a22d13eb75404f8317089aabb3faef723aeafc4ca9a0c17e66e"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/2e/0b/7f25a43b0820a220a00c4a334d93c36cfa9e4248764054d6f9901eacbbd4/pyobjc_framework_classkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5d0a5cd026c51a22d13eb75404f8317089aabb3faef723aeafc4ca9a0c17e66e"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/2e/0b/7f25a43b0820a220a00c4a334d93c36cfa9e4248764054d6f9901eacbbd4/pyobjc_framework_classkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5d0a5cd026c51a22d13eb75404f8317089aabb3faef723aeafc4ca9a0c17e66e"
+    else
+      url "https://files.pythonhosted.org/packages/2e/0b/7f25a43b0820a220a00c4a334d93c36cfa9e4248764054d6f9901eacbbd4/pyobjc_framework_classkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5d0a5cd026c51a22d13eb75404f8317089aabb3faef723aeafc4ca9a0c17e66e"
+    end
   end
   resource "pyobjc-framework-CloudKit" do
     url "https://files.pythonhosted.org/packages/35/71/cbef7179bf1a594558ea27f1e5ad18f5c17ef71a8a24192aae16127bc849/pyobjc_framework_cloudkit-12.1-py2.py3-none-any.whl"
@@ -228,11 +393,11 @@ class Ggai < Formula
       url "https://files.pythonhosted.org/packages/59/bb/f777cc9e775fc7dae77b569254570fe46eb842516b3e4fe383ab49eab598/pyobjc_framework_cocoa-12.1-cp314-cp314-macosx_10_15_universal2.whl"
       sha256 "03342a60fc0015bcdf9b93ac0b4f457d3938e9ef761b28df9564c91a14f0129a"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/02/a3/16ca9a15e77c061a9250afbae2eae26f2e1579eb8ca9462ae2d2c71e1169/pyobjc_framework_cocoa-12.1.tar.gz"
-      sha256 "5556c87db95711b985d5efdaaf01c917ddd41d148b1e52a0c66b1a2e2c5c1640"
+      url "https://files.pythonhosted.org/packages/59/bb/f777cc9e775fc7dae77b569254570fe46eb842516b3e4fe383ab49eab598/pyobjc_framework_cocoa-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "03342a60fc0015bcdf9b93ac0b4f457d3938e9ef761b28df9564c91a14f0129a"
     else
-      url "https://files.pythonhosted.org/packages/02/a3/16ca9a15e77c061a9250afbae2eae26f2e1579eb8ca9462ae2d2c71e1169/pyobjc_framework_cocoa-12.1.tar.gz"
-      sha256 "5556c87db95711b985d5efdaaf01c917ddd41d148b1e52a0c66b1a2e2c5c1640"
+      url "https://files.pythonhosted.org/packages/59/bb/f777cc9e775fc7dae77b569254570fe46eb842516b3e4fe383ab49eab598/pyobjc_framework_cocoa-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "03342a60fc0015bcdf9b93ac0b4f457d3938e9ef761b28df9564c91a14f0129a"
     end
   end
   resource "pyobjc-framework-Collaboration" do
@@ -248,48 +413,158 @@ class Ggai < Formula
     sha256 "9ef22d4eacd492e13099b9b8936db892cdbbef1e3d23c3484e0ed749f83c4984"
   end
   resource "pyobjc-framework-Contacts" do
-    url "https://files.pythonhosted.org/packages/4b/a0/ce0542d211d4ea02f5cbcf72ee0a16b66b0d477a4ba5c32e00117703f2f0/pyobjc_framework_contacts-12.1.tar.gz"
-    sha256 "89bca3c5cf31404b714abaa1673577e1aaad6f2ef49d4141c6dbcc0643a789ad"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/7e/8b/3200f69b77ea85fe69caa1afea444387b5e41bf44ceff11e772954d8a0d5/pyobjc_framework_contacts-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "65576c359eb31c5a5ef95e0c6714686a94bb154a508d791885ff7c33dbc8afa3"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/7e/8b/3200f69b77ea85fe69caa1afea444387b5e41bf44ceff11e772954d8a0d5/pyobjc_framework_contacts-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "65576c359eb31c5a5ef95e0c6714686a94bb154a508d791885ff7c33dbc8afa3"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/7e/8b/3200f69b77ea85fe69caa1afea444387b5e41bf44ceff11e772954d8a0d5/pyobjc_framework_contacts-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "65576c359eb31c5a5ef95e0c6714686a94bb154a508d791885ff7c33dbc8afa3"
+    else
+      url "https://files.pythonhosted.org/packages/7e/8b/3200f69b77ea85fe69caa1afea444387b5e41bf44ceff11e772954d8a0d5/pyobjc_framework_contacts-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "65576c359eb31c5a5ef95e0c6714686a94bb154a508d791885ff7c33dbc8afa3"
+    end
   end
   resource "pyobjc-framework-ContactsUI" do
-    url "https://files.pythonhosted.org/packages/cd/0c/7bb7f898456a81d88d06a1084a42e374519d2e40a668a872b69b11f8c1f9/pyobjc_framework_contactsui-12.1.tar.gz"
-    sha256 "aaeca7c9e0c9c4e224d73636f9a558f9368c2c7422155a41fd4d7a13613a77c1"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/4b/d4/fe84efe4301a4367a2ab427214f20e13bfb3a64dc5e29649acc15022c0ad/pyobjc_framework_contactsui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "eb06b422ce8d422dce2c9af49a2bd093f78761e5aa3f1c866582a4c60cf31f79"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/4b/d4/fe84efe4301a4367a2ab427214f20e13bfb3a64dc5e29649acc15022c0ad/pyobjc_framework_contactsui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "eb06b422ce8d422dce2c9af49a2bd093f78761e5aa3f1c866582a4c60cf31f79"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/4b/d4/fe84efe4301a4367a2ab427214f20e13bfb3a64dc5e29649acc15022c0ad/pyobjc_framework_contactsui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "eb06b422ce8d422dce2c9af49a2bd093f78761e5aa3f1c866582a4c60cf31f79"
+    else
+      url "https://files.pythonhosted.org/packages/4b/d4/fe84efe4301a4367a2ab427214f20e13bfb3a64dc5e29649acc15022c0ad/pyobjc_framework_contactsui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "eb06b422ce8d422dce2c9af49a2bd093f78761e5aa3f1c866582a4c60cf31f79"
+    end
   end
   resource "pyobjc-framework-CoreAudio" do
-    url "https://files.pythonhosted.org/packages/84/d1/0b884c5564ab952ff5daa949128c64815300556019c1bba0cf2ca752a1a0/pyobjc_framework_coreaudio-12.1.tar.gz"
-    sha256 "a9e72925fcc1795430496ce0bffd4ddaa92c22460a10308a7283ade830089fe1"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/cf/f2/c5ca32d01c9d892bf189cfe9b17deaf996db3b4013f8a8ba9b0d22730d70/pyobjc_framework_coreaudio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "78ea67483a5deb21625c189328152008d278fe1da4304da9fcc1babd12627038"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/cf/f2/c5ca32d01c9d892bf189cfe9b17deaf996db3b4013f8a8ba9b0d22730d70/pyobjc_framework_coreaudio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "78ea67483a5deb21625c189328152008d278fe1da4304da9fcc1babd12627038"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/cf/f2/c5ca32d01c9d892bf189cfe9b17deaf996db3b4013f8a8ba9b0d22730d70/pyobjc_framework_coreaudio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "78ea67483a5deb21625c189328152008d278fe1da4304da9fcc1babd12627038"
+    else
+      url "https://files.pythonhosted.org/packages/cf/f2/c5ca32d01c9d892bf189cfe9b17deaf996db3b4013f8a8ba9b0d22730d70/pyobjc_framework_coreaudio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "78ea67483a5deb21625c189328152008d278fe1da4304da9fcc1babd12627038"
+    end
   end
   resource "pyobjc-framework-CoreAudioKit" do
-    url "https://files.pythonhosted.org/packages/41/1c/5c7e39b9361d4eec99b9115b593edd9825388acd594cb3b4519f8f1ac12c/pyobjc_framework_coreaudiokit-12.1.tar.gz"
-    sha256 "b83624f8de3068ab2ca279f786be0804da5cf904ff9979d96007b69ef4869e1e"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/92/65/36f017784df7ca5ad7741f1624c89410d62d0ebdeb437be32f7a1286a6df/pyobjc_framework_coreaudiokit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a2f9839a4bd05db2e7d12659af4cab32ec17dfee89fff83bbe9faee558e77a08"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/92/65/36f017784df7ca5ad7741f1624c89410d62d0ebdeb437be32f7a1286a6df/pyobjc_framework_coreaudiokit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a2f9839a4bd05db2e7d12659af4cab32ec17dfee89fff83bbe9faee558e77a08"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/92/65/36f017784df7ca5ad7741f1624c89410d62d0ebdeb437be32f7a1286a6df/pyobjc_framework_coreaudiokit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a2f9839a4bd05db2e7d12659af4cab32ec17dfee89fff83bbe9faee558e77a08"
+    else
+      url "https://files.pythonhosted.org/packages/92/65/36f017784df7ca5ad7741f1624c89410d62d0ebdeb437be32f7a1286a6df/pyobjc_framework_coreaudiokit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a2f9839a4bd05db2e7d12659af4cab32ec17dfee89fff83bbe9faee558e77a08"
+    end
   end
   resource "pyobjc-framework-CoreBluetooth" do
-    url "https://files.pythonhosted.org/packages/4b/25/d21d6cb3fd249c2c2aa96ee54279f40876a0c93e7161b3304bf21cbd0bfe/pyobjc_framework_corebluetooth-12.1.tar.gz"
-    sha256 "8060c1466d90bbb9100741a1091bb79975d9ba43911c9841599879fc45c2bbe0"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/2f/41/90640a4db62f0bf0611cf8a161129c798242116e2a6a44995668b017b106/pyobjc_framework_corebluetooth-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "15ba5207ca626dffe57ccb7c1beaf01f93930159564211cb97d744eaf0d812aa"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/2f/41/90640a4db62f0bf0611cf8a161129c798242116e2a6a44995668b017b106/pyobjc_framework_corebluetooth-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "15ba5207ca626dffe57ccb7c1beaf01f93930159564211cb97d744eaf0d812aa"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/2f/41/90640a4db62f0bf0611cf8a161129c798242116e2a6a44995668b017b106/pyobjc_framework_corebluetooth-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "15ba5207ca626dffe57ccb7c1beaf01f93930159564211cb97d744eaf0d812aa"
+    else
+      url "https://files.pythonhosted.org/packages/2f/41/90640a4db62f0bf0611cf8a161129c798242116e2a6a44995668b017b106/pyobjc_framework_corebluetooth-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "15ba5207ca626dffe57ccb7c1beaf01f93930159564211cb97d744eaf0d812aa"
+    end
   end
   resource "pyobjc-framework-CoreData" do
-    url "https://files.pythonhosted.org/packages/3e/c5/8cd46cd4f1b7cf88bdeed3848f830ea9cdcc4e55cd0287a968a2838033fb/pyobjc_framework_coredata-12.1.tar.gz"
-    sha256 "1e47d3c5e51fdc87a90da62b97cae1bc49931a2bb064db1305827028e1fc0ffa"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/66/2e/238dedc9499b4cccb963dccdfbbc420ace33a01fb9e1221a79c3044fecce/pyobjc_framework_coredata-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "07d19e7db06e1ad21708cf01fc8014d5f1b73efd373a99af6ff882c1bfb8497b"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/66/2e/238dedc9499b4cccb963dccdfbbc420ace33a01fb9e1221a79c3044fecce/pyobjc_framework_coredata-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "07d19e7db06e1ad21708cf01fc8014d5f1b73efd373a99af6ff882c1bfb8497b"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/66/2e/238dedc9499b4cccb963dccdfbbc420ace33a01fb9e1221a79c3044fecce/pyobjc_framework_coredata-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "07d19e7db06e1ad21708cf01fc8014d5f1b73efd373a99af6ff882c1bfb8497b"
+    else
+      url "https://files.pythonhosted.org/packages/66/2e/238dedc9499b4cccb963dccdfbbc420ace33a01fb9e1221a79c3044fecce/pyobjc_framework_coredata-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "07d19e7db06e1ad21708cf01fc8014d5f1b73efd373a99af6ff882c1bfb8497b"
+    end
   end
   resource "pyobjc-framework-CoreHaptics" do
     url "https://files.pythonhosted.org/packages/25/f4/f469d6a9cac7c195f3d08fa65f94c32dd1dcf97a54b481be648fb3a7a5f3/pyobjc_framework_corehaptics-12.1-py2.py3-none-any.whl"
     sha256 "a3b07d36ddf5c86a9cdaa411ab53d09553d26ea04fc7d4f82d21a84f0fc05fc0"
   end
   resource "pyobjc-framework-CoreLocation" do
-    url "https://files.pythonhosted.org/packages/cc/79/b75885e0d75397dc2fe1ed9ca80be2b64c18b817f5fb924277cb1bf7b163/pyobjc_framework_corelocation-12.1.tar.gz"
-    sha256 "3674e9353f949d91dde6230ad68f6d5748a7f0424751e08a2c09d06050d66231"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/38/ef/cd24f05a406c4f8478117f7bf54a9a7753b6485b3fc645a5d0530b1fa34b/pyobjc_framework_corelocation-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3ed12521c457e484944fd91b1d19643d00596d3b0ea3455984c9e918a9c65138"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/38/ef/cd24f05a406c4f8478117f7bf54a9a7753b6485b3fc645a5d0530b1fa34b/pyobjc_framework_corelocation-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3ed12521c457e484944fd91b1d19643d00596d3b0ea3455984c9e918a9c65138"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/38/ef/cd24f05a406c4f8478117f7bf54a9a7753b6485b3fc645a5d0530b1fa34b/pyobjc_framework_corelocation-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3ed12521c457e484944fd91b1d19643d00596d3b0ea3455984c9e918a9c65138"
+    else
+      url "https://files.pythonhosted.org/packages/38/ef/cd24f05a406c4f8478117f7bf54a9a7753b6485b3fc645a5d0530b1fa34b/pyobjc_framework_corelocation-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3ed12521c457e484944fd91b1d19643d00596d3b0ea3455984c9e918a9c65138"
+    end
   end
   resource "pyobjc-framework-CoreMedia" do
-    url "https://files.pythonhosted.org/packages/da/7d/5ad600ff7aedfef8ba8f51b11d9aaacdf247b870bd14045d6e6f232e3df9/pyobjc_framework_coremedia-12.1.tar.gz"
-    sha256 "166c66a9c01e7a70103f3ca44c571431d124b9070612ef63a1511a4e6d9d84a7"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/08/e2/b890658face1290c8b6b6b53a1159c822bece248f883e42302548bef38da/pyobjc_framework_coremedia-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "737ec6e0b63414f42f7188030c85975d6d2124fbf6b15b52c99b6cc20250af4d"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/08/e2/b890658face1290c8b6b6b53a1159c822bece248f883e42302548bef38da/pyobjc_framework_coremedia-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "737ec6e0b63414f42f7188030c85975d6d2124fbf6b15b52c99b6cc20250af4d"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/08/e2/b890658face1290c8b6b6b53a1159c822bece248f883e42302548bef38da/pyobjc_framework_coremedia-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "737ec6e0b63414f42f7188030c85975d6d2124fbf6b15b52c99b6cc20250af4d"
+    else
+      url "https://files.pythonhosted.org/packages/08/e2/b890658face1290c8b6b6b53a1159c822bece248f883e42302548bef38da/pyobjc_framework_coremedia-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "737ec6e0b63414f42f7188030c85975d6d2124fbf6b15b52c99b6cc20250af4d"
+    end
   end
   resource "pyobjc-framework-CoreMediaIO" do
-    url "https://files.pythonhosted.org/packages/08/8e/23baee53ccd6c011c965cff62eb55638b4088c3df27d2bf05004105d6190/pyobjc_framework_coremediaio-12.1.tar.gz"
-    sha256 "880b313b28f00b27775d630174d09e0b53d1cdbadb74216618c9dd5b3eb6806a"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/41/fd/cdf26be5b15ee2f2a73c320a62393e03ab15966ee8262540f918f0c7b181/pyobjc_framework_coremediaio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a5ca5763f185f48fedafec82f794dca53c55d2e52058d1b11baa43dd4ab0cd16"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/41/fd/cdf26be5b15ee2f2a73c320a62393e03ab15966ee8262540f918f0c7b181/pyobjc_framework_coremediaio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a5ca5763f185f48fedafec82f794dca53c55d2e52058d1b11baa43dd4ab0cd16"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/41/fd/cdf26be5b15ee2f2a73c320a62393e03ab15966ee8262540f918f0c7b181/pyobjc_framework_coremediaio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a5ca5763f185f48fedafec82f794dca53c55d2e52058d1b11baa43dd4ab0cd16"
+    else
+      url "https://files.pythonhosted.org/packages/41/fd/cdf26be5b15ee2f2a73c320a62393e03ab15966ee8262540f918f0c7b181/pyobjc_framework_coremediaio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a5ca5763f185f48fedafec82f794dca53c55d2e52058d1b11baa43dd4ab0cd16"
+    end
   end
   resource "pyobjc-framework-CoreMIDI" do
-    url "https://files.pythonhosted.org/packages/75/96/2d583060a71a73c8a7e6d92f2a02675621b63c1f489f2639e020fae34792/pyobjc_framework_coremidi-12.1.tar.gz"
-    sha256 "3c6f1fd03997c3b0f20ab8545126b1ce5f0cddcc1587dffacad876c161da8c54"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/29/4d/7d8d6ee42a2c6ebc89fb78fa6a2924de255f76ba7907656c26cc5847fc92/pyobjc_framework_coremidi-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b49442cf533923952f56049be407edbe2ab2ece04ae1c94ca1e28d500f9f5754"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/29/4d/7d8d6ee42a2c6ebc89fb78fa6a2924de255f76ba7907656c26cc5847fc92/pyobjc_framework_coremidi-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b49442cf533923952f56049be407edbe2ab2ece04ae1c94ca1e28d500f9f5754"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/29/4d/7d8d6ee42a2c6ebc89fb78fa6a2924de255f76ba7907656c26cc5847fc92/pyobjc_framework_coremidi-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b49442cf533923952f56049be407edbe2ab2ece04ae1c94ca1e28d500f9f5754"
+    else
+      url "https://files.pythonhosted.org/packages/29/4d/7d8d6ee42a2c6ebc89fb78fa6a2924de255f76ba7907656c26cc5847fc92/pyobjc_framework_coremidi-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b49442cf533923952f56049be407edbe2ab2ece04ae1c94ca1e28d500f9f5754"
+    end
   end
   resource "pyobjc-framework-CoreML" do
     if OS.mac? && Hardware::CPU.arm?
@@ -299,36 +574,102 @@ class Ggai < Formula
       url "https://files.pythonhosted.org/packages/bc/5c/510ae8e3663238d32e653ed6a09ac65611dd045a7241f12633c1ab48bb9b/pyobjc_framework_coreml-12.1-cp314-cp314-macosx_10_15_universal2.whl"
       sha256 "a04a96e512ecf6999aa9e1f60ad5635cb9d1cd839be470341d8d1541797baef6"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/30/2d/baa9ea02cbb1c200683cb7273b69b4bee5070e86f2060b77e6a27c2a9d7e/pyobjc_framework_coreml-12.1.tar.gz"
-      sha256 "0d1a4216891a18775c9e0170d908714c18e4f53f9dc79fb0f5263b2aa81609ba"
+      url "https://files.pythonhosted.org/packages/bc/5c/510ae8e3663238d32e653ed6a09ac65611dd045a7241f12633c1ab48bb9b/pyobjc_framework_coreml-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a04a96e512ecf6999aa9e1f60ad5635cb9d1cd839be470341d8d1541797baef6"
     else
-      url "https://files.pythonhosted.org/packages/30/2d/baa9ea02cbb1c200683cb7273b69b4bee5070e86f2060b77e6a27c2a9d7e/pyobjc_framework_coreml-12.1.tar.gz"
-      sha256 "0d1a4216891a18775c9e0170d908714c18e4f53f9dc79fb0f5263b2aa81609ba"
+      url "https://files.pythonhosted.org/packages/bc/5c/510ae8e3663238d32e653ed6a09ac65611dd045a7241f12633c1ab48bb9b/pyobjc_framework_coreml-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a04a96e512ecf6999aa9e1f60ad5635cb9d1cd839be470341d8d1541797baef6"
     end
   end
   resource "pyobjc-framework-CoreMotion" do
-    url "https://files.pythonhosted.org/packages/2c/eb/abef7d405670cf9c844befc2330a46ee59f6ff7bac6f199bf249561a2ca6/pyobjc_framework_coremotion-12.1.tar.gz"
-    sha256 "8e1b094d34084cc8cf07bedc0630b4ee7f32b0215011f79c9e3cd09d205a27c7"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/21/b0/a1809fc3eea18db15d20bd2225f4d5e1cfc74f38b252e0cb1e3f2563bcfa/pyobjc_framework_coremotion-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e7ce95dfa7e33b5762e0a800d76ef9c6a34b827c700d7e80c3740b7cd05168a5"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/21/b0/a1809fc3eea18db15d20bd2225f4d5e1cfc74f38b252e0cb1e3f2563bcfa/pyobjc_framework_coremotion-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e7ce95dfa7e33b5762e0a800d76ef9c6a34b827c700d7e80c3740b7cd05168a5"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/21/b0/a1809fc3eea18db15d20bd2225f4d5e1cfc74f38b252e0cb1e3f2563bcfa/pyobjc_framework_coremotion-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e7ce95dfa7e33b5762e0a800d76ef9c6a34b827c700d7e80c3740b7cd05168a5"
+    else
+      url "https://files.pythonhosted.org/packages/21/b0/a1809fc3eea18db15d20bd2225f4d5e1cfc74f38b252e0cb1e3f2563bcfa/pyobjc_framework_coremotion-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e7ce95dfa7e33b5762e0a800d76ef9c6a34b827c700d7e80c3740b7cd05168a5"
+    end
   end
   resource "pyobjc-framework-CoreServices" do
-    url "https://files.pythonhosted.org/packages/4c/b3/52338a3ff41713f7d7bccaf63bef4ba4a8f2ce0c7eaff39a3629d022a79a/pyobjc_framework_coreservices-12.1.tar.gz"
-    sha256 "fc6a9f18fc6da64c166fe95f2defeb7ac8a9836b3b03bb6a891d36035260dbaa"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/d8/b6/c4100905d92f1187f74701ab520da95a235c09e94a71e5872462660ac022/pyobjc_framework_coreservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c650e1083fb313b9c8df4be8d582c266aa1b99c75ed5d7e45e3a91a7b8a128b2"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/d8/b6/c4100905d92f1187f74701ab520da95a235c09e94a71e5872462660ac022/pyobjc_framework_coreservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c650e1083fb313b9c8df4be8d582c266aa1b99c75ed5d7e45e3a91a7b8a128b2"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/d8/b6/c4100905d92f1187f74701ab520da95a235c09e94a71e5872462660ac022/pyobjc_framework_coreservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c650e1083fb313b9c8df4be8d582c266aa1b99c75ed5d7e45e3a91a7b8a128b2"
+    else
+      url "https://files.pythonhosted.org/packages/d8/b6/c4100905d92f1187f74701ab520da95a235c09e94a71e5872462660ac022/pyobjc_framework_coreservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c650e1083fb313b9c8df4be8d582c266aa1b99c75ed5d7e45e3a91a7b8a128b2"
+    end
   end
   resource "pyobjc-framework-CoreSpotlight" do
-    url "https://files.pythonhosted.org/packages/99/d0/88ca73b0cf23847af463334989dd8f98e44f801b811e7e1d8a5627ec20b4/pyobjc_framework_corespotlight-12.1.tar.gz"
-    sha256 "57add47380cd0bbb9793f50a4a4b435a90d4ebd2a33698e058cb353ddfb0d068"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/21/cf/11cafe42bc7209bd96d71323beb60d6d1cdb069eb651f120323b3ef9c8d4/pyobjc_framework_corespotlight-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "986ac40755e15aa3a562aac687b22c882de2b4b0fa58fbd419cc3487a0df1507"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/21/cf/11cafe42bc7209bd96d71323beb60d6d1cdb069eb651f120323b3ef9c8d4/pyobjc_framework_corespotlight-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "986ac40755e15aa3a562aac687b22c882de2b4b0fa58fbd419cc3487a0df1507"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/21/cf/11cafe42bc7209bd96d71323beb60d6d1cdb069eb651f120323b3ef9c8d4/pyobjc_framework_corespotlight-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "986ac40755e15aa3a562aac687b22c882de2b4b0fa58fbd419cc3487a0df1507"
+    else
+      url "https://files.pythonhosted.org/packages/21/cf/11cafe42bc7209bd96d71323beb60d6d1cdb069eb651f120323b3ef9c8d4/pyobjc_framework_corespotlight-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "986ac40755e15aa3a562aac687b22c882de2b4b0fa58fbd419cc3487a0df1507"
+    end
   end
   resource "pyobjc-framework-CoreText" do
-    url "https://files.pythonhosted.org/packages/29/da/682c9c92a39f713bd3c56e7375fa8f1b10ad558ecb075258ab6f1cdd4a6d/pyobjc_framework_coretext-12.1.tar.gz"
-    sha256 "e0adb717738fae395dc645c9e8a10bb5f6a4277e73cba8fa2a57f3b518e71da5"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/ef/c3/adf9d306e9ead108167ab7a974ab7d171dbacf31c72fad63e12585f58023/pyobjc_framework_coretext-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "782a1a9617ea267c05226e9cd81a8dec529969a607fe1e037541ee1feb9524e9"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/ef/c3/adf9d306e9ead108167ab7a974ab7d171dbacf31c72fad63e12585f58023/pyobjc_framework_coretext-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "782a1a9617ea267c05226e9cd81a8dec529969a607fe1e037541ee1feb9524e9"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/ef/c3/adf9d306e9ead108167ab7a974ab7d171dbacf31c72fad63e12585f58023/pyobjc_framework_coretext-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "782a1a9617ea267c05226e9cd81a8dec529969a607fe1e037541ee1feb9524e9"
+    else
+      url "https://files.pythonhosted.org/packages/ef/c3/adf9d306e9ead108167ab7a974ab7d171dbacf31c72fad63e12585f58023/pyobjc_framework_coretext-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "782a1a9617ea267c05226e9cd81a8dec529969a607fe1e037541ee1feb9524e9"
+    end
   end
   resource "pyobjc-framework-CoreWLAN" do
-    url "https://files.pythonhosted.org/packages/88/71/739a5d023566b506b3fd3d2412983faa95a8c16226c0dcd0f67a9294a342/pyobjc_framework_corewlan-12.1.tar.gz"
-    sha256 "a9d82ec71ef61f37e1d611caf51a4203f3dbd8caf827e98128a1afaa0fd2feb5"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/e8/e2/e89ea1ee92de17ec53087868d0466f6fd8174488b613a46528a3642aa41d/pyobjc_framework_corewlan-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "336536ecfd503118f79c8337cc983bbf0768e3ba4ac142e0cf8db1408c644965"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/e8/e2/e89ea1ee92de17ec53087868d0466f6fd8174488b613a46528a3642aa41d/pyobjc_framework_corewlan-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "336536ecfd503118f79c8337cc983bbf0768e3ba4ac142e0cf8db1408c644965"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/e8/e2/e89ea1ee92de17ec53087868d0466f6fd8174488b613a46528a3642aa41d/pyobjc_framework_corewlan-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "336536ecfd503118f79c8337cc983bbf0768e3ba4ac142e0cf8db1408c644965"
+    else
+      url "https://files.pythonhosted.org/packages/e8/e2/e89ea1ee92de17ec53087868d0466f6fd8174488b613a46528a3642aa41d/pyobjc_framework_corewlan-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "336536ecfd503118f79c8337cc983bbf0768e3ba4ac142e0cf8db1408c644965"
+    end
   end
   resource "pyobjc-framework-CryptoTokenKit" do
-    url "https://files.pythonhosted.org/packages/6b/7c/d03ff4f74054578577296f33bc669fce16c7827eb1a553bb372b5aab30ca/pyobjc_framework_cryptotokenkit-12.1.tar.gz"
-    sha256 "c95116b4b7a41bf5b54aff823a4ef6f4d9da4d0441996d6d2c115026a42d82f5"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/6d/cc/32c8e34c6c54e487b993eaabe70d997096fcc1d82176207f967858f2987b/pyobjc_framework_cryptotokenkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "94fa4b3903a1a39fe1d5874a5ae5b67471f488925c485a7e9c3575fbf9eba43e"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/6d/cc/32c8e34c6c54e487b993eaabe70d997096fcc1d82176207f967858f2987b/pyobjc_framework_cryptotokenkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "94fa4b3903a1a39fe1d5874a5ae5b67471f488925c485a7e9c3575fbf9eba43e"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/6d/cc/32c8e34c6c54e487b993eaabe70d997096fcc1d82176207f967858f2987b/pyobjc_framework_cryptotokenkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "94fa4b3903a1a39fe1d5874a5ae5b67471f488925c485a7e9c3575fbf9eba43e"
+    else
+      url "https://files.pythonhosted.org/packages/6d/cc/32c8e34c6c54e487b993eaabe70d997096fcc1d82176207f967858f2987b/pyobjc_framework_cryptotokenkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "94fa4b3903a1a39fe1d5874a5ae5b67471f488925c485a7e9c3575fbf9eba43e"
+    end
   end
   resource "pyobjc-framework-DataDetection" do
     url "https://files.pythonhosted.org/packages/70/1c/5d2f941501e84da8fef8ef3fd378b5c083f063f083f97dd3e8a07f0404b3/pyobjc_framework_datadetection-12.1-py2.py3-none-any.whl"
@@ -347,8 +688,19 @@ class Ggai < Formula
     sha256 "578854eec17fa473ac17ab30050a7bbb2ab69f17c5c49b673695254c3e88ad4b"
   end
   resource "pyobjc-framework-DiscRecording" do
-    url "https://files.pythonhosted.org/packages/c4/87/8bd4544793bfcdf507174abddd02b1f077b48fab0004b3db9a63142ce7e9/pyobjc_framework_discrecording-12.1.tar.gz"
-    sha256 "6defc8ea97fb33b4d43870c673710c04c3dc48be30cdf78ba28191a922094990"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/d1/f1/61b7d8a35fb654ece97b539912452334665abf0a1fa9e83cda809c674c9e/pyobjc_framework_discrecording-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a60e2cab88fdf923f2017effb248f7c32819fbe494a6d17acfa71754b44ff68c"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/d1/f1/61b7d8a35fb654ece97b539912452334665abf0a1fa9e83cda809c674c9e/pyobjc_framework_discrecording-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a60e2cab88fdf923f2017effb248f7c32819fbe494a6d17acfa71754b44ff68c"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/d1/f1/61b7d8a35fb654ece97b539912452334665abf0a1fa9e83cda809c674c9e/pyobjc_framework_discrecording-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a60e2cab88fdf923f2017effb248f7c32819fbe494a6d17acfa71754b44ff68c"
+    else
+      url "https://files.pythonhosted.org/packages/d1/f1/61b7d8a35fb654ece97b539912452334665abf0a1fa9e83cda809c674c9e/pyobjc_framework_discrecording-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a60e2cab88fdf923f2017effb248f7c32819fbe494a6d17acfa71754b44ff68c"
+    end
   end
   resource "pyobjc-framework-DiscRecordingUI" do
     url "https://files.pythonhosted.org/packages/f2/4e/76016130c27b98943c5758a05beab3ba1bc9349ee881e1dfc509ea954233/pyobjc_framework_discrecordingui-12.1-py2.py3-none-any.whl"
@@ -375,16 +727,49 @@ class Ggai < Formula
     sha256 "c3a9eca3bd143cf202787dd5e3f40d954c198f18a5e0b8b3e2fcdd317bf33a52"
   end
   resource "pyobjc-framework-ExtensionKit" do
-    url "https://files.pythonhosted.org/packages/9a/d4/e9b1f74d29ad9dea3d60468d59b80e14ed3a19f9f7a25afcbc10d29c8a1e/pyobjc_framework_extensionkit-12.1.tar.gz"
-    sha256 "773987353e8aba04223dbba3149253db944abfb090c35318b3a770195b75da6d"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/fc/ec/a02ddac5ea7439dc4deb488ba551e27565920b8864c2f71611159794a1b5/pyobjc_framework_extensionkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b002bd4ee7aa951298f8bdd41e2a59d172050975499f94a26caff263b5fadca4"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/fc/ec/a02ddac5ea7439dc4deb488ba551e27565920b8864c2f71611159794a1b5/pyobjc_framework_extensionkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b002bd4ee7aa951298f8bdd41e2a59d172050975499f94a26caff263b5fadca4"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/fc/ec/a02ddac5ea7439dc4deb488ba551e27565920b8864c2f71611159794a1b5/pyobjc_framework_extensionkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b002bd4ee7aa951298f8bdd41e2a59d172050975499f94a26caff263b5fadca4"
+    else
+      url "https://files.pythonhosted.org/packages/fc/ec/a02ddac5ea7439dc4deb488ba551e27565920b8864c2f71611159794a1b5/pyobjc_framework_extensionkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b002bd4ee7aa951298f8bdd41e2a59d172050975499f94a26caff263b5fadca4"
+    end
   end
   resource "pyobjc-framework-ExternalAccessory" do
-    url "https://files.pythonhosted.org/packages/8e/35/86c097ae2fdf912c61c1276e80f3e090a3fc898c75effdf51d86afec456b/pyobjc_framework_externalaccessory-12.1.tar.gz"
-    sha256 "079f770a115d517a6ab87db1b8a62ca6cdf6c35ae65f45eecc21b491e78776c0"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/7b/e4/b7f1c8b977e64b495a5f268f9f6d82ed71152268542a7e676c26c647a6b0/pyobjc_framework_externalaccessory-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "22efc5bf68f5f0ef39f4308ef06403c42544f5fc75f6eeb137a87af99357dda1"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/7b/e4/b7f1c8b977e64b495a5f268f9f6d82ed71152268542a7e676c26c647a6b0/pyobjc_framework_externalaccessory-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "22efc5bf68f5f0ef39f4308ef06403c42544f5fc75f6eeb137a87af99357dda1"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/7b/e4/b7f1c8b977e64b495a5f268f9f6d82ed71152268542a7e676c26c647a6b0/pyobjc_framework_externalaccessory-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "22efc5bf68f5f0ef39f4308ef06403c42544f5fc75f6eeb137a87af99357dda1"
+    else
+      url "https://files.pythonhosted.org/packages/7b/e4/b7f1c8b977e64b495a5f268f9f6d82ed71152268542a7e676c26c647a6b0/pyobjc_framework_externalaccessory-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "22efc5bf68f5f0ef39f4308ef06403c42544f5fc75f6eeb137a87af99357dda1"
+    end
   end
   resource "pyobjc-framework-FileProvider" do
-    url "https://files.pythonhosted.org/packages/cc/9a/724b1fae5709f8860f06a6a2a46de568f9bb8bdb2e2aae45b4e010368f51/pyobjc_framework_fileprovider-12.1.tar.gz"
-    sha256 "45034e0d00ae153c991aa01cb1fd41874650a30093e77ba73401dcce5534c8ad"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/4f/8d/b1c6e0927d22d0c125c8a62cd2342c4613e3aabf13cb0e66ea62fe85fff1/pyobjc_framework_fileprovider-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "520b8c83b1ce63e0f668ea1683e3843f2e5379c0af76dceb19d5d540d584ff54"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/4f/8d/b1c6e0927d22d0c125c8a62cd2342c4613e3aabf13cb0e66ea62fe85fff1/pyobjc_framework_fileprovider-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "520b8c83b1ce63e0f668ea1683e3843f2e5379c0af76dceb19d5d540d584ff54"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/4f/8d/b1c6e0927d22d0c125c8a62cd2342c4613e3aabf13cb0e66ea62fe85fff1/pyobjc_framework_fileprovider-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "520b8c83b1ce63e0f668ea1683e3843f2e5379c0af76dceb19d5d540d584ff54"
+    else
+      url "https://files.pythonhosted.org/packages/4f/8d/b1c6e0927d22d0c125c8a62cd2342c4613e3aabf13cb0e66ea62fe85fff1/pyobjc_framework_fileprovider-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "520b8c83b1ce63e0f668ea1683e3843f2e5379c0af76dceb19d5d540d584ff54"
+    end
   end
   resource "pyobjc-framework-FileProviderUI" do
     url "https://files.pythonhosted.org/packages/e8/65/cc4397511bd0af91993d6302a2aed205296a9ad626146eefdfc8a9624219/pyobjc_framework_fileproviderui-12.1-py2.py3-none-any.whl"
@@ -395,44 +780,143 @@ class Ggai < Formula
     sha256 "e07abeca52c486cf14927f617afc27afa7a3828b99fab3ad02355105fb29203e"
   end
   resource "pyobjc-framework-FSEvents" do
-    url "https://files.pythonhosted.org/packages/43/17/21f45d2bca2efc72b975f2dfeae7a163dbeabb1236c1f188578403fd4f09/pyobjc_framework_fsevents-12.1.tar.gz"
-    sha256 "a22350e2aa789dec59b62da869c1b494a429f8c618854b1383d6473f4c065a02"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/90/f6/d6ea1ce944adb3e2c77abc84470a825854428c72e71efe5742bad1c1b1cd/pyobjc_framework_fsevents-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "90819f2fe0516443f679273b128c212d9e6802570f2f1c8a1e190fed76e2dc48"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/90/f6/d6ea1ce944adb3e2c77abc84470a825854428c72e71efe5742bad1c1b1cd/pyobjc_framework_fsevents-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "90819f2fe0516443f679273b128c212d9e6802570f2f1c8a1e190fed76e2dc48"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/90/f6/d6ea1ce944adb3e2c77abc84470a825854428c72e71efe5742bad1c1b1cd/pyobjc_framework_fsevents-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "90819f2fe0516443f679273b128c212d9e6802570f2f1c8a1e190fed76e2dc48"
+    else
+      url "https://files.pythonhosted.org/packages/90/f6/d6ea1ce944adb3e2c77abc84470a825854428c72e71efe5742bad1c1b1cd/pyobjc_framework_fsevents-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "90819f2fe0516443f679273b128c212d9e6802570f2f1c8a1e190fed76e2dc48"
+    end
   end
   resource "pyobjc-framework-FSKit" do
-    url "https://files.pythonhosted.org/packages/a1/55/d00246d6e6d9756e129e1d94bc131c99eece2daa84b2696f6442b8a22177/pyobjc_framework_fskit-12.1.tar.gz"
-    sha256 "ec54e941cdb0b7d800616c06ca76a93685bd7119b8aa6eb4e7a3ee27658fc7ba"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/7f/4a/10a5d0a35ab18129289e0dfa2ab56469af2f1a9b2c8eeccd814d9c171e63/pyobjc_framework_fskit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d856df1b12ef79803e11904571411ffe5720ceb8840f489ca7ec977c1d789e57"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/7f/4a/10a5d0a35ab18129289e0dfa2ab56469af2f1a9b2c8eeccd814d9c171e63/pyobjc_framework_fskit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d856df1b12ef79803e11904571411ffe5720ceb8840f489ca7ec977c1d789e57"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/7f/4a/10a5d0a35ab18129289e0dfa2ab56469af2f1a9b2c8eeccd814d9c171e63/pyobjc_framework_fskit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d856df1b12ef79803e11904571411ffe5720ceb8840f489ca7ec977c1d789e57"
+    else
+      url "https://files.pythonhosted.org/packages/7f/4a/10a5d0a35ab18129289e0dfa2ab56469af2f1a9b2c8eeccd814d9c171e63/pyobjc_framework_fskit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d856df1b12ef79803e11904571411ffe5720ceb8840f489ca7ec977c1d789e57"
+    end
   end
   resource "pyobjc-framework-GameCenter" do
-    url "https://files.pythonhosted.org/packages/d2/f8/b5fd86f6b722d4259228922e125b50e0a6975120a1c4d957e990fb84e42c/pyobjc_framework_gamecenter-12.1.tar.gz"
-    sha256 "de4118f14c9cf93eb0316d49da410faded3609ce9cd63425e9ef878cebb7ea72"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/7c/fb/5b4f1bd82e324f2fb598d3131f626744b6fbc9f87feda894bc854058de66/pyobjc_framework_gamecenter-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c452f65aaa102c11196193f44d41061ce33a66be2e9cf79d890d8eb611f84aa9"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/7c/fb/5b4f1bd82e324f2fb598d3131f626744b6fbc9f87feda894bc854058de66/pyobjc_framework_gamecenter-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c452f65aaa102c11196193f44d41061ce33a66be2e9cf79d890d8eb611f84aa9"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/7c/fb/5b4f1bd82e324f2fb598d3131f626744b6fbc9f87feda894bc854058de66/pyobjc_framework_gamecenter-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c452f65aaa102c11196193f44d41061ce33a66be2e9cf79d890d8eb611f84aa9"
+    else
+      url "https://files.pythonhosted.org/packages/7c/fb/5b4f1bd82e324f2fb598d3131f626744b6fbc9f87feda894bc854058de66/pyobjc_framework_gamecenter-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c452f65aaa102c11196193f44d41061ce33a66be2e9cf79d890d8eb611f84aa9"
+    end
   end
   resource "pyobjc-framework-GameController" do
-    url "https://files.pythonhosted.org/packages/21/14/353bb1fe448cd833839fd199ab26426c0248088753e63c22fe19dc07530f/pyobjc_framework_gamecontroller-12.1.tar.gz"
-    sha256 "64ed3cc4844b67f1faeb540c7cc8d512c84f70b3a4bafdb33d4663a2b2a2b1d8"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/38/0a/4386a2436b7ae4df62c30b8a96d89be15c6c9e302b89fc7e7cd19ba3429c/pyobjc_framework_gamecontroller-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3404a6488bb498989304aa87ce6217c973505a627b6eb9ae7884fd804569b8e4"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/38/0a/4386a2436b7ae4df62c30b8a96d89be15c6c9e302b89fc7e7cd19ba3429c/pyobjc_framework_gamecontroller-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3404a6488bb498989304aa87ce6217c973505a627b6eb9ae7884fd804569b8e4"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/38/0a/4386a2436b7ae4df62c30b8a96d89be15c6c9e302b89fc7e7cd19ba3429c/pyobjc_framework_gamecontroller-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3404a6488bb498989304aa87ce6217c973505a627b6eb9ae7884fd804569b8e4"
+    else
+      url "https://files.pythonhosted.org/packages/38/0a/4386a2436b7ae4df62c30b8a96d89be15c6c9e302b89fc7e7cd19ba3429c/pyobjc_framework_gamecontroller-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3404a6488bb498989304aa87ce6217c973505a627b6eb9ae7884fd804569b8e4"
+    end
   end
   resource "pyobjc-framework-GameKit" do
-    url "https://files.pythonhosted.org/packages/52/7b/d625c0937557f7e2e64200fdbeb867d2f6f86b2f148b8d6bfe085e32d872/pyobjc_framework_gamekit-12.1.tar.gz"
-    sha256 "014d032c3484093f1409f8f631ba8a0fd2ff7a3ae23fd9d14235340889854c16"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/05/39/4a9a51cae1ced9d0f74ca6c68e7304b9b1c2d184fed11b736947535ba59f/pyobjc_framework_gamekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "14080fdea98ec01c3e06260f1f5b31aaf59c78c2872fe8b843e17fd0ce151fa4"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/05/39/4a9a51cae1ced9d0f74ca6c68e7304b9b1c2d184fed11b736947535ba59f/pyobjc_framework_gamekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "14080fdea98ec01c3e06260f1f5b31aaf59c78c2872fe8b843e17fd0ce151fa4"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/05/39/4a9a51cae1ced9d0f74ca6c68e7304b9b1c2d184fed11b736947535ba59f/pyobjc_framework_gamekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "14080fdea98ec01c3e06260f1f5b31aaf59c78c2872fe8b843e17fd0ce151fa4"
+    else
+      url "https://files.pythonhosted.org/packages/05/39/4a9a51cae1ced9d0f74ca6c68e7304b9b1c2d184fed11b736947535ba59f/pyobjc_framework_gamekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "14080fdea98ec01c3e06260f1f5b31aaf59c78c2872fe8b843e17fd0ce151fa4"
+    end
   end
   resource "pyobjc-framework-GameplayKit" do
-    url "https://files.pythonhosted.org/packages/e2/11/c310bbc2526f95cce662cc1f1359bb11e2458eab0689737b4850d0f6acb7/pyobjc_framework_gameplaykit-12.1.tar.gz"
-    sha256 "935ebd806d802888969357946245d35a304c530c86f1ffe584e2cf21f0a608a8"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/38/a5/e10365b7287eb4a8e83275f04942d085f8e87da0a65c375df14a78df23c8/pyobjc_framework_gameplaykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "786036bdf266faf196b29b23e123faf76df5f3e90f113e2a7cdd4d04af071dc2"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/38/a5/e10365b7287eb4a8e83275f04942d085f8e87da0a65c375df14a78df23c8/pyobjc_framework_gameplaykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "786036bdf266faf196b29b23e123faf76df5f3e90f113e2a7cdd4d04af071dc2"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/38/a5/e10365b7287eb4a8e83275f04942d085f8e87da0a65c375df14a78df23c8/pyobjc_framework_gameplaykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "786036bdf266faf196b29b23e123faf76df5f3e90f113e2a7cdd4d04af071dc2"
+    else
+      url "https://files.pythonhosted.org/packages/38/a5/e10365b7287eb4a8e83275f04942d085f8e87da0a65c375df14a78df23c8/pyobjc_framework_gameplaykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "786036bdf266faf196b29b23e123faf76df5f3e90f113e2a7cdd4d04af071dc2"
+    end
   end
   resource "pyobjc-framework-GameSave" do
     url "https://files.pythonhosted.org/packages/59/ec/93d48cb048a1b35cea559cc9261b07f0d410078b3af029121302faa410d0/pyobjc_framework_gamesave-12.1-py2.py3-none-any.whl"
     sha256 "432e69f8404be9290d42c89caba241a3156ed52013947978ac54f0f032a14ffd"
   end
   resource "pyobjc-framework-HealthKit" do
-    url "https://files.pythonhosted.org/packages/af/67/436630d00ba1028ea33cc9df2fc28e081481433e5075600f2ea1ff00f45e/pyobjc_framework_healthkit-12.1.tar.gz"
-    sha256 "29c5e5de54b41080b7a4b0207698ac6f600dcb9149becc9c6b3a69957e200e5c"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/f2/6f/99933449e0cb8d6424de8e709fe423427efc634f75930885a723debcce11/pyobjc_framework_healthkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "1f10a3abf6d5a326192e96343e7e1d9d16efa0cf4b39266335e385455680bc69"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/f2/6f/99933449e0cb8d6424de8e709fe423427efc634f75930885a723debcce11/pyobjc_framework_healthkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "1f10a3abf6d5a326192e96343e7e1d9d16efa0cf4b39266335e385455680bc69"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/f2/6f/99933449e0cb8d6424de8e709fe423427efc634f75930885a723debcce11/pyobjc_framework_healthkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "1f10a3abf6d5a326192e96343e7e1d9d16efa0cf4b39266335e385455680bc69"
+    else
+      url "https://files.pythonhosted.org/packages/f2/6f/99933449e0cb8d6424de8e709fe423427efc634f75930885a723debcce11/pyobjc_framework_healthkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "1f10a3abf6d5a326192e96343e7e1d9d16efa0cf4b39266335e385455680bc69"
+    end
   end
   resource "pyobjc-framework-ImageCaptureCore" do
-    url "https://files.pythonhosted.org/packages/6d/a1/39347381fc7d3cd5ab942d86af347b25c73f0ddf6f5227d8b4d8f5328016/pyobjc_framework_imagecapturecore-12.1.tar.gz"
-    sha256 "c4776c59f4db57727389d17e1ffd9c567b854b8db52198b3ccc11281711074e5"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/50/fc/feb035f2866050737f8315958e31cfe2bf5d6d4d046a7268d28b94cd8155/pyobjc_framework_imagecapturecore-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b7a7feeb0b53f5b0e0305c5c41f6b722d5f8cfca506c49678902244cd339ac10"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/50/fc/feb035f2866050737f8315958e31cfe2bf5d6d4d046a7268d28b94cd8155/pyobjc_framework_imagecapturecore-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b7a7feeb0b53f5b0e0305c5c41f6b722d5f8cfca506c49678902244cd339ac10"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/50/fc/feb035f2866050737f8315958e31cfe2bf5d6d4d046a7268d28b94cd8155/pyobjc_framework_imagecapturecore-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b7a7feeb0b53f5b0e0305c5c41f6b722d5f8cfca506c49678902244cd339ac10"
+    else
+      url "https://files.pythonhosted.org/packages/50/fc/feb035f2866050737f8315958e31cfe2bf5d6d4d046a7268d28b94cd8155/pyobjc_framework_imagecapturecore-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b7a7feeb0b53f5b0e0305c5c41f6b722d5f8cfca506c49678902244cd339ac10"
+    end
   end
   resource "pyobjc-framework-InputMethodKit" do
-    url "https://files.pythonhosted.org/packages/5d/b8/d33dd8b7306029bbbd80525bf833fc547e6a223c494bf69a534487283a28/pyobjc_framework_inputmethodkit-12.1.tar.gz"
-    sha256 "f63b6fe2fa7f1412eae63baea1e120e7865e3b68ccfb7d8b0a4aadb309f2b278"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/76/f8/6915cc42826e1178c18cc9232edda15ef5d1f57950eef8fd6f8752853b9c/pyobjc_framework_inputmethodkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3b27c166574ad08d196129c979c5eec891cd630d249c75a970e26f3949578cb9"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/76/f8/6915cc42826e1178c18cc9232edda15ef5d1f57950eef8fd6f8752853b9c/pyobjc_framework_inputmethodkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3b27c166574ad08d196129c979c5eec891cd630d249c75a970e26f3949578cb9"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/76/f8/6915cc42826e1178c18cc9232edda15ef5d1f57950eef8fd6f8752853b9c/pyobjc_framework_inputmethodkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3b27c166574ad08d196129c979c5eec891cd630d249c75a970e26f3949578cb9"
+    else
+      url "https://files.pythonhosted.org/packages/76/f8/6915cc42826e1178c18cc9232edda15ef5d1f57950eef8fd6f8752853b9c/pyobjc_framework_inputmethodkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "3b27c166574ad08d196129c979c5eec891cd630d249c75a970e26f3949578cb9"
+    end
   end
   resource "pyobjc-framework-InstallerPlugins" do
     url "https://files.pythonhosted.org/packages/99/1f/31dca45db3342882a628aa1b27707a283d4dc7ef558fddd2533175a0661a/pyobjc_framework_installerplugins-12.1-py2.py3-none-any.whl"
@@ -443,16 +927,49 @@ class Ggai < Formula
     sha256 "cd91d38e8f356afd726b6ea8c235699316ea90edfd3472965c251efbf4150bc9"
   end
   resource "pyobjc-framework-Intents" do
-    url "https://files.pythonhosted.org/packages/f1/a1/3bab6139e94b97eca098e1562f5d6840e3ff10ea1f7fd704a17111a97d5b/pyobjc_framework_intents-12.1.tar.gz"
-    sha256 "bd688c3ab34a18412f56e459e9dae29e1f4152d3c2048fcacdef5fc49dfb9765"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/42/8a/d319b1a014dcf52cd46c2c956bed0e66f7c80253acaebd1ec5920b01bf41/pyobjc_framework_intents-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5c50c336418a3ba8fdfa5b5d12e46dca290e4321fb9844245af4a32b11cf6563"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/42/8a/d319b1a014dcf52cd46c2c956bed0e66f7c80253acaebd1ec5920b01bf41/pyobjc_framework_intents-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5c50c336418a3ba8fdfa5b5d12e46dca290e4321fb9844245af4a32b11cf6563"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/42/8a/d319b1a014dcf52cd46c2c956bed0e66f7c80253acaebd1ec5920b01bf41/pyobjc_framework_intents-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5c50c336418a3ba8fdfa5b5d12e46dca290e4321fb9844245af4a32b11cf6563"
+    else
+      url "https://files.pythonhosted.org/packages/42/8a/d319b1a014dcf52cd46c2c956bed0e66f7c80253acaebd1ec5920b01bf41/pyobjc_framework_intents-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5c50c336418a3ba8fdfa5b5d12e46dca290e4321fb9844245af4a32b11cf6563"
+    end
   end
   resource "pyobjc-framework-IntentsUI" do
-    url "https://files.pythonhosted.org/packages/19/cf/f0e385b9cfbf153d68efe8d19e5ae672b59acbbfc1f9b58faaefc5ec8c9e/pyobjc_framework_intentsui-12.1.tar.gz"
-    sha256 "16bdf4b7b91c0d1ec9d5513a1182861f1b5b7af95d4f4218ff7cf03032d57f99"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/68/07/61dc855f6eeaf75d274ad4b66006e05b0bef2138a6a559c60f0bc59d32ea/pyobjc_framework_intentsui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d01222760005421324c3892b6b98c5b4295828a6b157a1fc410f63eb336b2d97"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/68/07/61dc855f6eeaf75d274ad4b66006e05b0bef2138a6a559c60f0bc59d32ea/pyobjc_framework_intentsui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d01222760005421324c3892b6b98c5b4295828a6b157a1fc410f63eb336b2d97"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/68/07/61dc855f6eeaf75d274ad4b66006e05b0bef2138a6a559c60f0bc59d32ea/pyobjc_framework_intentsui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d01222760005421324c3892b6b98c5b4295828a6b157a1fc410f63eb336b2d97"
+    else
+      url "https://files.pythonhosted.org/packages/68/07/61dc855f6eeaf75d274ad4b66006e05b0bef2138a6a559c60f0bc59d32ea/pyobjc_framework_intentsui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d01222760005421324c3892b6b98c5b4295828a6b157a1fc410f63eb336b2d97"
+    end
   end
   resource "pyobjc-framework-IOBluetooth" do
-    url "https://files.pythonhosted.org/packages/e4/aa/ca3944bbdfead4201b4ae6b51510942c5a7d8e5e2dc3139a071c74061fdf/pyobjc_framework_iobluetooth-12.1.tar.gz"
-    sha256 "8a434118812f4c01dfc64339d41fe8229516864a59d2803e9094ee4cbe2b7edd"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/ef/58/4553d846513840622cd56ef715543f922d7d5ddfbe38316dbc7e43f23832/pyobjc_framework_iobluetooth-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a14506046ad9403ea95c75c1dd248167f41aef4aed62f50b567bf2482056ebf5"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/ef/58/4553d846513840622cd56ef715543f922d7d5ddfbe38316dbc7e43f23832/pyobjc_framework_iobluetooth-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a14506046ad9403ea95c75c1dd248167f41aef4aed62f50b567bf2482056ebf5"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/ef/58/4553d846513840622cd56ef715543f922d7d5ddfbe38316dbc7e43f23832/pyobjc_framework_iobluetooth-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a14506046ad9403ea95c75c1dd248167f41aef4aed62f50b567bf2482056ebf5"
+    else
+      url "https://files.pythonhosted.org/packages/ef/58/4553d846513840622cd56ef715543f922d7d5ddfbe38316dbc7e43f23832/pyobjc_framework_iobluetooth-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a14506046ad9403ea95c75c1dd248167f41aef4aed62f50b567bf2482056ebf5"
+    end
   end
   resource "pyobjc-framework-IOBluetoothUI" do
     url "https://files.pythonhosted.org/packages/e3/c9/69aeda0cdb5d25d30dc4596a1c5b464fc81b5c0c4e28efc54b7e11bde51c/pyobjc_framework_iobluetoothui-12.1-py2.py3-none-any.whl"
@@ -479,20 +996,53 @@ class Ggai < Formula
     sha256 "e63e78fceeed4d4dc807f9dabd5cf90407e4f552fab6a0d75a8d0af63094ad3c"
   end
   resource "pyobjc-framework-libdispatch" do
-    url "https://files.pythonhosted.org/packages/26/e8/75b6b9b3c88b37723c237e5a7600384ea2d84874548671139db02e76652b/pyobjc_framework_libdispatch-12.1.tar.gz"
-    sha256 "4035535b4fae1b5e976f3e0e38b6e3442ffea1b8aa178d0ca89faa9b8ecdea41"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/59/d8/7d60a70fc1a546c6cb482fe0595cb4bd1368d75c48d49e76d0bc6c0a2d0f/pyobjc_framework_libdispatch-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "0ebfd9e4446ab6528126bff25cfb09e4213ddf992b3208978911cfd3152e45f5"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/59/d8/7d60a70fc1a546c6cb482fe0595cb4bd1368d75c48d49e76d0bc6c0a2d0f/pyobjc_framework_libdispatch-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "0ebfd9e4446ab6528126bff25cfb09e4213ddf992b3208978911cfd3152e45f5"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/59/d8/7d60a70fc1a546c6cb482fe0595cb4bd1368d75c48d49e76d0bc6c0a2d0f/pyobjc_framework_libdispatch-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "0ebfd9e4446ab6528126bff25cfb09e4213ddf992b3208978911cfd3152e45f5"
+    else
+      url "https://files.pythonhosted.org/packages/59/d8/7d60a70fc1a546c6cb482fe0595cb4bd1368d75c48d49e76d0bc6c0a2d0f/pyobjc_framework_libdispatch-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "0ebfd9e4446ab6528126bff25cfb09e4213ddf992b3208978911cfd3152e45f5"
+    end
   end
   resource "pyobjc-framework-libxpc" do
-    url "https://files.pythonhosted.org/packages/16/e4/364db7dc26f235e3d7eaab2f92057f460b39800bffdec3128f113388ac9f/pyobjc_framework_libxpc-12.1.tar.gz"
-    sha256 "e46363a735f3ecc9a2f91637750623f90ee74f9938a4e7c833e01233174af44d"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/fc/9d/d66559d9183dae383962c79ca67eaabf7fe9f8bb9f65cf5a4369fbdcdd0e/pyobjc_framework_libxpc-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "bc5eaed7871fab8971631e99151ea0271f64d4059790c9f41a30ae4841f4fd89"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/fc/9d/d66559d9183dae383962c79ca67eaabf7fe9f8bb9f65cf5a4369fbdcdd0e/pyobjc_framework_libxpc-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "bc5eaed7871fab8971631e99151ea0271f64d4059790c9f41a30ae4841f4fd89"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/fc/9d/d66559d9183dae383962c79ca67eaabf7fe9f8bb9f65cf5a4369fbdcdd0e/pyobjc_framework_libxpc-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "bc5eaed7871fab8971631e99151ea0271f64d4059790c9f41a30ae4841f4fd89"
+    else
+      url "https://files.pythonhosted.org/packages/fc/9d/d66559d9183dae383962c79ca67eaabf7fe9f8bb9f65cf5a4369fbdcdd0e/pyobjc_framework_libxpc-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "bc5eaed7871fab8971631e99151ea0271f64d4059790c9f41a30ae4841f4fd89"
+    end
   end
   resource "pyobjc-framework-LinkPresentation" do
     url "https://files.pythonhosted.org/packages/ad/51/226eb45f196f3bf93374713571aae6c8a4760389e1d9435c4a4cc3f38ea4/pyobjc_framework_linkpresentation-12.1-py2.py3-none-any.whl"
     sha256 "853a84c7b525b77b114a7a8d798aef83f528ed3a6803bda12184fe5af4e79a47"
   end
   resource "pyobjc-framework-LocalAuthentication" do
-    url "https://files.pythonhosted.org/packages/8d/0e/7e5d9a58bb3d5b79a75d925557ef68084171526191b1c0929a887a553d4f/pyobjc_framework_localauthentication-12.1.tar.gz"
-    sha256 "2284f587d8e1206166e4495b33f420c1de486c36c28c4921d09eec858a699d05"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/e6/58/6dfb304103b4cdaee44acd7f5093c07f3053df0cc9648c87876f1e5fc690/pyobjc_framework_localauthentication-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f8d525ed2ad5cd56e420436187b534454d1f7d1fae6e585df82397d6d92c6e54"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/e6/58/6dfb304103b4cdaee44acd7f5093c07f3053df0cc9648c87876f1e5fc690/pyobjc_framework_localauthentication-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f8d525ed2ad5cd56e420436187b534454d1f7d1fae6e585df82397d6d92c6e54"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/e6/58/6dfb304103b4cdaee44acd7f5093c07f3053df0cc9648c87876f1e5fc690/pyobjc_framework_localauthentication-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f8d525ed2ad5cd56e420436187b534454d1f7d1fae6e585df82397d6d92c6e54"
+    else
+      url "https://files.pythonhosted.org/packages/e6/58/6dfb304103b4cdaee44acd7f5093c07f3053df0cc9648c87876f1e5fc690/pyobjc_framework_localauthentication-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f8d525ed2ad5cd56e420436187b534454d1f7d1fae6e585df82397d6d92c6e54"
+    end
   end
   resource "pyobjc-framework-LocalAuthenticationEmbeddedUI" do
     url "https://files.pythonhosted.org/packages/30/7d/0d46639c7a26b6af928ab4c822cd28b733791e02ac28cc84c3014bcf7dc7/pyobjc_framework_localauthenticationembeddedui-12.1-py2.py3-none-any.whl"
@@ -503,16 +1053,38 @@ class Ggai < Formula
     sha256 "536ac0c4ea3560364cd159a6512c3c18a744a12e4e0883c07df0f8a2ff21e3fe"
   end
   resource "pyobjc-framework-MapKit" do
-    url "https://files.pythonhosted.org/packages/36/bb/2a668203c20e509a648c35e803d79d0c7f7816dacba74eb5ad8acb186790/pyobjc_framework_mapkit-12.1.tar.gz"
-    sha256 "dbc32dc48e821aaa9b4294402c240adbc1c6834e658a07677b7c19b7990533c5"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/06/ef/f802b9f0a620039b277374ba36702a0e359fe54e8526dcd90d2b061d2594/pyobjc_framework_mapkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c2f47e813e81cb13e48343108ea3185a856c13bab1cb17e76d0d87568e18459b"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/06/ef/f802b9f0a620039b277374ba36702a0e359fe54e8526dcd90d2b061d2594/pyobjc_framework_mapkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c2f47e813e81cb13e48343108ea3185a856c13bab1cb17e76d0d87568e18459b"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/06/ef/f802b9f0a620039b277374ba36702a0e359fe54e8526dcd90d2b061d2594/pyobjc_framework_mapkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c2f47e813e81cb13e48343108ea3185a856c13bab1cb17e76d0d87568e18459b"
+    else
+      url "https://files.pythonhosted.org/packages/06/ef/f802b9f0a620039b277374ba36702a0e359fe54e8526dcd90d2b061d2594/pyobjc_framework_mapkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "c2f47e813e81cb13e48343108ea3185a856c13bab1cb17e76d0d87568e18459b"
+    end
   end
   resource "pyobjc-framework-MediaAccessibility" do
     url "https://files.pythonhosted.org/packages/a2/0c/7fb5462561f59d739192c6d02ba0fd36ad7841efac5a8398a85a030ef7fc/pyobjc_framework_mediaaccessibility-12.1-py2.py3-none-any.whl"
     sha256 "2ff8845c97dd52b0e5cf53990291e6d77c8a73a7aac0e9235d62d9a4256916d1"
   end
   resource "pyobjc-framework-MediaExtension" do
-    url "https://files.pythonhosted.org/packages/d6/aa/1e8015711df1cdb5e4a0aa0ed4721409d39971ae6e1e71915e3ab72423a3/pyobjc_framework_mediaextension-12.1.tar.gz"
-    sha256 "44409d63cc7d74e5724a68e3f9252cb62fd0fd3ccf0ca94c6a33e5c990149953"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/4a/f0/fcff5206bb1a7ce89b9923ceb3215af767fd3c91dafc9d176ba08d6a3f30/pyobjc_framework_mediaextension-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "4f66719c97f508c619368377d768266c58cc783cf5fc51bd9d8e5e0cad0c824c"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/4a/f0/fcff5206bb1a7ce89b9923ceb3215af767fd3c91dafc9d176ba08d6a3f30/pyobjc_framework_mediaextension-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "4f66719c97f508c619368377d768266c58cc783cf5fc51bd9d8e5e0cad0c824c"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/4a/f0/fcff5206bb1a7ce89b9923ceb3215af767fd3c91dafc9d176ba08d6a3f30/pyobjc_framework_mediaextension-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "4f66719c97f508c619368377d768266c58cc783cf5fc51bd9d8e5e0cad0c824c"
+    else
+      url "https://files.pythonhosted.org/packages/4a/f0/fcff5206bb1a7ce89b9923ceb3215af767fd3c91dafc9d176ba08d6a3f30/pyobjc_framework_mediaextension-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "4f66719c97f508c619368377d768266c58cc783cf5fc51bd9d8e5e0cad0c824c"
+    end
   end
   resource "pyobjc-framework-MediaLibrary" do
     url "https://files.pythonhosted.org/packages/c2/cd/eeaf8585a343fda5b8cf3b8f144c872d1057c845202098b9441a39b76cb0/pyobjc_framework_medialibrary-12.1-py2.py3-none-any.whl"
@@ -523,44 +1095,132 @@ class Ggai < Formula
     sha256 "85d9baec131807bfdf0f4c24d4b943e83cce806ab31c95c7e19c78e3fb7eefc8"
   end
   resource "pyobjc-framework-MediaToolbox" do
-    url "https://files.pythonhosted.org/packages/a3/71/be5879380a161f98212a336b432256f307d1dcbaaaeb8ec988aea2ada2cd/pyobjc_framework_mediatoolbox-12.1.tar.gz"
-    sha256 "385b48746a5f08756ee87afc14037e552954c427ed5745d7ece31a21a7bad5ab"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/bb/42/f0354b949f1eda6a57722a7450c77ff6689e53f9b2a933c4911e4385c2c8/pyobjc_framework_mediatoolbox-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "59921d4155a88d4acd04e80497707ac0208af3ff41574acba68214376e9fca23"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/bb/42/f0354b949f1eda6a57722a7450c77ff6689e53f9b2a933c4911e4385c2c8/pyobjc_framework_mediatoolbox-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "59921d4155a88d4acd04e80497707ac0208af3ff41574acba68214376e9fca23"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/bb/42/f0354b949f1eda6a57722a7450c77ff6689e53f9b2a933c4911e4385c2c8/pyobjc_framework_mediatoolbox-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "59921d4155a88d4acd04e80497707ac0208af3ff41574acba68214376e9fca23"
+    else
+      url "https://files.pythonhosted.org/packages/bb/42/f0354b949f1eda6a57722a7450c77ff6689e53f9b2a933c4911e4385c2c8/pyobjc_framework_mediatoolbox-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "59921d4155a88d4acd04e80497707ac0208af3ff41574acba68214376e9fca23"
+    end
   end
   resource "pyobjc-framework-Metal" do
-    url "https://files.pythonhosted.org/packages/e7/06/a84f7eb8561d5631954b9458cfca04b690b80b5b85ce70642bc89335f52a/pyobjc_framework_metal-12.1.tar.gz"
-    sha256 "bb554877d5ee2bf3f340ad88e8fe1b85baab7b5ec4bd6ae0f4f7604147e3eae7"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/88/8a/890dbc66bdae2ec839e28a15f16696ed1ab34b3cf32d58ed4dcd76183f25/pyobjc_framework_metal-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2440db9b7057b6bafbabe8a2c5dde044865569176058ee34a7d138df0fc96c8c"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/88/8a/890dbc66bdae2ec839e28a15f16696ed1ab34b3cf32d58ed4dcd76183f25/pyobjc_framework_metal-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2440db9b7057b6bafbabe8a2c5dde044865569176058ee34a7d138df0fc96c8c"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/88/8a/890dbc66bdae2ec839e28a15f16696ed1ab34b3cf32d58ed4dcd76183f25/pyobjc_framework_metal-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2440db9b7057b6bafbabe8a2c5dde044865569176058ee34a7d138df0fc96c8c"
+    else
+      url "https://files.pythonhosted.org/packages/88/8a/890dbc66bdae2ec839e28a15f16696ed1ab34b3cf32d58ed4dcd76183f25/pyobjc_framework_metal-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2440db9b7057b6bafbabe8a2c5dde044865569176058ee34a7d138df0fc96c8c"
+    end
   end
   resource "pyobjc-framework-MetalFX" do
-    url "https://files.pythonhosted.org/packages/f1/09/ce5c74565677fde66de3b9d35389066b19e5d1bfef9d9a4ad80f0c858c0c/pyobjc_framework_metalfx-12.1.tar.gz"
-    sha256 "1551b686fb80083a97879ce0331bdb1d4c9b94557570b7ecc35ebf40ff65c90b"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/ae/a6/fe7108290f798f79f2efbcf511fdb605b834f3616496fae8bec0c719ba65/pyobjc_framework_metalfx-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b5c4d81ebe71be69db838041ec93c12fb0458fe68a06f61f87a4d892135953dc"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/ae/a6/fe7108290f798f79f2efbcf511fdb605b834f3616496fae8bec0c719ba65/pyobjc_framework_metalfx-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b5c4d81ebe71be69db838041ec93c12fb0458fe68a06f61f87a4d892135953dc"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/ae/a6/fe7108290f798f79f2efbcf511fdb605b834f3616496fae8bec0c719ba65/pyobjc_framework_metalfx-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b5c4d81ebe71be69db838041ec93c12fb0458fe68a06f61f87a4d892135953dc"
+    else
+      url "https://files.pythonhosted.org/packages/ae/a6/fe7108290f798f79f2efbcf511fdb605b834f3616496fae8bec0c719ba65/pyobjc_framework_metalfx-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "b5c4d81ebe71be69db838041ec93c12fb0458fe68a06f61f87a4d892135953dc"
+    end
   end
   resource "pyobjc-framework-MetalKit" do
-    url "https://files.pythonhosted.org/packages/14/15/5091147aae12d4011a788b93971c3376aaaf9bf32aa935a2c9a06a71e18b/pyobjc_framework_metalkit-12.1.tar.gz"
-    sha256 "14cc5c256f0e3471b412a5b3582cb2a0d36d3d57401a8aa09e433252d1c34824"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/d4/52/84c2829df343322025d3ad474153359c850c3189555c0819155044b8777d/pyobjc_framework_metalkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a1b8ac9582b65d2711836b56dd24ce450aa740b0c478da9ee0621cc4c64e64cb"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/d4/52/84c2829df343322025d3ad474153359c850c3189555c0819155044b8777d/pyobjc_framework_metalkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a1b8ac9582b65d2711836b56dd24ce450aa740b0c478da9ee0621cc4c64e64cb"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/d4/52/84c2829df343322025d3ad474153359c850c3189555c0819155044b8777d/pyobjc_framework_metalkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a1b8ac9582b65d2711836b56dd24ce450aa740b0c478da9ee0621cc4c64e64cb"
+    else
+      url "https://files.pythonhosted.org/packages/d4/52/84c2829df343322025d3ad474153359c850c3189555c0819155044b8777d/pyobjc_framework_metalkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a1b8ac9582b65d2711836b56dd24ce450aa740b0c478da9ee0621cc4c64e64cb"
+    end
   end
   resource "pyobjc-framework-MetalPerformanceShaders" do
-    url "https://files.pythonhosted.org/packages/c5/68/58da38e54aa0d8c19f0d3084d8c84e92d54cc8c9254041f07119d86aa073/pyobjc_framework_metalperformanceshaders-12.1.tar.gz"
-    sha256 "b198e755b95a1de1525e63c3b14327ae93ef1d88359e6be1ce554a3493755b50"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/b4/d7/1177d8815549c90d8ddb0764b62c17bdaca6d6e03b8b54f3e7137167d8f3/pyobjc_framework_metalperformanceshaders-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5d5a0a5c859c5493d597842f3d011c59bf7c10d04a29852016298364fca9e16e"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/b4/d7/1177d8815549c90d8ddb0764b62c17bdaca6d6e03b8b54f3e7137167d8f3/pyobjc_framework_metalperformanceshaders-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5d5a0a5c859c5493d597842f3d011c59bf7c10d04a29852016298364fca9e16e"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/b4/d7/1177d8815549c90d8ddb0764b62c17bdaca6d6e03b8b54f3e7137167d8f3/pyobjc_framework_metalperformanceshaders-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5d5a0a5c859c5493d597842f3d011c59bf7c10d04a29852016298364fca9e16e"
+    else
+      url "https://files.pythonhosted.org/packages/b4/d7/1177d8815549c90d8ddb0764b62c17bdaca6d6e03b8b54f3e7137167d8f3/pyobjc_framework_metalperformanceshaders-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5d5a0a5c859c5493d597842f3d011c59bf7c10d04a29852016298364fca9e16e"
+    end
   end
   resource "pyobjc-framework-MetalPerformanceShadersGraph" do
     url "https://files.pythonhosted.org/packages/e2/c9/5e7fd0d4bc9bdf7b442f36e020677c721ba9b4c1dc1fa3180085f22a4ef9/pyobjc_framework_metalperformanceshadersgraph-12.1-py2.py3-none-any.whl"
     sha256 "85a1c7a6114ada05c7924b3235a1a98c45359410d148097488f15aee5ebb6ab9"
   end
   resource "pyobjc-framework-MetricKit" do
-    url "https://files.pythonhosted.org/packages/ba/13/5576ddfbc0b174810a49171e2dbe610bdafd3b701011c6ecd9b3a461de8a/pyobjc_framework_metrickit-12.1.tar.gz"
-    sha256 "77841daf6b36ba0c19df88545fd910c0516acf279e6b7b4fa0a712a046eaa9f1"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/d6/8b/a97a1463fc4453e5b1c157816a8356d800c4d66d5624154dc6dbdd7f52c0/pyobjc_framework_metrickit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f6cde78ba1a401660fe0e3a945d1941efef255c1021a8772a838aceb31bd74e6"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/d6/8b/a97a1463fc4453e5b1c157816a8356d800c4d66d5624154dc6dbdd7f52c0/pyobjc_framework_metrickit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f6cde78ba1a401660fe0e3a945d1941efef255c1021a8772a838aceb31bd74e6"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/d6/8b/a97a1463fc4453e5b1c157816a8356d800c4d66d5624154dc6dbdd7f52c0/pyobjc_framework_metrickit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f6cde78ba1a401660fe0e3a945d1941efef255c1021a8772a838aceb31bd74e6"
+    else
+      url "https://files.pythonhosted.org/packages/d6/8b/a97a1463fc4453e5b1c157816a8356d800c4d66d5624154dc6dbdd7f52c0/pyobjc_framework_metrickit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "f6cde78ba1a401660fe0e3a945d1941efef255c1021a8772a838aceb31bd74e6"
+    end
   end
   resource "pyobjc-framework-MLCompute" do
     url "https://files.pythonhosted.org/packages/ac/f7/4614b9ccd0151795e328b9ed881fbcbb13e577a8ec4ae3507edb1a462731/pyobjc_framework_mlcompute-12.1-py2.py3-none-any.whl"
     sha256 "4f0fc19551d710a03dfc4c7129299897544ff8ea76db6c7539ecc2f9b2571bde"
   end
   resource "pyobjc-framework-ModelIO" do
-    url "https://files.pythonhosted.org/packages/b4/11/32c358111b623b4a0af9e90470b198fffc068b45acac74e1ba711aee7199/pyobjc_framework_modelio-12.1.tar.gz"
-    sha256 "d041d7bca7c2a4526344d3e593347225b7a2e51a499b3aa548895ba516d1bdbb"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/14/14/52b19e6ba86de2d38aed69a091c5d0c436c007ddf73441cbcc0a217db1d4/pyobjc_framework_modelio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5250e7f58cc71ca8928b33a00ac0dc56ca0eead97507f4bfcf777582a4b05e39"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/14/14/52b19e6ba86de2d38aed69a091c5d0c436c007ddf73441cbcc0a217db1d4/pyobjc_framework_modelio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5250e7f58cc71ca8928b33a00ac0dc56ca0eead97507f4bfcf777582a4b05e39"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/14/14/52b19e6ba86de2d38aed69a091c5d0c436c007ddf73441cbcc0a217db1d4/pyobjc_framework_modelio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5250e7f58cc71ca8928b33a00ac0dc56ca0eead97507f4bfcf777582a4b05e39"
+    else
+      url "https://files.pythonhosted.org/packages/14/14/52b19e6ba86de2d38aed69a091c5d0c436c007ddf73441cbcc0a217db1d4/pyobjc_framework_modelio-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5250e7f58cc71ca8928b33a00ac0dc56ca0eead97507f4bfcf777582a4b05e39"
+    end
   end
   resource "pyobjc-framework-MultipeerConnectivity" do
-    url "https://files.pythonhosted.org/packages/87/35/0d0bb6881004cb238cfd7bf74f4b2e42601a1accdf27b2189ec61cf3a2dc/pyobjc_framework_multipeerconnectivity-12.1.tar.gz"
-    sha256 "7123f734b7174cacbe92a51a62b4645cc9033f6b462ff945b504b62e1b9e6c1c"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/d6/64/fd5932ab32bec0e340b60ca87f57c07a9d963b56ab5f857787efcec236e4/pyobjc_framework_multipeerconnectivity-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "014f92d7e176154531c3173cf7113b6be374c041646c4b86d93afb84d2ea334c"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/d6/64/fd5932ab32bec0e340b60ca87f57c07a9d963b56ab5f857787efcec236e4/pyobjc_framework_multipeerconnectivity-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "014f92d7e176154531c3173cf7113b6be374c041646c4b86d93afb84d2ea334c"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/d6/64/fd5932ab32bec0e340b60ca87f57c07a9d963b56ab5f857787efcec236e4/pyobjc_framework_multipeerconnectivity-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "014f92d7e176154531c3173cf7113b6be374c041646c4b86d93afb84d2ea334c"
+    else
+      url "https://files.pythonhosted.org/packages/d6/64/fd5932ab32bec0e340b60ca87f57c07a9d963b56ab5f857787efcec236e4/pyobjc_framework_multipeerconnectivity-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "014f92d7e176154531c3173cf7113b6be374c041646c4b86d93afb84d2ea334c"
+    end
   end
   resource "pyobjc-framework-NaturalLanguage" do
     url "https://files.pythonhosted.org/packages/ec/d8/715a11111f76c80769cb267a19ecf2a4ac76152a6410debb5a4790422256/pyobjc_framework_naturallanguage-12.1-py2.py3-none-any.whl"
@@ -571,16 +1231,49 @@ class Ggai < Formula
     sha256 "0021f8b141e693d3821524c170e9c645090eb320e80c2935ddb978a6e8b8da81"
   end
   resource "pyobjc-framework-Network" do
-    url "https://files.pythonhosted.org/packages/38/13/a71270a1b0a9ec979e68b8ec84b0f960e908b17b51cb3cac246a74d52b6b/pyobjc_framework_network-12.1.tar.gz"
-    sha256 "dbf736ff84d1caa41224e86ff84d34b4e9eb6918ae4e373a44d3cb597648a16a"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/e0/6d/a7fb29708f2797fa96bfa6ae740b8154ac719e150939393453073121b7c9/pyobjc_framework_network-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "25e20ec81e23699e1182808384b8e426cb3ae9adaf639684232fc205edb48183"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/e0/6d/a7fb29708f2797fa96bfa6ae740b8154ac719e150939393453073121b7c9/pyobjc_framework_network-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "25e20ec81e23699e1182808384b8e426cb3ae9adaf639684232fc205edb48183"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/e0/6d/a7fb29708f2797fa96bfa6ae740b8154ac719e150939393453073121b7c9/pyobjc_framework_network-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "25e20ec81e23699e1182808384b8e426cb3ae9adaf639684232fc205edb48183"
+    else
+      url "https://files.pythonhosted.org/packages/e0/6d/a7fb29708f2797fa96bfa6ae740b8154ac719e150939393453073121b7c9/pyobjc_framework_network-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "25e20ec81e23699e1182808384b8e426cb3ae9adaf639684232fc205edb48183"
+    end
   end
   resource "pyobjc-framework-NetworkExtension" do
-    url "https://files.pythonhosted.org/packages/bf/3e/ac51dbb2efa16903e6af01f3c1f5a854c558661a7a5375c3e8767ac668e8/pyobjc_framework_networkextension-12.1.tar.gz"
-    sha256 "36abc339a7f214ab6a05cb2384a9df912f247163710741e118662bd049acfa2e"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/b6/00/460b9ef440663299153ac0c165a56916620016435d402e4cf4cfdc74b521/pyobjc_framework_networkextension-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "21076ec44790023b579f21f6b88e13388d353de98658dbb50369df53e6a9c967"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/b6/00/460b9ef440663299153ac0c165a56916620016435d402e4cf4cfdc74b521/pyobjc_framework_networkextension-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "21076ec44790023b579f21f6b88e13388d353de98658dbb50369df53e6a9c967"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/b6/00/460b9ef440663299153ac0c165a56916620016435d402e4cf4cfdc74b521/pyobjc_framework_networkextension-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "21076ec44790023b579f21f6b88e13388d353de98658dbb50369df53e6a9c967"
+    else
+      url "https://files.pythonhosted.org/packages/b6/00/460b9ef440663299153ac0c165a56916620016435d402e4cf4cfdc74b521/pyobjc_framework_networkextension-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "21076ec44790023b579f21f6b88e13388d353de98658dbb50369df53e6a9c967"
+    end
   end
   resource "pyobjc-framework-NotificationCenter" do
-    url "https://files.pythonhosted.org/packages/c6/12/ae0fe82fb1e02365c9fe9531c9de46322f7af09e3659882212c6bf24d75e/pyobjc_framework_notificationcenter-12.1.tar.gz"
-    sha256 "2d09f5ab9dc39770bae4fa0c7cfe961e6c440c8fc465191d403633dccc941094"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/da/0a/621ed53aa7521d534275b8069c0f0d5e6517d772808a49add8476ad5c86d/pyobjc_framework_notificationcenter-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "9495b1b0820a3e82bfcd0331b92bc29e4e4ca3a4e58d6ec0e1eda6c301ec4460"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/da/0a/621ed53aa7521d534275b8069c0f0d5e6517d772808a49add8476ad5c86d/pyobjc_framework_notificationcenter-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "9495b1b0820a3e82bfcd0331b92bc29e4e4ca3a4e58d6ec0e1eda6c301ec4460"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/da/0a/621ed53aa7521d534275b8069c0f0d5e6517d772808a49add8476ad5c86d/pyobjc_framework_notificationcenter-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "9495b1b0820a3e82bfcd0331b92bc29e4e4ca3a4e58d6ec0e1eda6c301ec4460"
+    else
+      url "https://files.pythonhosted.org/packages/da/0a/621ed53aa7521d534275b8069c0f0d5e6517d772808a49add8476ad5c86d/pyobjc_framework_notificationcenter-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "9495b1b0820a3e82bfcd0331b92bc29e4e4ca3a4e58d6ec0e1eda6c301ec4460"
+    end
   end
   resource "pyobjc-framework-OpenDirectory" do
     url "https://files.pythonhosted.org/packages/d6/e7/3c2dece9c5b28af28a44d72a27b35ea5ffac31fed7cbd8d696ea75dc4a81/pyobjc_framework_opendirectory-12.1-py2.py3-none-any.whl"
@@ -591,12 +1284,34 @@ class Ggai < Formula
     sha256 "c49165336856fd75113d2e264a98c6deb235f1bd033eae48f661d4d832d85e6b"
   end
   resource "pyobjc-framework-OSLog" do
-    url "https://files.pythonhosted.org/packages/12/42/805c9b4ac6ad25deb4215989d8fc41533d01e07ffd23f31b65620bade546/pyobjc_framework_oslog-12.1.tar.gz"
-    sha256 "d0ec6f4e3d1689d5e4341bc1130c6f24cb4ad619939f6c14d11a7e80c0ac4553"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/f4/c1/7a7742fc81708c53a0f736ce883069b3c1797440d691a7ed7b8e29e8dbbd/pyobjc_framework_oslog-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "16d98c49698da839b79904a2c63fee658fd4a8c4fa9223e5694270533127e8d4"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/f4/c1/7a7742fc81708c53a0f736ce883069b3c1797440d691a7ed7b8e29e8dbbd/pyobjc_framework_oslog-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "16d98c49698da839b79904a2c63fee658fd4a8c4fa9223e5694270533127e8d4"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/f4/c1/7a7742fc81708c53a0f736ce883069b3c1797440d691a7ed7b8e29e8dbbd/pyobjc_framework_oslog-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "16d98c49698da839b79904a2c63fee658fd4a8c4fa9223e5694270533127e8d4"
+    else
+      url "https://files.pythonhosted.org/packages/f4/c1/7a7742fc81708c53a0f736ce883069b3c1797440d691a7ed7b8e29e8dbbd/pyobjc_framework_oslog-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "16d98c49698da839b79904a2c63fee658fd4a8c4fa9223e5694270533127e8d4"
+    end
   end
   resource "pyobjc-framework-PassKit" do
-    url "https://files.pythonhosted.org/packages/6c/d4/2afb59fb0f99eb2f03888850887e536f1ef64b303fd756283679471a5189/pyobjc_framework_passkit-12.1.tar.gz"
-    sha256 "d8c27c352e86a3549bf696504e6b25af5f2134b173d9dd60d66c6d3da53bb078"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/dc/71/bde73bb39a836fb07c10fbdc60f38a3bd436c0aada1de0f4140737813930/pyobjc_framework_passkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e28dcf1074cddd82c2bd3ee5c3800952ac59850578b1135b38871ff584ea9d41"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/dc/71/bde73bb39a836fb07c10fbdc60f38a3bd436c0aada1de0f4140737813930/pyobjc_framework_passkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e28dcf1074cddd82c2bd3ee5c3800952ac59850578b1135b38871ff584ea9d41"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/dc/71/bde73bb39a836fb07c10fbdc60f38a3bd436c0aada1de0f4140737813930/pyobjc_framework_passkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e28dcf1074cddd82c2bd3ee5c3800952ac59850578b1135b38871ff584ea9d41"
+    else
+      url "https://files.pythonhosted.org/packages/dc/71/bde73bb39a836fb07c10fbdc60f38a3bd436c0aada1de0f4140737813930/pyobjc_framework_passkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e28dcf1074cddd82c2bd3ee5c3800952ac59850578b1135b38871ff584ea9d41"
+    end
   end
   resource "pyobjc-framework-PencilKit" do
     url "https://files.pythonhosted.org/packages/e8/26/daf47dcfced8f7326218dced5c68ed2f3b522ec113329218ce1305809535/pyobjc_framework_pencilkit-12.1-py2.py3-none-any.whl"
@@ -607,20 +1322,53 @@ class Ggai < Formula
     sha256 "99a1c1efc6644f5312cce3693117d4e4482538f65ad08fe59e41e2579b67ab17"
   end
   resource "pyobjc-framework-Photos" do
-    url "https://files.pythonhosted.org/packages/b8/53/f8a3dc7f711034d2283e289cd966fb7486028ea132a24260290ff32d3525/pyobjc_framework_photos-12.1.tar.gz"
-    sha256 "adb68aaa29e186832d3c36a0b60b0592a834e24c5263e9d78c956b2b77dce563"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/c2/5c/47b9e1f6ac61a80b6544091dffe42dc883217d6e670ddc188968988ba7f6/pyobjc_framework_photos-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "95d5036bdaf1c50559adfa60fd715b57c68577d2574241ed1890e359849f923f"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/c2/5c/47b9e1f6ac61a80b6544091dffe42dc883217d6e670ddc188968988ba7f6/pyobjc_framework_photos-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "95d5036bdaf1c50559adfa60fd715b57c68577d2574241ed1890e359849f923f"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/c2/5c/47b9e1f6ac61a80b6544091dffe42dc883217d6e670ddc188968988ba7f6/pyobjc_framework_photos-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "95d5036bdaf1c50559adfa60fd715b57c68577d2574241ed1890e359849f923f"
+    else
+      url "https://files.pythonhosted.org/packages/c2/5c/47b9e1f6ac61a80b6544091dffe42dc883217d6e670ddc188968988ba7f6/pyobjc_framework_photos-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "95d5036bdaf1c50559adfa60fd715b57c68577d2574241ed1890e359849f923f"
+    end
   end
   resource "pyobjc-framework-PhotosUI" do
-    url "https://files.pythonhosted.org/packages/40/a5/14c538828ed1a420e047388aedc4a2d7d9292030d81bf6b1ced2ec27b6e9/pyobjc_framework_photosui-12.1.tar.gz"
-    sha256 "9141234bb9d17687f1e8b66303158eccdd45132341fbe5e892174910035f029a"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/33/4e/d45cae151b0b46ab4110b6ea7d689af9480a07ced3dbf5f0860b201a542a/pyobjc_framework_photosui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a8e0320908f497d1e548336569f435afd27ed964e65b2aefa3a2d2ea4c041da2"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/33/4e/d45cae151b0b46ab4110b6ea7d689af9480a07ced3dbf5f0860b201a542a/pyobjc_framework_photosui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a8e0320908f497d1e548336569f435afd27ed964e65b2aefa3a2d2ea4c041da2"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/33/4e/d45cae151b0b46ab4110b6ea7d689af9480a07ced3dbf5f0860b201a542a/pyobjc_framework_photosui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a8e0320908f497d1e548336569f435afd27ed964e65b2aefa3a2d2ea4c041da2"
+    else
+      url "https://files.pythonhosted.org/packages/33/4e/d45cae151b0b46ab4110b6ea7d689af9480a07ced3dbf5f0860b201a542a/pyobjc_framework_photosui-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a8e0320908f497d1e548336569f435afd27ed964e65b2aefa3a2d2ea4c041da2"
+    end
   end
   resource "pyobjc-framework-PreferencePanes" do
     url "https://files.pythonhosted.org/packages/36/7b/8ceec1ab0446224d685e243e2770c5a5c92285bcab0b9324dbe7a893ae5a/pyobjc_framework_preferencepanes-12.1-py2.py3-none-any.whl"
     sha256 "1b3af9db9e0cfed8db28c260b2cf9a22c15fda5f0ff4c26157b17f99a0e29bbf"
   end
   resource "pyobjc-framework-PushKit" do
-    url "https://files.pythonhosted.org/packages/a9/45/de756b62709add6d0615f86e48291ee2bee40223e7dde7bbe68a952593f0/pyobjc_framework_pushkit-12.1.tar.gz"
-    sha256 "829a2fc8f4780e75fc2a41217290ee0ff92d4ade43c42def4d7e5af436d8ae82"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/16/09/9ba944e1146308460bf7474cdc2a0844682862f9850576494035a7653f4a/pyobjc_framework_pushkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "de82e1f6e01444582ad2ca6a76aeee1524c23695f0e4f56596f9db3e9d635623"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/16/09/9ba944e1146308460bf7474cdc2a0844682862f9850576494035a7653f4a/pyobjc_framework_pushkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "de82e1f6e01444582ad2ca6a76aeee1524c23695f0e4f56596f9db3e9d635623"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/16/09/9ba944e1146308460bf7474cdc2a0844682862f9850576494035a7653f4a/pyobjc_framework_pushkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "de82e1f6e01444582ad2ca6a76aeee1524c23695f0e4f56596f9db3e9d635623"
+    else
+      url "https://files.pythonhosted.org/packages/16/09/9ba944e1146308460bf7474cdc2a0844682862f9850576494035a7653f4a/pyobjc_framework_pushkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "de82e1f6e01444582ad2ca6a76aeee1524c23695f0e4f56596f9db3e9d635623"
+    end
   end
   resource "pyobjc-framework-Quartz" do
     if OS.mac? && Hardware::CPU.arm?
@@ -630,11 +1378,11 @@ class Ggai < Formula
       url "https://files.pythonhosted.org/packages/4a/00/96249c5c7e5aaca5f688ca18b8d8ad05cd7886ebd639b3c71a6a4cadbe75/pyobjc_framework_quartz-12.1-cp314-cp314-macosx_10_15_universal2.whl"
       sha256 "42d306b07f05ae7d155984503e0fb1b701fecd31dcc5c79fe8ab9790ff7e0de0"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/94/18/cc59f3d4355c9456fc945eae7fe8797003c4da99212dd531ad1b0de8a0c6/pyobjc_framework_quartz-12.1.tar.gz"
-      sha256 "27f782f3513ac88ec9b6c82d9767eef95a5cf4175ce88a1e5a65875fee799608"
+      url "https://files.pythonhosted.org/packages/4a/00/96249c5c7e5aaca5f688ca18b8d8ad05cd7886ebd639b3c71a6a4cadbe75/pyobjc_framework_quartz-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "42d306b07f05ae7d155984503e0fb1b701fecd31dcc5c79fe8ab9790ff7e0de0"
     else
-      url "https://files.pythonhosted.org/packages/94/18/cc59f3d4355c9456fc945eae7fe8797003c4da99212dd531ad1b0de8a0c6/pyobjc_framework_quartz-12.1.tar.gz"
-      sha256 "27f782f3513ac88ec9b6c82d9767eef95a5cf4175ce88a1e5a65875fee799608"
+      url "https://files.pythonhosted.org/packages/4a/00/96249c5c7e5aaca5f688ca18b8d8ad05cd7886ebd639b3c71a6a4cadbe75/pyobjc_framework_quartz-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "42d306b07f05ae7d155984503e0fb1b701fecd31dcc5c79fe8ab9790ff7e0de0"
     end
   end
   resource "pyobjc-framework-QuickLookThumbnailing" do
@@ -642,52 +1390,151 @@ class Ggai < Formula
     sha256 "5efe50b0318188b3a4147681788b47fce64709f6fe0e1b5d020e408ef40ab08e"
   end
   resource "pyobjc-framework-ReplayKit" do
-    url "https://files.pythonhosted.org/packages/35/f8/b92af879734d91c1726227e7a03b9e68ab8d9d2bb1716d1a5c29254087f2/pyobjc_framework_replaykit-12.1.tar.gz"
-    sha256 "95801fd35c329d7302b2541f2754e6574bf36547ab869fbbf41e408dfa07268a"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/f7/e7/e3efd189fbaf349962a98db3d63b3ba30fd5f27e249cc933993478421ebc/pyobjc_framework_replaykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d6d8046825149f7f2627987a1b48ac7e4c9747a15e263054de0dfde1926a0f42"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/f7/e7/e3efd189fbaf349962a98db3d63b3ba30fd5f27e249cc933993478421ebc/pyobjc_framework_replaykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d6d8046825149f7f2627987a1b48ac7e4c9747a15e263054de0dfde1926a0f42"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/f7/e7/e3efd189fbaf349962a98db3d63b3ba30fd5f27e249cc933993478421ebc/pyobjc_framework_replaykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d6d8046825149f7f2627987a1b48ac7e4c9747a15e263054de0dfde1926a0f42"
+    else
+      url "https://files.pythonhosted.org/packages/f7/e7/e3efd189fbaf349962a98db3d63b3ba30fd5f27e249cc933993478421ebc/pyobjc_framework_replaykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d6d8046825149f7f2627987a1b48ac7e4c9747a15e263054de0dfde1926a0f42"
+    end
   end
   resource "pyobjc-framework-SafariServices" do
-    url "https://files.pythonhosted.org/packages/3e/4b/8f896bafbdbfa180a5ba1e21a6f5dc63150c09cba69d85f68708e02866ae/pyobjc_framework_safariservices-12.1.tar.gz"
-    sha256 "6a56f71c1e692bca1f48fe7c40e4c5a41e148b4e3c6cfb185fd80a4d4a951897"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/99/c3/766dd0e14d61ed05d416bccc4435a977169d5256828ab31ba5939b2f953d/pyobjc_framework_safariservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "090afa066820de497d2479a1c5bd4c8ed381eb36a615e4644e12e347ec9d9a3e"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/99/c3/766dd0e14d61ed05d416bccc4435a977169d5256828ab31ba5939b2f953d/pyobjc_framework_safariservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "090afa066820de497d2479a1c5bd4c8ed381eb36a615e4644e12e347ec9d9a3e"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/99/c3/766dd0e14d61ed05d416bccc4435a977169d5256828ab31ba5939b2f953d/pyobjc_framework_safariservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "090afa066820de497d2479a1c5bd4c8ed381eb36a615e4644e12e347ec9d9a3e"
+    else
+      url "https://files.pythonhosted.org/packages/99/c3/766dd0e14d61ed05d416bccc4435a977169d5256828ab31ba5939b2f953d/pyobjc_framework_safariservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "090afa066820de497d2479a1c5bd4c8ed381eb36a615e4644e12e347ec9d9a3e"
+    end
   end
   resource "pyobjc-framework-SafetyKit" do
-    url "https://files.pythonhosted.org/packages/f4/bf/ad6bf60ceb61614c9c9f5758190971e9b90c45b1c7a244e45db64138b6c2/pyobjc_framework_safetykit-12.1.tar.gz"
-    sha256 "0cd4850659fb9b5632fd8ad21f2de6863e8303ff0d51c5cc9c0034aac5db08d8"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/d9/ec/759117239a3edbd8994069f1f595e4fbc72fa60fa7ebb4aeb4fd47265e7c/pyobjc_framework_safetykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "1b0e8761fd53e6a83a48dbd93961434b05fe17658478b9001c65627da46ba02b"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/d9/ec/759117239a3edbd8994069f1f595e4fbc72fa60fa7ebb4aeb4fd47265e7c/pyobjc_framework_safetykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "1b0e8761fd53e6a83a48dbd93961434b05fe17658478b9001c65627da46ba02b"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/d9/ec/759117239a3edbd8994069f1f595e4fbc72fa60fa7ebb4aeb4fd47265e7c/pyobjc_framework_safetykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "1b0e8761fd53e6a83a48dbd93961434b05fe17658478b9001c65627da46ba02b"
+    else
+      url "https://files.pythonhosted.org/packages/d9/ec/759117239a3edbd8994069f1f595e4fbc72fa60fa7ebb4aeb4fd47265e7c/pyobjc_framework_safetykit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "1b0e8761fd53e6a83a48dbd93961434b05fe17658478b9001c65627da46ba02b"
+    end
   end
   resource "pyobjc-framework-SceneKit" do
-    url "https://files.pythonhosted.org/packages/94/8c/1f4005cf0cb68f84dd98b93bbc0974ee7851bb33d976791c85e042dc2278/pyobjc_framework_scenekit-12.1.tar.gz"
-    sha256 "1bd5b866f31fd829f26feac52e807ed942254fd248115c7c742cfad41d949426"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/5a/0c/eb436dda11b6f950bff7f7d9af108970058f2fa9822a946a6982d74a64f8/pyobjc_framework_scenekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d4c8512c9186f12602ac19558072cdeec3a607d628c269317d5965341a14372c"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/5a/0c/eb436dda11b6f950bff7f7d9af108970058f2fa9822a946a6982d74a64f8/pyobjc_framework_scenekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d4c8512c9186f12602ac19558072cdeec3a607d628c269317d5965341a14372c"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/5a/0c/eb436dda11b6f950bff7f7d9af108970058f2fa9822a946a6982d74a64f8/pyobjc_framework_scenekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d4c8512c9186f12602ac19558072cdeec3a607d628c269317d5965341a14372c"
+    else
+      url "https://files.pythonhosted.org/packages/5a/0c/eb436dda11b6f950bff7f7d9af108970058f2fa9822a946a6982d74a64f8/pyobjc_framework_scenekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "d4c8512c9186f12602ac19558072cdeec3a607d628c269317d5965341a14372c"
+    end
   end
   resource "pyobjc-framework-ScreenCaptureKit" do
-    url "https://files.pythonhosted.org/packages/2d/7f/73458db1361d2cb408f43821a1e3819318a0f81885f833d78d93bdc698e0/pyobjc_framework_screencapturekit-12.1.tar.gz"
-    sha256 "50992c6128b35ab45d9e336f0993ddd112f58b8c8c8f0892a9cb42d61bd1f4c9"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/be/b4/881e2ff0e11e7d705716f01f1bfd10232f7d21bda38d630c3fbe409b13a9/pyobjc_framework_screencapturekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "be210ea5df36c1392425c026c59c5e0797b0d6e07ee9551d032e40bed95d2833"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/be/b4/881e2ff0e11e7d705716f01f1bfd10232f7d21bda38d630c3fbe409b13a9/pyobjc_framework_screencapturekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "be210ea5df36c1392425c026c59c5e0797b0d6e07ee9551d032e40bed95d2833"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/be/b4/881e2ff0e11e7d705716f01f1bfd10232f7d21bda38d630c3fbe409b13a9/pyobjc_framework_screencapturekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "be210ea5df36c1392425c026c59c5e0797b0d6e07ee9551d032e40bed95d2833"
+    else
+      url "https://files.pythonhosted.org/packages/be/b4/881e2ff0e11e7d705716f01f1bfd10232f7d21bda38d630c3fbe409b13a9/pyobjc_framework_screencapturekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "be210ea5df36c1392425c026c59c5e0797b0d6e07ee9551d032e40bed95d2833"
+    end
   end
   resource "pyobjc-framework-ScreenSaver" do
-    url "https://files.pythonhosted.org/packages/7d/99/7cfbce880cea61253a44eed594dce66c2b2fbf29e37eaedcd40cffa949e9/pyobjc_framework_screensaver-12.1.tar.gz"
-    sha256 "c4ca111317c5a3883b7eace0a9e7dd72bc6ffaa2ca954bdec918c3ab7c65c96f"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/c6/97/2fab7dfb449ccc49fb617ade97bfa35689572c71fff5885ea25705479a30/pyobjc_framework_screensaver-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "4744a01043a9c6b464f6a2230948812bf88bdd68f084b6f05b475b93093c3ea9"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/c6/97/2fab7dfb449ccc49fb617ade97bfa35689572c71fff5885ea25705479a30/pyobjc_framework_screensaver-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "4744a01043a9c6b464f6a2230948812bf88bdd68f084b6f05b475b93093c3ea9"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/c6/97/2fab7dfb449ccc49fb617ade97bfa35689572c71fff5885ea25705479a30/pyobjc_framework_screensaver-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "4744a01043a9c6b464f6a2230948812bf88bdd68f084b6f05b475b93093c3ea9"
+    else
+      url "https://files.pythonhosted.org/packages/c6/97/2fab7dfb449ccc49fb617ade97bfa35689572c71fff5885ea25705479a30/pyobjc_framework_screensaver-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "4744a01043a9c6b464f6a2230948812bf88bdd68f084b6f05b475b93093c3ea9"
+    end
   end
   resource "pyobjc-framework-ScreenTime" do
     url "https://files.pythonhosted.org/packages/27/06/904174de6170e11b53673cc5844e5f13394eeeed486e0bcdf5288c1b0853/pyobjc_framework_screentime-12.1-py2.py3-none-any.whl"
     sha256 "d34a068ec8ba2704987fcd05c37c9a9392de61d92933e6e71c8e4eaa4dfce029"
   end
   resource "pyobjc-framework-ScriptingBridge" do
-    url "https://files.pythonhosted.org/packages/0c/cb/adc0a09e8c4755c2281bd12803a87f36e0832a8fc853a2d663433dbb72ce/pyobjc_framework_scriptingbridge-12.1.tar.gz"
-    sha256 "0e90f866a7e6a8aeaf723d04c826657dd528c8c1b91e7a605f8bb947c74ad082"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/b1/bc/5f1d372bb1efa9cf1e3218e1831136f5548b9f5b12a4a6676bf8b37cca63/pyobjc_framework_scriptingbridge-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "48f4bc33b2cab6634f58f37549096bda9ec7d3ec664b4b40e7d3248d9f481f69"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/b1/bc/5f1d372bb1efa9cf1e3218e1831136f5548b9f5b12a4a6676bf8b37cca63/pyobjc_framework_scriptingbridge-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "48f4bc33b2cab6634f58f37549096bda9ec7d3ec664b4b40e7d3248d9f481f69"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/b1/bc/5f1d372bb1efa9cf1e3218e1831136f5548b9f5b12a4a6676bf8b37cca63/pyobjc_framework_scriptingbridge-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "48f4bc33b2cab6634f58f37549096bda9ec7d3ec664b4b40e7d3248d9f481f69"
+    else
+      url "https://files.pythonhosted.org/packages/b1/bc/5f1d372bb1efa9cf1e3218e1831136f5548b9f5b12a4a6676bf8b37cca63/pyobjc_framework_scriptingbridge-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "48f4bc33b2cab6634f58f37549096bda9ec7d3ec664b4b40e7d3248d9f481f69"
+    end
   end
   resource "pyobjc-framework-SearchKit" do
     url "https://files.pythonhosted.org/packages/72/46/4f9cd3011f47b43b21b2924ab3770303c3f0a4d16f05550d38c5fcb42e78/pyobjc_framework_searchkit-12.1-py2.py3-none-any.whl"
     sha256 "844ce62b7296b19da8db7dedd539d07f7b3fb3bb8b029c261f7bcf0e01a97758"
   end
   resource "pyobjc-framework-Security" do
-    url "https://files.pythonhosted.org/packages/80/aa/796e09a3e3d5cee32ebeebb7dcf421b48ea86e28c387924608a05e3f668b/pyobjc_framework_security-12.1.tar.gz"
-    sha256 "7fecb982bd2f7c4354513faf90ba4c53c190b7e88167984c2d0da99741de6da9"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/66/4d/63c15f9449c191e7448a05ff8af4a82c39a51bb627bc96dc9697586c0f79/pyobjc_framework_security-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "6319a34508fd87ab6ca3cda6f54e707196197a65b792b292705af967e225438a"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/66/4d/63c15f9449c191e7448a05ff8af4a82c39a51bb627bc96dc9697586c0f79/pyobjc_framework_security-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "6319a34508fd87ab6ca3cda6f54e707196197a65b792b292705af967e225438a"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/66/4d/63c15f9449c191e7448a05ff8af4a82c39a51bb627bc96dc9697586c0f79/pyobjc_framework_security-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "6319a34508fd87ab6ca3cda6f54e707196197a65b792b292705af967e225438a"
+    else
+      url "https://files.pythonhosted.org/packages/66/4d/63c15f9449c191e7448a05ff8af4a82c39a51bb627bc96dc9697586c0f79/pyobjc_framework_security-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "6319a34508fd87ab6ca3cda6f54e707196197a65b792b292705af967e225438a"
+    end
   end
   resource "pyobjc-framework-SecurityFoundation" do
     url "https://files.pythonhosted.org/packages/93/1e/349fb71a413b37b1b41e712c7ca180df82144478f8a9a59497d66d0f2ea2/pyobjc_framework_securityfoundation-12.1-py2.py3-none-any.whl"
     sha256 "579cf23e63434226f78ffe0afb8426e971009588e4ad812c478d47dfd558201c"
   end
   resource "pyobjc-framework-SecurityInterface" do
-    url "https://files.pythonhosted.org/packages/f9/64/bf5b5d82655112a2314422ee649f1e1e73d4381afa87e1651ce7e8444694/pyobjc_framework_securityinterface-12.1.tar.gz"
-    sha256 "deef11ad03be8d9ff77db6e7ac40f6b641ee2d72eaafcf91040537942472e88b"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/8e/df/c6b30b5eb671755d6d59baa34c406d38524eef309886b6a7d9b7a05eb00a/pyobjc_framework_securityinterface-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "153632d23b0235faa56d26d5641e585542dac6b13b0d7b152cca27655405dec4"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/8e/df/c6b30b5eb671755d6d59baa34c406d38524eef309886b6a7d9b7a05eb00a/pyobjc_framework_securityinterface-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "153632d23b0235faa56d26d5641e585542dac6b13b0d7b152cca27655405dec4"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/8e/df/c6b30b5eb671755d6d59baa34c406d38524eef309886b6a7d9b7a05eb00a/pyobjc_framework_securityinterface-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "153632d23b0235faa56d26d5641e585542dac6b13b0d7b152cca27655405dec4"
+    else
+      url "https://files.pythonhosted.org/packages/8e/df/c6b30b5eb671755d6d59baa34c406d38524eef309886b6a7d9b7a05eb00a/pyobjc_framework_securityinterface-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "153632d23b0235faa56d26d5641e585542dac6b13b0d7b152cca27655405dec4"
+    end
   end
   resource "pyobjc-framework-SecurityUI" do
     url "https://files.pythonhosted.org/packages/36/7f/eff9ffdd34511cc95a60e5bd62f1cfbcbcec1a5012ef1168161506628c87/pyobjc_framework_securityui-12.1-py2.py3-none-any.whl"
@@ -702,16 +1549,49 @@ class Ggai < Formula
     sha256 "9a2941f16eeb71e55e1cd94f50197f91520778c7f48ad896761f5e78725cc08f"
   end
   resource "pyobjc-framework-SharedWithYou" do
-    url "https://files.pythonhosted.org/packages/0f/8b/8ab209a143c11575a857e2111acc5427fb4986b84708b21324cbcbf5591b/pyobjc_framework_sharedwithyou-12.1.tar.gz"
-    sha256 "167d84794a48f408ee51f885210c616fda1ec4bff3dd8617a4b5547f61b05caf"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/1e/b0/eca22cf9ba67c8ba04a98f8a26af0a5ca16b40e05a8100b8209a153046b1/pyobjc_framework_sharedwithyou-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5a38bc6e3e0c9a36fe86e331eb16b680bab0024c897d252af1e611f0cd1087ef"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/1e/b0/eca22cf9ba67c8ba04a98f8a26af0a5ca16b40e05a8100b8209a153046b1/pyobjc_framework_sharedwithyou-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5a38bc6e3e0c9a36fe86e331eb16b680bab0024c897d252af1e611f0cd1087ef"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/1e/b0/eca22cf9ba67c8ba04a98f8a26af0a5ca16b40e05a8100b8209a153046b1/pyobjc_framework_sharedwithyou-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5a38bc6e3e0c9a36fe86e331eb16b680bab0024c897d252af1e611f0cd1087ef"
+    else
+      url "https://files.pythonhosted.org/packages/1e/b0/eca22cf9ba67c8ba04a98f8a26af0a5ca16b40e05a8100b8209a153046b1/pyobjc_framework_sharedwithyou-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5a38bc6e3e0c9a36fe86e331eb16b680bab0024c897d252af1e611f0cd1087ef"
+    end
   end
   resource "pyobjc-framework-SharedWithYouCore" do
-    url "https://files.pythonhosted.org/packages/55/ef/84059c5774fd5435551ab7ab40b51271cfb9997b0d21f491c6b429fe57a8/pyobjc_framework_sharedwithyoucore-12.1.tar.gz"
-    sha256 "0813149eeb755d718b146ec9365eb4ca3262b6af9ff9ba7db2f7b6f4fd104518"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/94/a1/24ffb35098a239a8804e469fcd7430eaee5e47bf0756c59cd77a66c3edff/pyobjc_framework_sharedwithyoucore-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2ceb4c3ad7bc1c93b4cbbbab6404d3e32714c12c36fab2932c170946af83c548"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/94/a1/24ffb35098a239a8804e469fcd7430eaee5e47bf0756c59cd77a66c3edff/pyobjc_framework_sharedwithyoucore-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2ceb4c3ad7bc1c93b4cbbbab6404d3e32714c12c36fab2932c170946af83c548"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/94/a1/24ffb35098a239a8804e469fcd7430eaee5e47bf0756c59cd77a66c3edff/pyobjc_framework_sharedwithyoucore-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2ceb4c3ad7bc1c93b4cbbbab6404d3e32714c12c36fab2932c170946af83c548"
+    else
+      url "https://files.pythonhosted.org/packages/94/a1/24ffb35098a239a8804e469fcd7430eaee5e47bf0756c59cd77a66c3edff/pyobjc_framework_sharedwithyoucore-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2ceb4c3ad7bc1c93b4cbbbab6404d3e32714c12c36fab2932c170946af83c548"
+    end
   end
   resource "pyobjc-framework-ShazamKit" do
-    url "https://files.pythonhosted.org/packages/ed/2c/8d82c5066cc376de68ad8c1454b7c722c7a62215e5c2f9dac5b33a6c3d42/pyobjc_framework_shazamkit-12.1.tar.gz"
-    sha256 "71db2addd016874639a224ed32b2000b858802b0370c595a283cce27f76883fe"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/8d/79/09d4b2c121d3d3a662e19d67328904fd62a3303b7a169698d654a3493140/pyobjc_framework_shazamkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "951b989997a7c19d0c0d91a477d3d221ddb890085f3538ae3c520177c2322caa"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/8d/79/09d4b2c121d3d3a662e19d67328904fd62a3303b7a169698d654a3493140/pyobjc_framework_shazamkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "951b989997a7c19d0c0d91a477d3d221ddb890085f3538ae3c520177c2322caa"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/8d/79/09d4b2c121d3d3a662e19d67328904fd62a3303b7a169698d654a3493140/pyobjc_framework_shazamkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "951b989997a7c19d0c0d91a477d3d221ddb890085f3538ae3c520177c2322caa"
+    else
+      url "https://files.pythonhosted.org/packages/8d/79/09d4b2c121d3d3a662e19d67328904fd62a3303b7a169698d654a3493140/pyobjc_framework_shazamkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "951b989997a7c19d0c0d91a477d3d221ddb890085f3538ae3c520177c2322caa"
+    end
   end
   resource "pyobjc-framework-Social" do
     url "https://files.pythonhosted.org/packages/f6/fb/090867e332d49a1e492e4b8972ac6034d1c7d17cf39f546077f35be58c46/pyobjc_framework_social-12.1-py2.py3-none-any.whl"
@@ -722,32 +1602,98 @@ class Ggai < Formula
     sha256 "8b2029ab48c1a9772f247f0aea995e8c3ff4706909002a9c1551722769343a52"
   end
   resource "pyobjc-framework-Speech" do
-    url "https://files.pythonhosted.org/packages/8d/3d/194cf19fe7a56c2be5dfc28f42b3b597a62ebb1e1f52a7dd9c55b917ac6c/pyobjc_framework_speech-12.1.tar.gz"
-    sha256 "2a2a546ba6c52d5dd35ddcfee3fd9226a428043d1719597e8701851a6566afdd"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/00/df/2af011d05b4ab008b1e9e4b8c71b730926ef8e9599aeb8220a898603580b/pyobjc_framework_speech-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a958b3ace1425cf9319f5d8ace920c2f3dac95a5a6d1bd8742d5b64d24671e30"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/00/df/2af011d05b4ab008b1e9e4b8c71b730926ef8e9599aeb8220a898603580b/pyobjc_framework_speech-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a958b3ace1425cf9319f5d8ace920c2f3dac95a5a6d1bd8742d5b64d24671e30"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/00/df/2af011d05b4ab008b1e9e4b8c71b730926ef8e9599aeb8220a898603580b/pyobjc_framework_speech-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a958b3ace1425cf9319f5d8ace920c2f3dac95a5a6d1bd8742d5b64d24671e30"
+    else
+      url "https://files.pythonhosted.org/packages/00/df/2af011d05b4ab008b1e9e4b8c71b730926ef8e9599aeb8220a898603580b/pyobjc_framework_speech-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "a958b3ace1425cf9319f5d8ace920c2f3dac95a5a6d1bd8742d5b64d24671e30"
+    end
   end
   resource "pyobjc-framework-SpriteKit" do
-    url "https://files.pythonhosted.org/packages/b6/78/d683ebe0afb49f46d2d21d38c870646e7cb3c2e83251f264e79d357b1b74/pyobjc_framework_spritekit-12.1.tar.gz"
-    sha256 "a851f4ef5aa65cc9e08008644a528e83cb31021a1c0f17ebfce4de343764d403"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/13/df/453d5885c79a1341e947c7654aa2c4c0cd6bed5cef4d1c16b26c58051d91/pyobjc_framework_spritekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5c9cb8f23436fc7bd0a8149f1271b307131a4c5669dfbb8302beef56cdca057f"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/13/df/453d5885c79a1341e947c7654aa2c4c0cd6bed5cef4d1c16b26c58051d91/pyobjc_framework_spritekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5c9cb8f23436fc7bd0a8149f1271b307131a4c5669dfbb8302beef56cdca057f"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/13/df/453d5885c79a1341e947c7654aa2c4c0cd6bed5cef4d1c16b26c58051d91/pyobjc_framework_spritekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5c9cb8f23436fc7bd0a8149f1271b307131a4c5669dfbb8302beef56cdca057f"
+    else
+      url "https://files.pythonhosted.org/packages/13/df/453d5885c79a1341e947c7654aa2c4c0cd6bed5cef4d1c16b26c58051d91/pyobjc_framework_spritekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5c9cb8f23436fc7bd0a8149f1271b307131a4c5669dfbb8302beef56cdca057f"
+    end
   end
   resource "pyobjc-framework-StoreKit" do
-    url "https://files.pythonhosted.org/packages/00/87/8a66a145feb026819775d44975c71c1c64df4e5e9ea20338f01456a61208/pyobjc_framework_storekit-12.1.tar.gz"
-    sha256 "818452e67e937a10b5c8451758274faa44ad5d4329df0fa85735115fb0608da9"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/6d/9b/3d510cc03d5aeef298356578aa8077e4ddebea0a0cd2f50a13bf4f98f9e8/pyobjc_framework_storekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5e9354f2373b243066358bf32988d07d8a2da6718563ee6946a40c981a37c7c1"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/6d/9b/3d510cc03d5aeef298356578aa8077e4ddebea0a0cd2f50a13bf4f98f9e8/pyobjc_framework_storekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5e9354f2373b243066358bf32988d07d8a2da6718563ee6946a40c981a37c7c1"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/6d/9b/3d510cc03d5aeef298356578aa8077e4ddebea0a0cd2f50a13bf4f98f9e8/pyobjc_framework_storekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5e9354f2373b243066358bf32988d07d8a2da6718563ee6946a40c981a37c7c1"
+    else
+      url "https://files.pythonhosted.org/packages/6d/9b/3d510cc03d5aeef298356578aa8077e4ddebea0a0cd2f50a13bf4f98f9e8/pyobjc_framework_storekit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "5e9354f2373b243066358bf32988d07d8a2da6718563ee6946a40c981a37c7c1"
+    end
   end
   resource "pyobjc-framework-Symbols" do
     url "https://files.pythonhosted.org/packages/f0/ea/6e9af9c750d68109ac54fbffb5463e33a7b54ffe8b9901a5b6b603b7884b/pyobjc_framework_symbols-12.1-py2.py3-none-any.whl"
     sha256 "c72eecbc25f6bfcd39c733067276270057c5aca684be20fdc56def645f2b6446"
   end
   resource "pyobjc-framework-SyncServices" do
-    url "https://files.pythonhosted.org/packages/21/91/6d03a988831ddb0fb001b13573560e9a5bcccde575b99350f98fe56a2dd4/pyobjc_framework_syncservices-12.1.tar.gz"
-    sha256 "6a213e93d9ce15128810987e4c5de8c73cfab1564ac8d273e6b437a49965e976"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/88/fa/f27f1a706a72c7a87a2aa37e49ae5f5e7445e02323218638e6ff5897c5c9/pyobjc_framework_syncservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2af99db7c23f0368300e8bd428ecfb75b14449d3467e883ff544dbc5ae9e1351"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/88/fa/f27f1a706a72c7a87a2aa37e49ae5f5e7445e02323218638e6ff5897c5c9/pyobjc_framework_syncservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2af99db7c23f0368300e8bd428ecfb75b14449d3467e883ff544dbc5ae9e1351"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/88/fa/f27f1a706a72c7a87a2aa37e49ae5f5e7445e02323218638e6ff5897c5c9/pyobjc_framework_syncservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2af99db7c23f0368300e8bd428ecfb75b14449d3467e883ff544dbc5ae9e1351"
+    else
+      url "https://files.pythonhosted.org/packages/88/fa/f27f1a706a72c7a87a2aa37e49ae5f5e7445e02323218638e6ff5897c5c9/pyobjc_framework_syncservices-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "2af99db7c23f0368300e8bd428ecfb75b14449d3467e883ff544dbc5ae9e1351"
+    end
   end
   resource "pyobjc-framework-SystemConfiguration" do
-    url "https://files.pythonhosted.org/packages/90/7d/50848df8e1c6b5e13967dee9fb91d3391fe1f2399d2d0797d2fc5edb32ba/pyobjc_framework_systemconfiguration-12.1.tar.gz"
-    sha256 "90fe04aa059876a21626931c71eaff742a27c79798a46347fd053d7008ec496e"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/05/95/9fbb2ab26f03142b84ff577dcd2dcd3ca8b0c13c2f6193ceecd20544b7a5/pyobjc_framework_systemconfiguration-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e9c597c13b9815dce7e1fccdfae7c66b9df98e8c688b7afdf4af39de26d917b3"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/05/95/9fbb2ab26f03142b84ff577dcd2dcd3ca8b0c13c2f6193ceecd20544b7a5/pyobjc_framework_systemconfiguration-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e9c597c13b9815dce7e1fccdfae7c66b9df98e8c688b7afdf4af39de26d917b3"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/05/95/9fbb2ab26f03142b84ff577dcd2dcd3ca8b0c13c2f6193ceecd20544b7a5/pyobjc_framework_systemconfiguration-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e9c597c13b9815dce7e1fccdfae7c66b9df98e8c688b7afdf4af39de26d917b3"
+    else
+      url "https://files.pythonhosted.org/packages/05/95/9fbb2ab26f03142b84ff577dcd2dcd3ca8b0c13c2f6193ceecd20544b7a5/pyobjc_framework_systemconfiguration-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e9c597c13b9815dce7e1fccdfae7c66b9df98e8c688b7afdf4af39de26d917b3"
+    end
   end
   resource "pyobjc-framework-SystemExtensions" do
-    url "https://files.pythonhosted.org/packages/12/01/8a706cd3f7dfcb9a5017831f2e6f9e5538298e90052db3bb8163230cbc4f/pyobjc_framework_systemextensions-12.1.tar.gz"
-    sha256 "243e043e2daee4b5c46cd90af5fff46b34596aac25011bab8ba8a37099685eeb"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/af/c8/4e9669b6b43af7f50df43cb76af84805ee3a9b32881d69b4e7685edd3017/pyobjc_framework_systemextensions-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "51f0a4488fa245695c7e8c1c83909c86bf27b34519807437c753602ff6d7e9af"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/af/c8/4e9669b6b43af7f50df43cb76af84805ee3a9b32881d69b4e7685edd3017/pyobjc_framework_systemextensions-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "51f0a4488fa245695c7e8c1c83909c86bf27b34519807437c753602ff6d7e9af"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/af/c8/4e9669b6b43af7f50df43cb76af84805ee3a9b32881d69b4e7685edd3017/pyobjc_framework_systemextensions-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "51f0a4488fa245695c7e8c1c83909c86bf27b34519807437c753602ff6d7e9af"
+    else
+      url "https://files.pythonhosted.org/packages/af/c8/4e9669b6b43af7f50df43cb76af84805ee3a9b32881d69b4e7685edd3017/pyobjc_framework_systemextensions-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "51f0a4488fa245695c7e8c1c83909c86bf27b34519807437c753602ff6d7e9af"
+    end
   end
   resource "pyobjc-framework-ThreadNetwork" do
     url "https://files.pythonhosted.org/packages/4f/b8/94b37dd353302c051a76f1a698cf55b5ad50ca061db7f0f332aa9e195766/pyobjc_framework_threadnetwork-12.1-py2.py3-none-any.whl"
@@ -758,8 +1704,19 @@ class Ggai < Formula
     sha256 "ec5411e39152304d2a7e0e426c3058fa37a00860af64e164794e0bcffee813f2"
   end
   resource "pyobjc-framework-UserNotifications" do
-    url "https://files.pythonhosted.org/packages/90/cd/e0253072f221fa89a42fe53f1a2650cc9bf415eb94ae455235bd010ee12e/pyobjc_framework_usernotifications-12.1.tar.gz"
-    sha256 "019ccdf2d400f9a428769df7dba4ea97c02453372bc5f8b75ce7ae54dfe130f9"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/cd/1a/caa96066b36c2c20ba6f033857fc24ff8e6b5811cf1bc112818928d27216/pyobjc_framework_usernotifications-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "cc69e2aed9b55296a447f2fb69cc52a1a026c50e46253dbf482f5807bce3ae7c"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/cd/1a/caa96066b36c2c20ba6f033857fc24ff8e6b5811cf1bc112818928d27216/pyobjc_framework_usernotifications-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "cc69e2aed9b55296a447f2fb69cc52a1a026c50e46253dbf482f5807bce3ae7c"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/cd/1a/caa96066b36c2c20ba6f033857fc24ff8e6b5811cf1bc112818928d27216/pyobjc_framework_usernotifications-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "cc69e2aed9b55296a447f2fb69cc52a1a026c50e46253dbf482f5807bce3ae7c"
+    else
+      url "https://files.pythonhosted.org/packages/cd/1a/caa96066b36c2c20ba6f033857fc24ff8e6b5811cf1bc112818928d27216/pyobjc_framework_usernotifications-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "cc69e2aed9b55296a447f2fb69cc52a1a026c50e46253dbf482f5807bce3ae7c"
+    end
   end
   resource "pyobjc-framework-UserNotificationsUI" do
     url "https://files.pythonhosted.org/packages/23/c8/52ac8a879079c1fbf25de8335ff506f7db87ff61e64838b20426f817f5d5/pyobjc_framework_usernotificationsui-12.1-py2.py3-none-any.whl"
@@ -770,12 +1727,34 @@ class Ggai < Formula
     sha256 "381a5e8a3016676e52b88e38b706559fa09391d33474d8a8a52f20a883104a7b"
   end
   resource "pyobjc-framework-VideoToolbox" do
-    url "https://files.pythonhosted.org/packages/b3/5f/6995ee40dc0d1a3460ee183f696e5254c0ad14a25b5bc5fd9bd7266c077b/pyobjc_framework_videotoolbox-12.1.tar.gz"
-    sha256 "7adc8670f3b94b086aed6e86c3199b388892edab4f02933c2e2d9b1657561bef"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/00/a9/581edc658e3ae242a55d463092a237cf9f744ba5a91d91c769af7d3f2ac6/pyobjc_framework_videotoolbox-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e67a3890916346b7c15c9270d247e191c3899e4698fee79d460a476145715401"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/00/a9/581edc658e3ae242a55d463092a237cf9f744ba5a91d91c769af7d3f2ac6/pyobjc_framework_videotoolbox-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e67a3890916346b7c15c9270d247e191c3899e4698fee79d460a476145715401"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/00/a9/581edc658e3ae242a55d463092a237cf9f744ba5a91d91c769af7d3f2ac6/pyobjc_framework_videotoolbox-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e67a3890916346b7c15c9270d247e191c3899e4698fee79d460a476145715401"
+    else
+      url "https://files.pythonhosted.org/packages/00/a9/581edc658e3ae242a55d463092a237cf9f744ba5a91d91c769af7d3f2ac6/pyobjc_framework_videotoolbox-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e67a3890916346b7c15c9270d247e191c3899e4698fee79d460a476145715401"
+    end
   end
   resource "pyobjc-framework-Virtualization" do
-    url "https://files.pythonhosted.org/packages/3b/6a/9d110b5521d9b898fad10928818c9f55d66a4af9ac097426c65a9878b095/pyobjc_framework_virtualization-12.1.tar.gz"
-    sha256 "e96afd8e801e92c6863da0921e40a3b68f724804f888bce43791330658abdb0f"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/72/4f/ed32bb177edca9feedd518aa2f98c75e86365497f086af21d807785d264c/pyobjc_framework_virtualization-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e40bff972adfefbe8a02e508571b32c58e90e4d974d65470eab75c53fe47006d"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/72/4f/ed32bb177edca9feedd518aa2f98c75e86365497f086af21d807785d264c/pyobjc_framework_virtualization-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e40bff972adfefbe8a02e508571b32c58e90e4d974d65470eab75c53fe47006d"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/72/4f/ed32bb177edca9feedd518aa2f98c75e86365497f086af21d807785d264c/pyobjc_framework_virtualization-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e40bff972adfefbe8a02e508571b32c58e90e4d974d65470eab75c53fe47006d"
+    else
+      url "https://files.pythonhosted.org/packages/72/4f/ed32bb177edca9feedd518aa2f98c75e86365497f086af21d807785d264c/pyobjc_framework_virtualization-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "e40bff972adfefbe8a02e508571b32c58e90e4d974d65470eab75c53fe47006d"
+    end
   end
   resource "pyobjc-framework-Vision" do
     if OS.mac? && Hardware::CPU.arm?
@@ -785,16 +1764,27 @@ class Ggai < Formula
       url "https://files.pythonhosted.org/packages/a7/a4/ee1ef14d6e1df6617e64dbaaa0ecf8ecb9e0af1425613fa633f6a94049c1/pyobjc_framework_vision-12.1-cp314-cp314-macosx_10_15_universal2.whl"
       sha256 "631add775ed1dafb221a6116137cdcd78432addc16200ca434571c2a039c0e03"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/c2/5a/08bb3e278f870443d226c141af14205ff41c0274da1e053b72b11dfc9fb2/pyobjc_framework_vision-12.1.tar.gz"
-      sha256 "a30959100e85dcede3a786c544e621ad6eb65ff6abf85721f805822b8c5fe9b0"
+      url "https://files.pythonhosted.org/packages/a7/a4/ee1ef14d6e1df6617e64dbaaa0ecf8ecb9e0af1425613fa633f6a94049c1/pyobjc_framework_vision-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "631add775ed1dafb221a6116137cdcd78432addc16200ca434571c2a039c0e03"
     else
-      url "https://files.pythonhosted.org/packages/c2/5a/08bb3e278f870443d226c141af14205ff41c0274da1e053b72b11dfc9fb2/pyobjc_framework_vision-12.1.tar.gz"
-      sha256 "a30959100e85dcede3a786c544e621ad6eb65ff6abf85721f805822b8c5fe9b0"
+      url "https://files.pythonhosted.org/packages/a7/a4/ee1ef14d6e1df6617e64dbaaa0ecf8ecb9e0af1425613fa633f6a94049c1/pyobjc_framework_vision-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "631add775ed1dafb221a6116137cdcd78432addc16200ca434571c2a039c0e03"
     end
   end
   resource "pyobjc-framework-WebKit" do
-    url "https://files.pythonhosted.org/packages/14/10/110a50e8e6670765d25190ca7f7bfeecc47ec4a8c018cb928f4f82c56e04/pyobjc_framework_webkit-12.1.tar.gz"
-    sha256 "97a54dd05ab5266bd4f614e41add517ae62cdd5a30328eabb06792474b37d82a"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/3b/ac/924878f239c167ffe3bfc643aee4d6dd5b357e25f6b28db227e40e9e6df3/pyobjc_framework_webkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "99d0d28542a266a95ee2585f51765c0331794bca461aaf4d1f5091489d475179"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/3b/ac/924878f239c167ffe3bfc643aee4d6dd5b357e25f6b28db227e40e9e6df3/pyobjc_framework_webkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "99d0d28542a266a95ee2585f51765c0331794bca461aaf4d1f5091489d475179"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/3b/ac/924878f239c167ffe3bfc643aee4d6dd5b357e25f6b28db227e40e9e6df3/pyobjc_framework_webkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "99d0d28542a266a95ee2585f51765c0331794bca461aaf4d1f5091489d475179"
+    else
+      url "https://files.pythonhosted.org/packages/3b/ac/924878f239c167ffe3bfc643aee4d6dd5b357e25f6b28db227e40e9e6df3/pyobjc_framework_webkit-12.1-cp314-cp314-macosx_10_15_universal2.whl"
+      sha256 "99d0d28542a266a95ee2585f51765c0331794bca461aaf4d1f5091489d475179"
+    end
   end
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl"
@@ -969,9 +1959,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-Accessibility").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -987,9 +1980,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-AddressBook").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1032,9 +2028,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-ApplicationServices").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1059,81 +2058,108 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-AudioVideoBridging").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-AuthenticationServices").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-AutomaticAssessmentConfiguration").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-Automator").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-AVFoundation").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-AVKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-AVRouting").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-BackgroundAssets").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-BrowserEngineKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1158,9 +2184,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-CallKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1176,9 +2205,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-CFNetwork").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1194,9 +2226,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-ClassKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1251,54 +2286,72 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-Contacts").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-ContactsUI").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreAudio").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreAudioKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreBluetooth").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreData").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1314,36 +2367,48 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-CoreLocation").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreMedia").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreMediaIO").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreMIDI").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1362,54 +2427,72 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-CoreMotion").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreServices").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreSpotlight").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreText").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CoreWLAN").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-CryptoTokenKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1452,9 +2535,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-DiscRecording").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1515,27 +2601,36 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-ExtensionKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-ExternalAccessory").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-FileProvider").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1560,54 +2655,72 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-FSEvents").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-FSKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-GameCenter").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-GameController").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-GameKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-GameplayKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1623,27 +2736,36 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-HealthKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-ImageCaptureCore").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-InputMethodKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1668,27 +2790,36 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-Intents").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-IntentsUI").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-IOBluetooth").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1749,18 +2880,24 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-libdispatch").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-libxpc").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1776,9 +2913,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-LocalAuthentication").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1803,9 +2943,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-MapKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1821,9 +2964,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-MediaExtension").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1848,45 +2994,60 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-MediaToolbox").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-Metal").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-MetalFX").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-MetalKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-MetalPerformanceShaders").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1902,9 +3063,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-MetricKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1920,18 +3084,24 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-ModelIO").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-MultipeerConnectivity").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -1956,27 +3126,36 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-Network").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-NetworkExtension").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-NotificationCenter").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2001,18 +3180,24 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-OSLog").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-PassKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2037,18 +3222,24 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-Photos").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-PhotosUI").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2064,9 +3255,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-PushKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2094,54 +3288,72 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-ReplayKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-SafariServices").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-SafetyKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-SceneKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-ScreenCaptureKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-ScreenSaver").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2157,9 +3369,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-ScriptingBridge").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2175,9 +3390,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-Security").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2193,9 +3411,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-SecurityInterface").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2229,27 +3450,36 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-SharedWithYou").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-SharedWithYouCore").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-ShazamKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2274,27 +3504,36 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-Speech").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-SpriteKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-StoreKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2310,27 +3549,36 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-SyncServices").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-SystemConfiguration").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-SystemExtensions").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2355,9 +3603,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-UserNotifications").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2382,18 +3633,24 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-VideoToolbox").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
     end
 
     resource("pyobjc-framework-Virtualization").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end
@@ -2412,9 +3669,12 @@ class Ggai < Formula
     end
 
     resource("pyobjc-framework-WebKit").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname.pwd
       else
         venv.pip_install Pathname.pwd
       end

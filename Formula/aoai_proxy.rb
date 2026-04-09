@@ -3,8 +3,8 @@ class AoaiProxy < Formula
 
   desc "OpenAI-compatible proxy for Azure OpenAI using Entra ID authentication"
   homepage "https://github.com/rioriost/aoai_proxy"
-  url "https://github.com/rioriost/aoai_proxy/releases/download/0.1.9/aoai_proxy-0.1.9.tar.gz"
-  sha256 "a9fe7cd1e2629cfe40a56b1186262442bb90064fc26c09216c78eb672f92dce5"
+  url "https://github.com/rioriost/aoai_proxy/releases/download/0.1.10/aoai_proxy-0.1.10.tar.gz"
+  sha256 "1cbff53d6ac01da38e08882efb2b65d5d703d1e3242247887dce5bae86cd7f2f"
   license "MIT"
 
   depends_on "python@3.12"
@@ -43,31 +43,42 @@ class AoaiProxy < Formula
       url "https://files.pythonhosted.org/packages/78/2d/7fa73dfa841b5ac06c7b8855cfc18622132e365f5b81d02230333ff26e9e/cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
       sha256 "3e17ed538242334bf70832644a32a7aae3d83b57567f9fd60a26257e992b79ba"
     else
-      url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
-      sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
+      url "https://files.pythonhosted.org/packages/df/a2/781b623f57358e360d62cdd7a8c681f074a71d445418a776eef0aadb4ab4/cffi-2.0.0-cp312-cp312-macosx_11_0_arm64.whl"
+      sha256 "8eca2a813c1cb7ad4fb74d368c2ffbbb4789d377ee5bb8df98373c2cc0dee76c"
     end
   end
   resource "charset_normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/68/687187c7e26cb24ccbd88e5069f5ef00eba804d36dde11d99aad0838ab45/charset_normalizer-3.4.6-py3-none-any.whl"
-    sha256 "947cf925bc916d90adba35a64c82aace04fa39b46b52d4630ece166655905a69"
+    if OS.mac? && Hardware::CPU.arm?
+      url "https://files.pythonhosted.org/packages/0c/eb/4fc8d0a7110eb5fc9cc161723a34a8a6c200ce3b4fbf681bc86feee22308/charset_normalizer-3.4.7-cp312-cp312-macosx_10_13_universal2.whl"
+      sha256 "eca9705049ad3c7345d574e3510665cb2cf844c2f2dcfe675332677f081cbd46"
+    elsif OS.mac? && Hardware::CPU.intel?
+      url "https://files.pythonhosted.org/packages/0c/eb/4fc8d0a7110eb5fc9cc161723a34a8a6c200ce3b4fbf681bc86feee22308/charset_normalizer-3.4.7-cp312-cp312-macosx_10_13_universal2.whl"
+      sha256 "eca9705049ad3c7345d574e3510665cb2cf844c2f2dcfe675332677f081cbd46"
+    elsif OS.linux?
+      url "https://files.pythonhosted.org/packages/4b/f8/d0118a2f5f23b02cd166fa385c60f9b0d4f9194f574e2b31cef350ad7223/charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "5649fd1c7bade02f320a462fdefd0b4bd3ce036065836d4f42e0de958038e116"
+    else
+      url "https://files.pythonhosted.org/packages/0c/eb/4fc8d0a7110eb5fc9cc161723a34a8a6c200ce3b4fbf681bc86feee22308/charset_normalizer-3.4.7-cp312-cp312-macosx_10_13_universal2.whl"
+      sha256 "eca9705049ad3c7345d574e3510665cb2cf844c2f2dcfe675332677f081cbd46"
+    end
   end
   resource "click" do
-    url "https://files.pythonhosted.org/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl"
-    sha256 "981153a64e25f12d547d3426c367a4857371575ee7ad18df2a6183ab0545b2a6"
+    url "https://files.pythonhosted.org/packages/e4/20/71885d8b97d4f3dde17b1fdb92dbd4908b00541c5a3379787137285f602e/click-8.3.2-py3-none-any.whl"
+    sha256 "1924d2c27c5653561cd2cae4548d1406039cb79b858b747cfea24924bbc1616d"
   end
   resource "cryptography" do
     if OS.mac? && Hardware::CPU.arm?
-      url "https://files.pythonhosted.org/packages/47/23/9285e15e3bc57325b0a72e592921983a701efc1ee8f91c06c5f0235d86d9/cryptography-46.0.6-cp311-abi3-macosx_10_9_universal2.whl"
-      sha256 "64235194bad039a10bb6d2d930ab3323baaec67e2ce36215fd0952fad0930ca8"
+      url "https://files.pythonhosted.org/packages/0b/5d/4a8f770695d73be252331e60e526291e3df0c9b27556a90a6b47bccca4c2/cryptography-46.0.7-cp311-abi3-macosx_10_9_universal2.whl"
+      sha256 "ea42cbe97209df307fdc3b155f1b6fa2577c0defa8f1f7d3be7d31d189108ad4"
     elsif OS.mac? && Hardware::CPU.intel?
-      url "https://files.pythonhosted.org/packages/47/23/9285e15e3bc57325b0a72e592921983a701efc1ee8f91c06c5f0235d86d9/cryptography-46.0.6-cp311-abi3-macosx_10_9_universal2.whl"
-      sha256 "64235194bad039a10bb6d2d930ab3323baaec67e2ce36215fd0952fad0930ca8"
+      url "https://files.pythonhosted.org/packages/0b/5d/4a8f770695d73be252331e60e526291e3df0c9b27556a90a6b47bccca4c2/cryptography-46.0.7-cp311-abi3-macosx_10_9_universal2.whl"
+      sha256 "ea42cbe97209df307fdc3b155f1b6fa2577c0defa8f1f7d3be7d31d189108ad4"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/19/69/732a736d12c2631e140be2348b4ad3d226302df63ef64d30dfdb8db7ad1c/cryptography-46.0.6-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
-      sha256 "9a693028b9cbe51b5a1136232ee8f2bc242e4e19d456ded3fa7c86e43c713b4a"
+      url "https://files.pythonhosted.org/packages/4a/9a/1765afe9f572e239c3469f2cb429f3ba7b31878c893b246b4b2994ffe2fe/cryptography-46.0.7-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+      sha256 "5ad9ef796328c5e3c4ceed237a183f5d41d21150f972455a9d926593a1dcb308"
     else
-      url "https://files.pythonhosted.org/packages/a4/ba/04b1bd4218cbc58dc90ce967106d51582371b898690f3ae0402876cc4f34/cryptography-46.0.6.tar.gz"
-      sha256 "27550628a518c5c6c903d84f637fbecf287f6cb9ced3804838a1295dc1fd0759"
+      url "https://files.pythonhosted.org/packages/0b/5d/4a8f770695d73be252331e60e526291e3df0c9b27556a90a6b47bccca4c2/cryptography-46.0.7-cp311-abi3-macosx_10_9_universal2.whl"
+      sha256 "ea42cbe97209df307fdc3b155f1b6fa2577c0defa8f1f7d3be7d31d189108ad4"
     end
   end
   resource "fastapi" do
@@ -117,8 +128,8 @@ class AoaiProxy < Formula
       url "https://files.pythonhosted.org/packages/0d/76/941cc9f73529988688a665a5c0ecff1112b3d95ab48f81db5f7606f522d3/pydantic_core-2.41.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
       sha256 "eceb81a8d74f9267ef4081e246ffd6d129da5d87e37a77c9bde550cb04870c1c"
     else
-      url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
-      sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
+      url "https://files.pythonhosted.org/packages/aa/32/9c2e8ccb57c01111e0fd091f236c7b371c1bccea0fa85247ac55b1e2b6b6/pydantic_core-2.41.5-cp312-cp312-macosx_11_0_arm64.whl"
+      sha256 "070259a8818988b9a84a449a2a7337c7f430a22acc0859c6b110aa7212a6d9c0"
     end
   end
   resource "pydantic-settings" do
@@ -150,8 +161,8 @@ class AoaiProxy < Formula
     sha256 "bf272323e553dfb2e87d9bfd225ca7b0f467b919d7bbd355436d3fd37cb0acd4"
   end
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/0a/89/f8827ccff89c1586027a105e5630ff6139a64da2515e24dafe860bd9ae4d/uvicorn-0.42.0-py3-none-any.whl"
-    sha256 "96c30f5c7abe6f74ae8900a70e92b85ad6613b745d4879eb9b16ccad15645359"
+    url "https://files.pythonhosted.org/packages/b7/23/a5bbd9600dd607411fa644c06ff4951bec3a4d82c4b852374024359c19c0/uvicorn-0.44.0-py3-none-any.whl"
+    sha256 "ce937c99a2cc70279556967274414c087888e8cec9f9c94644dfca11bd3ced89"
   end
 
   def install
@@ -229,9 +240,12 @@ class AoaiProxy < Formula
     end
 
     resource("charset_normalizer").stage do
-      wheel = Dir["*.whl"].first
-      if wheel
-        venv.pip_install Pathname(wheel)
+      if OS.mac? && Hardware::CPU.arm?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.mac? && Hardware::CPU.intel?
+        venv.pip_install Pathname(Dir["*.whl"].first)
+      elsif OS.linux?
+        venv.pip_install Pathname(Dir["*.whl"].first)
       else
         venv.pip_install Pathname.pwd
       end

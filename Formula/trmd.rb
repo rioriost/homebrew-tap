@@ -3,8 +3,8 @@ class Trmd < Formula
 
   desc "Translate Markdown using OpenAI"
   homepage "https://github.com/rioriost/trmd"
-  url "https://github.com/rioriost/trmd/releases/download/0.1.41/trmd-0.1.41.tar.gz"
-  sha256 "21ae369824b4998f0ecd8efe166a824bdeaa3df074de8216389ed59976b92ab2"
+  url "https://github.com/rioriost/trmd/releases/download/0.1.42/trmd-0.1.42.tar.gz"
+  sha256 "6ef953158d60295f4ed14b06cd0f71afc735040c49daf2faa716eee1d098885b"
   license "MIT"
 
   depends_on "python@3.13"
@@ -17,8 +17,8 @@ class Trmd < Formula
     sha256 "08b310f9e24a9594186fd75b4f73f4a4152069e3853f1ed8bfbf58369f4ad708"
   end
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/22/30/7cd8fdcdfbc5b869528b079bfb76dcdf6056b1a2097a662e5e8c04f42965/certifi-2026.4.22-py3-none-any.whl"
-    sha256 "3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a"
+    url "https://files.pythonhosted.org/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl"
+    sha256 "3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897"
   end
   resource "distro" do
     url "https://files.pythonhosted.org/packages/12/b3/231ffd4ab1fc9d679809f356cebee130ac7daa00d6d6f3206dd4fd137e9e/distro-1.9.0-py3-none-any.whl"
@@ -37,27 +37,27 @@ class Trmd < Formula
     sha256 "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"
   end
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6c/3c/3f62dee257eb3d6b2c1ef2a09d36d9793c7111156a73b5654d2c2305e5ce/idna-3.14-py3-none-any.whl"
-    sha256 "e677eaf072e290f7b725f9acf0b3a2bd55f9fd6f7c70abe5f0e34823d0accf69"
+    url "https://files.pythonhosted.org/packages/94/16/70255075a9859a0e3adb789b68ceb0e210dec03934245fd98d248226572f/idna-3.16-py3-none-any.whl"
+    sha256 "cc246e3a3f89580c3a951b5ad298ca4638078b2cdd4f115654332b5c26daded5"
   end
   resource "jiter" do
     if OS.mac? && Hardware::CPU.arm?
-      url "https://files.pythonhosted.org/packages/d6/be/080c96a45cd74f9fce5db4fd68510b88087fb37ffe2541ff73c12db92535/jiter-0.14.0-cp313-cp313-macosx_11_0_arm64.whl"
-      sha256 "4b77da71f6e819be5fbcec11a453fde5b1d0267ef6ed487e2a392fd8e14e4e3a"
+      url "https://files.pythonhosted.org/packages/86/59/db537c0949e83668c38481d426b9f2fd5ab758c4ee53a811dd0a510626a0/jiter-0.15.0-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "d1e7b1776f0797956c509e123d0952d10d293a9492dea9f288ab9570ec01d1a5"
     elsif OS.mac? && Hardware::CPU.intel?
-      url "https://files.pythonhosted.org/packages/97/2a/09f70020898507a89279659a1afe3364d57fc1b2c89949081975d135f6f5/jiter-0.14.0-cp313-cp313-macosx_10_12_x86_64.whl"
-      sha256 "af72f204cf4d44258e5b4c1745130ac45ddab0e71a06333b01de660ab4187a94"
+      url "https://files.pythonhosted.org/packages/e5/f4/f708c900ecee41b2025ef8413d5351e5649eb2125c506f6720cc69b06f5c/jiter-0.15.0-cp313-cp313-macosx_10_12_x86_64.whl"
+      sha256 "1c11465f97e2abf45a014b83b730222f8f1c5335e802c7055a67d50de6f1f4e3"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/5d/37/c16d9d15c0a471b8644b1abe3c82668092a707d9bedcf076f24ff2e380cd/jiter-0.14.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-      sha256 "fc4ab96a30fb3cb2c7e0cd33f7616c8860da5f5674438988a54ac717caccdbaa"
+      url "https://files.pythonhosted.org/packages/8f/7c/89fbcabb2739b7a5b8dc959a1b6c5761f6484f5fed3486854b3c789bb1de/jiter-0.15.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+      sha256 "d1aa62e277fc1cbd80e6deacae6f4d983b41b3d7728e0645c5d741a6149bba45"
     else
-      url "https://files.pythonhosted.org/packages/d6/be/080c96a45cd74f9fce5db4fd68510b88087fb37ffe2541ff73c12db92535/jiter-0.14.0-cp313-cp313-macosx_11_0_arm64.whl"
-      sha256 "4b77da71f6e819be5fbcec11a453fde5b1d0267ef6ed487e2a392fd8e14e4e3a"
+      url "https://files.pythonhosted.org/packages/86/59/db537c0949e83668c38481d426b9f2fd5ab758c4ee53a811dd0a510626a0/jiter-0.15.0-cp313-cp313-macosx_11_0_arm64.whl"
+      sha256 "d1e7b1776f0797956c509e123d0952d10d293a9492dea9f288ab9570ec01d1a5"
     end
   end
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/9d/1c/5d43735b2553baae2a5e899dcbcd0670a86930d993184d72ca909bf11c9b/openai-2.36.0-py3-none-any.whl"
-    sha256 "143f6194b548dbc2c921af1f1b03b9f14c85fed8a75b5b516f5bcc11a2a50c63"
+    url "https://files.pythonhosted.org/packages/0a/bf/ccff9be562e24207716d04ef9dc931c76aff0c89a7265da43e2104d7fe06/openai-2.38.0-py3-none-any.whl"
+    sha256 "ec6661c57b2dcc47414a767e6e3335c7ed3d19c9696999283a3c82e95c756a3c"
   end
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/fd/7b/122376b1fd3c62c1ed9dc80c931ace4844b3c55407b6fb2d199377c9736f/pydantic-2.13.4-py3-none-any.whl"

@@ -3,24 +3,24 @@ class Pgsalesgen < Formula
 
   desc "Generate sales data for PostgreSQL"
   homepage "https://github.com/rioriost/pgsalesgen"
-  url "https://github.com/rioriost/pgsalesgen/releases/download/0.1.6/pgsalesgen-0.1.6.tar.gz"
-  sha256 "389830b7c254b3b1d2c5b6ca91140183877bf9dcc99f36e5d3ba9625039902e0"
+  url "https://github.com/rioriost/pgsalesgen/releases/download/0.1.7/pgsalesgen-0.1.7.tar.gz"
+  sha256 "233621277ad32ddccf94edd75dc0dce66fab3bf66990eb8d51c8b3a25a19613b"
   license "MIT"
 
   depends_on "python@3.14"
   resource "numpy" do
     if OS.mac? && Hardware::CPU.arm?
-      url "https://files.pythonhosted.org/packages/4c/39/8a320264a84404c74cc7e79715de85d6130fa07a0898f67fb5cd5bd79908/numpy-2.4.4-cp314-cp314-macosx_11_0_arm64.whl"
-      sha256 "2483e4584a1cb3092da4470b38866634bafb223cbcd551ee047633fd2584599a"
+      url "https://files.pythonhosted.org/packages/8e/62/764ce66fa4147ae6d73071a3abf804ffe606f174618697c571acdf26a7c9/numpy-2.4.6-cp314-cp314-macosx_11_0_arm64.whl"
+      sha256 "38efbc8de75c7a0fc1ac190162d892787f3f47b57cc291231aafee36b80982b7"
     elsif OS.mac? && Hardware::CPU.intel?
-      url "https://files.pythonhosted.org/packages/6e/06/c54062f85f673dd5c04cbe2f14c3acb8c8b95e3384869bb8cc9bff8cb9df/numpy-2.4.4-cp314-cp314-macosx_10_15_x86_64.whl"
-      sha256 "f169b9a863d34f5d11b8698ead99febeaa17a13ca044961aa8e2662a6c7766a0"
+      url "https://files.pythonhosted.org/packages/f8/91/3ab2044d05fd16d343c5ac2e69b127f1b2854040dd20b193257c78028bd3/numpy-2.4.6-cp314-cp314-macosx_10_15_x86_64.whl"
+      sha256 "06ca2f61ec4385a07a6977c55ba998a4466c123642b4a32694d3128fce18c079"
     elsif OS.linux?
-      url "https://files.pythonhosted.org/packages/98/7c/21252050676612625449b4807d6b695b9ce8a7c9e1c197ee6216c8a65c7c/numpy-2.4.4-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
-      sha256 "27a8d92cd10f1382a67d7cf4db7ce18341b66438bdd9f691d7b0e48d104c2a9d"
+      url "https://files.pythonhosted.org/packages/f3/eb/ebffaa97dc55502df69584a8f0dcf07f69a3e0b3e2323670a2722db9aa39/numpy-2.4.6-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+      sha256 "a2c306dea656c12c68f51f4cea133cbe78ca7435eb28c735eac1d3ebe73be6e8"
     else
-      url "https://files.pythonhosted.org/packages/4c/39/8a320264a84404c74cc7e79715de85d6130fa07a0898f67fb5cd5bd79908/numpy-2.4.4-cp314-cp314-macosx_11_0_arm64.whl"
-      sha256 "2483e4584a1cb3092da4470b38866634bafb223cbcd551ee047633fd2584599a"
+      url "https://files.pythonhosted.org/packages/8e/62/764ce66fa4147ae6d73071a3abf804ffe606f174618697c571acdf26a7c9/numpy-2.4.6-cp314-cp314-macosx_11_0_arm64.whl"
+      sha256 "38efbc8de75c7a0fc1ac190162d892787f3f47b57cc291231aafee36b80982b7"
     end
   end
   resource "psycopg" do

@@ -1,19 +1,25 @@
 class NesRecycle < Formula
   include Language::Python::Virtualenv
 
-  desc 'CLI tool for previewing and submitting the Nespresso recycling pickup form over HTTP'
-  homepage 'https://github.com/rioriost/nes_recycle'
-  url 'https://files.pythonhosted.org/packages/61/a9/77b5d59843fb70f1a4193cb6f9d1829449ef7dda3ba1450a0fd193b90559/nes_recycle-0.0.3.tar.gz'
-  sha256 '744e38972bf9d758d6e181ba8444eb817fea49651e63b0bf8342eb4d83d98746'
-  license 'MIT'
+  desc "CLI tool for previewing and submitting the Nespresso recycling pickup form over HTTP"
+  homepage "https://github.com/rioriost/nes_recycle"
+  url "https://github.com/rioriost/nes_recycle/releases/download/0.0.6/nes_recycle-0.0.6.tar.gz"
+  sha256 "152252b71042389cb2d80ada6c7609c24112dec1b59ee16b2fe8643185ad7f6a"
+  license "MIT"
 
-  depends_on 'python@3.14'
+  depends_on "python@3.14"
 
   def install
-    virtualenv_install_with_resources
+    if OS.mac?
+      ENV.append "LDFLAGS", "-Wl,-headerpad_max_install_names"
+      ENV.append "RUSTFLAGS", "-C link-arg=-Wl,-headerpad_max_install_names"
+    end
+    cd "." do
+      virtualenv_install_with_resources
+    end
   end
 
   test do
-    assert_match 'usage', shell_output("#{bin}/nes_recycle --help")
+    system "#{bin}/nes_recycle", "--help"
   end
 end

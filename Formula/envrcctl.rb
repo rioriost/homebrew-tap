@@ -3,17 +3,19 @@ class Envrcctl < Formula
 
   desc "Manage .envrc with managed blocks and OS-backed secrets"
   homepage "https://github.com/rioriost/envrcctl"
-  url "https://github.com/rioriost/envrcctl/releases/download/0.3.2/envrcctl-0.3.2.tar.gz"
-  sha256 "b539dbfb2cf6874b2f97e2bfa12c90835d209bcb957dab22038c95bf94ff4eb8"
+  url "https://github.com/rioriost/envrcctl/releases/download/0.4.0/envrcctl-0.4.0.tar.gz"
+  sha256 "77b57b9044bcc111f1a6f9fc33eeefbc38fd98370eaf3271b314a9cb50bc4c73"
   license "MIT"
 
   depends_on "python@3.14"
 
   on_macos do
     on_arm do
+      depends_on macos: :tahoe
+
       resource "envrcctl-macos-auth-arm64" do
-        url "https://github.com/rioriost/envrcctl/releases/download/0.3.2/envrcctl-macos-auth-0.3.2-arm64.tar.gz"
-        sha256 "e2b94b933f851ca297a4cdb6e2c079aaf14e0680efb82c08a5cabef38181dfb6"
+        url "https://github.com/rioriost/envrcctl/releases/download/0.4.0/envrcctl-macos-auth-0.4.0-arm64.tar.gz"
+        sha256 "56d6ca4a715a87f736ec4cf334203c0476e69aa03ed41e2fd37fbbfad511d513"
       end
     end
   end
@@ -59,8 +61,8 @@ class Envrcctl < Formula
   end
 
   resource "envrcctl-wheel" do
-    url "https://github.com/rioriost/envrcctl/releases/download/0.3.2/envrcctl-0.3.2-py3-none-any.whl", using: :nounzip
-    sha256 "c3e389259385025e504eb668edceeed663acadc7fc8dc563f3d504263d6310c3"
+    url "https://github.com/rioriost/envrcctl/releases/download/0.4.0/envrcctl-0.4.0-py3-none-any.whl", using: :nounzip
+    sha256 "6553b46696c5d6bf83b0515534271700b28890a52931e2dbab0c51642af48dfb"
   end
 
   def install
@@ -96,6 +98,7 @@ class Envrcctl < Formula
     assert_match "Manage .envrc", shell_output("#{bin}/envrcctl --help")
     if OS.mac? && Hardware::CPU.arm?
       assert_path_exists bin/"envrcctl-macos-auth"
+      assert_match "Usage:", shell_output("#{bin}/envrcctl-macos-auth --help")
     end
   end
 end
